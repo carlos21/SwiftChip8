@@ -69,7 +69,7 @@
 
 /* Begin PBXFileReference section */
 		35DD776F24FB27A4000164F7 /* Screen.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Screen.swift; sourceTree = "<group>"; };
-		35DD777024FB27A4000164F7 /* Chip8.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Chip8.swift; path = ../../Chip8bk/Chip8/Core/Chip8.swift; sourceTree = "<group>"; };
+		35DD777024FB27A4000164F7 /* Chip8.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Chip8.swift; sourceTree = "<group>"; };
 		35DD777124FB27A4000164F7 /* Keyboard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Keyboard.swift; sourceTree = "<group>"; };
 		35DD777224FB27A4000164F7 /* Memory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Memory.swift; sourceTree = "<group>"; };
 		35DD777324FB27A5000164F7 /* Pixel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Pixel.swift; sourceTree = "<group>"; };
@@ -143,6 +143,20 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		35DD77B224FB2D26000164F7 /* Chip8 */ = {
+			isa = PBXGroup;
+			children = (
+				35DD777024FB27A4000164F7 /* Chip8.swift */,
+				35DD777124FB27A4000164F7 /* Keyboard.swift */,
+				35DD777224FB27A4000164F7 /* Memory.swift */,
+				35DD777324FB27A5000164F7 /* Pixel.swift */,
+				35DD776F24FB27A4000164F7 /* Screen.swift */,
+				35DD777424FB27A5000164F7 /* Stack.swift */,
+				35DD778D24FB2877000164F7 /* SpriteKit+KeyCode.swift */,
+			);
+			path = Chip8;
+			sourceTree = "<group>";
+		};
 		52D6D9721BEFF229002C0205 = {
 			isa = PBXGroup;
 			children = (
@@ -179,13 +193,7 @@
 		8933C7811EB5B7E0000D00A4 /* Sources */ = {
 			isa = PBXGroup;
 			children = (
-				35DD777024FB27A4000164F7 /* Chip8.swift */,
-				35DD777124FB27A4000164F7 /* Keyboard.swift */,
-				35DD777224FB27A4000164F7 /* Memory.swift */,
-				35DD777324FB27A5000164F7 /* Pixel.swift */,
-				35DD776F24FB27A4000164F7 /* Screen.swift */,
-				35DD777424FB27A5000164F7 /* Stack.swift */,
-				35DD778D24FB2877000164F7 /* SpriteKit+KeyCode.swift */,
+				35DD77B224FB2D26000164F7 /* Chip8 */,
 			);
 			path = Sources;
 			sourceTree = "<group>";
