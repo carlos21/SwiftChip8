@@ -8,9 +8,6 @@
 
 import Foundation
 
-let screenWidth = 64
-let screenHeight = 32
-
 public class Screen {
     
     private var pixels = [[Pixel]]()
@@ -19,9 +16,9 @@ public class Screen {
 //        let rows = Array<Pixel>(repeating: Pixel(), count: screenHeight)
 //        pixels = Array<Array<Pixel>>(repeating: rows, count: screenWidth)
 //
-        for _ in 0..<screenWidth {
+        for _ in 0..<Emulator.screenWidth {
             var rows = [Pixel]()
-            for _ in 0..<screenHeight {
+            for _ in 0..<Emulator.screenHeight {
                 rows.append(Pixel())
             }
             pixels.append(rows)
@@ -47,6 +44,7 @@ public class Screen {
         pixels.flatMap { $0 }.forEach { $0.clear() }
     }
     
+    @discardableResult
     public func drawSprite(x: Int, y: Int, sprite: [UInt8], bytesToRead: Int) -> Bool {
         var pixelCollision = false
         for ly in 0..<bytesToRead {
@@ -55,14 +53,19 @@ public class Screen {
                 if (c & (0b10000000) >> lx) == 0 {
                     continue
                 }
-                pixels[ly+y][lx+x].paint()
-                pixelCollision = true
+                
+                let pixel = pixels[(lx+x) % Emulator.screenWidth][(ly+y) % Emulator.screenHeight]
+                if pixel.isOn {
+                    pixelCollision = true
+                }
+                pixel.paint()
+                
             }
         }
         return pixelCollision
     }
     
     private func assetBounds(x: Int, y: Int) {
-        precondition(x < screenWidth && x >= 0 && y < screenHeight && y >= 0)
+        precondition(x < Emulator.screenWidth && x >= 0 && y < Emulator.screenHeight && y >= 0)
     }
 }

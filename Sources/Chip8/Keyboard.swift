@@ -10,7 +10,7 @@ import Foundation
 
 let totalKeys = 16
 
-extension Chip8 {
+extension Emulator {
     
     public struct Keyboard {
         
@@ -41,7 +41,7 @@ extension Chip8 {
     }
 }
 
-extension Chip8.Keyboard {
+extension Emulator.Keyboard {
     
     public enum KeyCode: UInt16 {
 
@@ -85,7 +85,7 @@ extension Chip8.Keyboard {
     }
 }
 
-extension Chip8.Keyboard.KeyCode: ExpressibleByIntegerLiteral {
+extension Emulator.Keyboard.KeyCode: ExpressibleByIntegerLiteral {
     
     public typealias IntegerLiteralType = UInt16
     
@@ -94,7 +94,7 @@ extension Chip8.Keyboard.KeyCode: ExpressibleByIntegerLiteral {
     }
 }
 
-extension Chip8.Keyboard.KeyCode: CustomStringConvertible {
+extension Emulator.Keyboard.KeyCode: CustomStringConvertible {
     
     public var description: String {
         switch self {

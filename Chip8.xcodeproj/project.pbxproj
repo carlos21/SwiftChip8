@@ -7,34 +7,52 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		35DD777524FB27A5000164F7 /* Screen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35DD776F24FB27A4000164F7 /* Screen.swift */; };
+		354F84A924FBA0CB00FD1253 /* INVADERS in Resources */ = {isa = PBXBuildFile; fileRef = 354F84A824FBA0CB00FD1253 /* INVADERS */; };
+		354F84B824FBAF9700FD1253 /* Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = 354F84B124FBAF3B00FD1253 /* Data.swift */; };
+		354F84B924FBAF9700FD1253 /* SpriteKit+KeyCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35DD778D24FB2877000164F7 /* SpriteKit+KeyCode.swift */; };
+		354F84BA24FBAF9700FD1253 /* UInt16.swift in Sources */ = {isa = PBXBuildFile; fileRef = 354F84AA24FBA5D300FD1253 /* UInt16.swift */; };
+		354F84BB24FBAF9700FD1253 /* Emulator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35DD777024FB27A4000164F7 /* Emulator.swift */; };
+		354F84BC24FBAF9700FD1253 /* Keyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35DD777124FB27A4000164F7 /* Keyboard.swift */; };
+		354F84BD24FBAF9700FD1253 /* Memory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35DD777224FB27A4000164F7 /* Memory.swift */; };
+		354F84BE24FBAF9700FD1253 /* Pixel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35DD777324FB27A5000164F7 /* Pixel.swift */; };
+		354F84BF24FBAF9700FD1253 /* Screen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35DD776F24FB27A4000164F7 /* Screen.swift */; };
+		354F84C024FBAF9700FD1253 /* Stack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35DD777424FB27A5000164F7 /* Stack.swift */; };
+		354F84C124FBAF9800FD1253 /* Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = 354F84B124FBAF3B00FD1253 /* Data.swift */; };
+		354F84C224FBAF9800FD1253 /* SpriteKit+KeyCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35DD778D24FB2877000164F7 /* SpriteKit+KeyCode.swift */; };
+		354F84C324FBAF9800FD1253 /* UInt16.swift in Sources */ = {isa = PBXBuildFile; fileRef = 354F84AA24FBA5D300FD1253 /* UInt16.swift */; };
+		354F84C424FBAF9800FD1253 /* Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = 354F84B124FBAF3B00FD1253 /* Data.swift */; };
+		354F84C524FBAF9800FD1253 /* SpriteKit+KeyCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35DD778D24FB2877000164F7 /* SpriteKit+KeyCode.swift */; };
+		354F84C624FBAF9800FD1253 /* UInt16.swift in Sources */ = {isa = PBXBuildFile; fileRef = 354F84AA24FBA5D300FD1253 /* UInt16.swift */; };
+		354F84C724FBAF9900FD1253 /* Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = 354F84B124FBAF3B00FD1253 /* Data.swift */; };
+		354F84C824FBAF9900FD1253 /* SpriteKit+KeyCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35DD778D24FB2877000164F7 /* SpriteKit+KeyCode.swift */; };
+		354F84C924FBAF9900FD1253 /* UInt16.swift in Sources */ = {isa = PBXBuildFile; fileRef = 354F84AA24FBA5D300FD1253 /* UInt16.swift */; };
 		35DD777624FB27A5000164F7 /* Screen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35DD776F24FB27A4000164F7 /* Screen.swift */; };
 		35DD777724FB27A5000164F7 /* Screen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35DD776F24FB27A4000164F7 /* Screen.swift */; };
 		35DD777824FB27A5000164F7 /* Screen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35DD776F24FB27A4000164F7 /* Screen.swift */; };
-		35DD777924FB27A5000164F7 /* Chip8.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35DD777024FB27A4000164F7 /* Chip8.swift */; };
-		35DD777A24FB27A5000164F7 /* Chip8.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35DD777024FB27A4000164F7 /* Chip8.swift */; };
-		35DD777B24FB27A5000164F7 /* Chip8.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35DD777024FB27A4000164F7 /* Chip8.swift */; };
-		35DD777C24FB27A5000164F7 /* Chip8.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35DD777024FB27A4000164F7 /* Chip8.swift */; };
-		35DD777D24FB27A5000164F7 /* Keyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35DD777124FB27A4000164F7 /* Keyboard.swift */; };
+		35DD777A24FB27A5000164F7 /* Emulator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35DD777024FB27A4000164F7 /* Emulator.swift */; };
+		35DD777B24FB27A5000164F7 /* Emulator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35DD777024FB27A4000164F7 /* Emulator.swift */; };
+		35DD777C24FB27A5000164F7 /* Emulator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35DD777024FB27A4000164F7 /* Emulator.swift */; };
 		35DD777E24FB27A5000164F7 /* Keyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35DD777124FB27A4000164F7 /* Keyboard.swift */; };
 		35DD777F24FB27A5000164F7 /* Keyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35DD777124FB27A4000164F7 /* Keyboard.swift */; };
 		35DD778024FB27A5000164F7 /* Keyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35DD777124FB27A4000164F7 /* Keyboard.swift */; };
-		35DD778124FB27A5000164F7 /* Memory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35DD777224FB27A4000164F7 /* Memory.swift */; };
 		35DD778224FB27A5000164F7 /* Memory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35DD777224FB27A4000164F7 /* Memory.swift */; };
 		35DD778324FB27A5000164F7 /* Memory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35DD777224FB27A4000164F7 /* Memory.swift */; };
 		35DD778424FB27A5000164F7 /* Memory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35DD777224FB27A4000164F7 /* Memory.swift */; };
-		35DD778524FB27A5000164F7 /* Pixel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35DD777324FB27A5000164F7 /* Pixel.swift */; };
 		35DD778624FB27A5000164F7 /* Pixel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35DD777324FB27A5000164F7 /* Pixel.swift */; };
 		35DD778724FB27A5000164F7 /* Pixel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35DD777324FB27A5000164F7 /* Pixel.swift */; };
 		35DD778824FB27A5000164F7 /* Pixel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35DD777324FB27A5000164F7 /* Pixel.swift */; };
-		35DD778924FB27A5000164F7 /* Stack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35DD777424FB27A5000164F7 /* Stack.swift */; };
 		35DD778A24FB27A5000164F7 /* Stack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35DD777424FB27A5000164F7 /* Stack.swift */; };
 		35DD778B24FB27A5000164F7 /* Stack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35DD777424FB27A5000164F7 /* Stack.swift */; };
 		35DD778C24FB27A5000164F7 /* Stack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35DD777424FB27A5000164F7 /* Stack.swift */; };
-		35DD778E24FB2877000164F7 /* SpriteKit+KeyCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35DD778D24FB2877000164F7 /* SpriteKit+KeyCode.swift */; };
-		35DD778F24FB2877000164F7 /* SpriteKit+KeyCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35DD778D24FB2877000164F7 /* SpriteKit+KeyCode.swift */; };
-		35DD779024FB2877000164F7 /* SpriteKit+KeyCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35DD778D24FB2877000164F7 /* SpriteKit+KeyCode.swift */; };
-		35DD779124FB2877000164F7 /* SpriteKit+KeyCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35DD778D24FB2877000164F7 /* SpriteKit+KeyCode.swift */; };
+		35DD77BD24FB2FD1000164F7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35DD77BC24FB2FD1000164F7 /* AppDelegate.swift */; };
+		35DD77BF24FB2FD1000164F7 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35DD77BE24FB2FD1000164F7 /* SceneDelegate.swift */; };
+		35DD77C124FB2FD1000164F7 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35DD77C024FB2FD1000164F7 /* ViewController.swift */; };
+		35DD77C424FB2FD1000164F7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 35DD77C224FB2FD1000164F7 /* Main.storyboard */; };
+		35DD77C624FB2FD3000164F7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 35DD77C524FB2FD3000164F7 /* Assets.xcassets */; };
+		35DD77C924FB2FD3000164F7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 35DD77C724FB2FD3000164F7 /* LaunchScreen.storyboard */; };
+		35DD77CF24FB30E6000164F7 /* Chip8.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 52D6D97C1BEFF229002C0205 /* Chip8.framework */; };
+		35DD77D024FB30E6000164F7 /* Chip8.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 52D6D97C1BEFF229002C0205 /* Chip8.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		35DD77D524FB3131000164F7 /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35DD77D424FB3131000164F7 /* GameScene.swift */; };
 		52D6D9871BEFF229002C0205 /* Chip8.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 52D6D97C1BEFF229002C0205 /* Chip8.framework */; };
 		8933C78E1EB5B82C000D00A4 /* Chip8Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8933C7891EB5B82A000D00A4 /* Chip8Tests.swift */; };
 		8933C78F1EB5B82C000D00A4 /* Chip8Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8933C7891EB5B82A000D00A4 /* Chip8Tests.swift */; };
@@ -44,6 +62,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		35DD77D124FB30E6000164F7 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 52D6D9731BEFF229002C0205 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 52D6D97B1BEFF229002C0205;
+			remoteInfo = "Chip8-iOS";
+		};
 		52D6D9881BEFF229002C0205 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 52D6D9731BEFF229002C0205 /* Project object */;
@@ -67,14 +92,40 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		35DD77D324FB30E7000164F7 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				35DD77D024FB30E6000164F7 /* Chip8.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
+		354F84A824FBA0CB00FD1253 /* INVADERS */ = {isa = PBXFileReference; lastKnownFileType = file; path = INVADERS; sourceTree = "<group>"; };
+		354F84AA24FBA5D300FD1253 /* UInt16.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UInt16.swift; sourceTree = "<group>"; };
+		354F84B124FBAF3B00FD1253 /* Data.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Data.swift; sourceTree = "<group>"; };
 		35DD776F24FB27A4000164F7 /* Screen.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Screen.swift; sourceTree = "<group>"; };
-		35DD777024FB27A4000164F7 /* Chip8.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Chip8.swift; sourceTree = "<group>"; };
+		35DD777024FB27A4000164F7 /* Emulator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Emulator.swift; sourceTree = "<group>"; };
 		35DD777124FB27A4000164F7 /* Keyboard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Keyboard.swift; sourceTree = "<group>"; };
 		35DD777224FB27A4000164F7 /* Memory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Memory.swift; sourceTree = "<group>"; };
 		35DD777324FB27A5000164F7 /* Pixel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Pixel.swift; sourceTree = "<group>"; };
 		35DD777424FB27A5000164F7 /* Stack.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Stack.swift; sourceTree = "<group>"; };
 		35DD778D24FB2877000164F7 /* SpriteKit+KeyCode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SpriteKit+KeyCode.swift"; sourceTree = "<group>"; };
+		35DD77BA24FB2FD1000164F7 /* Chip8-iOS-Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Chip8-iOS-Example.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		35DD77BC24FB2FD1000164F7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		35DD77BE24FB2FD1000164F7 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		35DD77C024FB2FD1000164F7 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		35DD77C324FB2FD1000164F7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		35DD77C524FB2FD3000164F7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		35DD77C824FB2FD3000164F7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		35DD77CA24FB2FD3000164F7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		35DD77D424FB3131000164F7 /* GameScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameScene.swift; sourceTree = "<group>"; };
 		52D6D97C1BEFF229002C0205 /* Chip8.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Chip8.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		52D6D9861BEFF229002C0205 /* Chip8-iOS Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Chip8-iOS Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		52D6D9E21BEFFF6E002C0205 /* Chip8.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Chip8.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -88,6 +139,14 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		35DD77B724FB2FD1000164F7 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				35DD77CF24FB30E6000164F7 /* Chip8.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		52D6D9781BEFF229002C0205 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -146,15 +205,40 @@
 		35DD77B224FB2D26000164F7 /* Chip8 */ = {
 			isa = PBXGroup;
 			children = (
-				35DD777024FB27A4000164F7 /* Chip8.swift */,
+				35DD778D24FB2877000164F7 /* SpriteKit+KeyCode.swift */,
+				354F84AA24FBA5D300FD1253 /* UInt16.swift */,
+				354F84B124FBAF3B00FD1253 /* Data.swift */,
+				35DD777024FB27A4000164F7 /* Emulator.swift */,
 				35DD777124FB27A4000164F7 /* Keyboard.swift */,
 				35DD777224FB27A4000164F7 /* Memory.swift */,
 				35DD777324FB27A5000164F7 /* Pixel.swift */,
 				35DD776F24FB27A4000164F7 /* Screen.swift */,
 				35DD777424FB27A5000164F7 /* Stack.swift */,
-				35DD778D24FB2877000164F7 /* SpriteKit+KeyCode.swift */,
 			);
 			path = Chip8;
+			sourceTree = "<group>";
+		};
+		35DD77BB24FB2FD1000164F7 /* Chip8-iOS-Example */ = {
+			isa = PBXGroup;
+			children = (
+				354F84A824FBA0CB00FD1253 /* INVADERS */,
+				35DD77BC24FB2FD1000164F7 /* AppDelegate.swift */,
+				35DD77BE24FB2FD1000164F7 /* SceneDelegate.swift */,
+				35DD77C024FB2FD1000164F7 /* ViewController.swift */,
+				35DD77D424FB3131000164F7 /* GameScene.swift */,
+				35DD77C224FB2FD1000164F7 /* Main.storyboard */,
+				35DD77C724FB2FD3000164F7 /* LaunchScreen.storyboard */,
+				35DD77C524FB2FD3000164F7 /* Assets.xcassets */,
+				35DD77CA24FB2FD3000164F7 /* Info.plist */,
+			);
+			path = "Chip8-iOS-Example";
+			sourceTree = "<group>";
+		};
+		35DD77CE24FB30E6000164F7 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 		52D6D9721BEFF229002C0205 = {
@@ -163,7 +247,9 @@
 				8933C7811EB5B7E0000D00A4 /* Sources */,
 				8933C7831EB5B7EB000D00A4 /* Tests */,
 				52D6D99C1BEFF38C002C0205 /* Configs */,
+				35DD77BB24FB2FD1000164F7 /* Chip8-iOS-Example */,
 				52D6D97D1BEFF229002C0205 /* Products */,
+				35DD77CE24FB30E6000164F7 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -177,6 +263,7 @@
 				52D6DA0F1BF000BD002C0205 /* Chip8.framework */,
 				DD75027A1C68FCFC006590AF /* Chip8-macOS Tests.xctest */,
 				DD75028D1C690C7A006590AF /* Chip8-tvOS Tests.xctest */,
+				35DD77BA24FB2FD1000164F7 /* Chip8-iOS-Example.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -257,6 +344,25 @@
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
+		35DD77B924FB2FD1000164F7 /* Chip8-iOS-Example */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 35DD77CB24FB2FD3000164F7 /* Build configuration list for PBXNativeTarget "Chip8-iOS-Example" */;
+			buildPhases = (
+				35DD77B624FB2FD1000164F7 /* Sources */,
+				35DD77B724FB2FD1000164F7 /* Frameworks */,
+				35DD77B824FB2FD1000164F7 /* Resources */,
+				35DD77D324FB30E7000164F7 /* Embed Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				35DD77D224FB30E6000164F7 /* PBXTargetDependency */,
+			);
+			name = "Chip8-iOS-Example";
+			productName = "Chip8-iOS-Example";
+			productReference = 35DD77BA24FB2FD1000164F7 /* Chip8-iOS-Example.app */;
+			productType = "com.apple.product-type.application";
+		};
 		52D6D97B1BEFF229002C0205 /* Chip8-iOS */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 52D6D9901BEFF229002C0205 /* Build configuration list for PBXNativeTarget "Chip8-iOS" */;
@@ -389,10 +495,15 @@
 		52D6D9731BEFF229002C0205 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 0720;
+				LastSwiftUpdateCheck = 1160;
 				LastUpgradeCheck = 1020;
 				ORGANIZATIONNAME = Chip8;
 				TargetAttributes = {
+					35DD77B924FB2FD1000164F7 = {
+						CreatedOnToolsVersion = 11.6;
+						DevelopmentTeam = JPFWAZT5D2;
+						ProvisioningStyle = Automatic;
+					};
 					52D6D97B1BEFF229002C0205 = {
 						CreatedOnToolsVersion = 7.1;
 						LastSwiftMigration = 1020;
@@ -443,11 +554,23 @@
 				52D6D9851BEFF229002C0205 /* Chip8-iOS Tests */,
 				DD7502791C68FCFC006590AF /* Chip8-macOS Tests */,
 				DD75028C1C690C7A006590AF /* Chip8-tvOS Tests */,
+				35DD77B924FB2FD1000164F7 /* Chip8-iOS-Example */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		35DD77B824FB2FD1000164F7 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				354F84A924FBA0CB00FD1253 /* INVADERS in Resources */,
+				35DD77C924FB2FD3000164F7 /* LaunchScreen.storyboard in Resources */,
+				35DD77C624FB2FD3000164F7 /* Assets.xcassets in Resources */,
+				35DD77C424FB2FD1000164F7 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		52D6D97A1BEFF229002C0205 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -500,17 +623,30 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		35DD77B624FB2FD1000164F7 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				35DD77C124FB2FD1000164F7 /* ViewController.swift in Sources */,
+				35DD77BD24FB2FD1000164F7 /* AppDelegate.swift in Sources */,
+				35DD77D524FB3131000164F7 /* GameScene.swift in Sources */,
+				35DD77BF24FB2FD1000164F7 /* SceneDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		52D6D9771BEFF229002C0205 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				35DD777924FB27A5000164F7 /* Chip8.swift in Sources */,
-				35DD778924FB27A5000164F7 /* Stack.swift in Sources */,
-				35DD777D24FB27A5000164F7 /* Keyboard.swift in Sources */,
-				35DD778124FB27A5000164F7 /* Memory.swift in Sources */,
-				35DD778E24FB2877000164F7 /* SpriteKit+KeyCode.swift in Sources */,
-				35DD778524FB27A5000164F7 /* Pixel.swift in Sources */,
-				35DD777524FB27A5000164F7 /* Screen.swift in Sources */,
+				354F84BE24FBAF9700FD1253 /* Pixel.swift in Sources */,
+				354F84C024FBAF9700FD1253 /* Stack.swift in Sources */,
+				354F84BD24FBAF9700FD1253 /* Memory.swift in Sources */,
+				354F84B924FBAF9700FD1253 /* SpriteKit+KeyCode.swift in Sources */,
+				354F84BA24FBAF9700FD1253 /* UInt16.swift in Sources */,
+				354F84BC24FBAF9700FD1253 /* Keyboard.swift in Sources */,
+				354F84BB24FBAF9700FD1253 /* Emulator.swift in Sources */,
+				354F84B824FBAF9700FD1253 /* Data.swift in Sources */,
+				354F84BF24FBAF9700FD1253 /* Screen.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -526,11 +662,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				35DD777B24FB27A5000164F7 /* Chip8.swift in Sources */,
+				354F84C524FBAF9800FD1253 /* SpriteKit+KeyCode.swift in Sources */,
+				354F84C424FBAF9800FD1253 /* Data.swift in Sources */,
+				35DD777B24FB27A5000164F7 /* Emulator.swift in Sources */,
 				35DD778B24FB27A5000164F7 /* Stack.swift in Sources */,
+				354F84C624FBAF9800FD1253 /* UInt16.swift in Sources */,
 				35DD777F24FB27A5000164F7 /* Keyboard.swift in Sources */,
 				35DD778324FB27A5000164F7 /* Memory.swift in Sources */,
-				35DD779024FB2877000164F7 /* SpriteKit+KeyCode.swift in Sources */,
 				35DD778724FB27A5000164F7 /* Pixel.swift in Sources */,
 				35DD777724FB27A5000164F7 /* Screen.swift in Sources */,
 			);
@@ -540,11 +678,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				35DD777C24FB27A5000164F7 /* Chip8.swift in Sources */,
+				354F84C824FBAF9900FD1253 /* SpriteKit+KeyCode.swift in Sources */,
+				354F84C724FBAF9900FD1253 /* Data.swift in Sources */,
+				35DD777C24FB27A5000164F7 /* Emulator.swift in Sources */,
 				35DD778C24FB27A5000164F7 /* Stack.swift in Sources */,
+				354F84C924FBAF9900FD1253 /* UInt16.swift in Sources */,
 				35DD778024FB27A5000164F7 /* Keyboard.swift in Sources */,
 				35DD778424FB27A5000164F7 /* Memory.swift in Sources */,
-				35DD779124FB2877000164F7 /* SpriteKit+KeyCode.swift in Sources */,
 				35DD778824FB27A5000164F7 /* Pixel.swift in Sources */,
 				35DD777824FB27A5000164F7 /* Screen.swift in Sources */,
 			);
@@ -554,11 +694,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				35DD777A24FB27A5000164F7 /* Chip8.swift in Sources */,
+				354F84C224FBAF9800FD1253 /* SpriteKit+KeyCode.swift in Sources */,
+				354F84C124FBAF9800FD1253 /* Data.swift in Sources */,
+				35DD777A24FB27A5000164F7 /* Emulator.swift in Sources */,
 				35DD778A24FB27A5000164F7 /* Stack.swift in Sources */,
+				354F84C324FBAF9800FD1253 /* UInt16.swift in Sources */,
 				35DD777E24FB27A5000164F7 /* Keyboard.swift in Sources */,
 				35DD778224FB27A5000164F7 /* Memory.swift in Sources */,
-				35DD778F24FB2877000164F7 /* SpriteKit+KeyCode.swift in Sources */,
 				35DD778624FB27A5000164F7 /* Pixel.swift in Sources */,
 				35DD777624FB27A5000164F7 /* Screen.swift in Sources */,
 			);
@@ -583,6 +725,11 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		35DD77D224FB30E6000164F7 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 52D6D97B1BEFF229002C0205 /* Chip8-iOS */;
+			targetProxy = 35DD77D124FB30E6000164F7 /* PBXContainerItemProxy */;
+		};
 		52D6D9891BEFF229002C0205 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 52D6D97B1BEFF229002C0205 /* Chip8-iOS */;
@@ -600,7 +747,79 @@
 		};
 /* End PBXTargetDependency section */
 
+/* Begin PBXVariantGroup section */
+		35DD77C224FB2FD1000164F7 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				35DD77C324FB2FD1000164F7 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		35DD77C724FB2FD3000164F7 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				35DD77C824FB2FD3000164F7 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
 /* Begin XCBuildConfiguration section */
+		35DD77CC24FB2FD3000164F7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = JPFWAZT5D2;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				INFOPLIST_FILE = "Chip8-iOS-Example/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.6;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.carlosduclos.Chip8-iOS-Example";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		35DD77CD24FB2FD3000164F7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = JPFWAZT5D2;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				INFOPLIST_FILE = "Chip8-iOS-Example/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.6;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.carlosduclos.Chip8-iOS-Example";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
 		52D6D98E1BEFF229002C0205 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -762,6 +981,7 @@
 		52D6D9941BEFF229002C0205 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = Configs/Chip8Tests.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -775,6 +995,7 @@
 		52D6D9951BEFF229002C0205 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = Configs/Chip8Tests.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -983,6 +1204,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		35DD77CB24FB2FD3000164F7 /* Build configuration list for PBXNativeTarget "Chip8-iOS-Example" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				35DD77CC24FB2FD3000164F7 /* Debug */,
+				35DD77CD24FB2FD3000164F7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		52D6D9761BEFF229002C0205 /* Build configuration list for PBXProject "Chip8" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

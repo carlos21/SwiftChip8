@@ -29,7 +29,7 @@ enum SpriteKit {
         case C = 0x08
         case V = 0x09
         
-        var emulatorKeyCode: Chip8.Keyboard.KeyCode {
+        var emulatorKeyCode: Emulator.Keyboard.KeyCode {
             switch self {
             case .X: return .zero
             case .one: return .one

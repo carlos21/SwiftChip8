@@ -11,7 +11,8 @@ import SpriteKit
 
 public class Pixel {
     
-    private(set) var color: Color = .black
+    public private(set) var color: Color = .black
+    public var node: SKSpriteNode?
     
     public var isOn: Bool {
         return color == .white

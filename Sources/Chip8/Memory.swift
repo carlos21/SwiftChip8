@@ -8,11 +8,9 @@
 
 import Foundation
 
-let memorySize = 4096
-
 public struct Memory {
     
-    private(set) var buffer = [UInt8](repeating: 0, count: memorySize)
+    public private(set) var buffer = [UInt8](repeating: 0, count: Emulator.memorySize)
     
     public func get(position: Int) -> UInt8? {
         assetBounds(position: position)
@@ -31,7 +29,14 @@ public struct Memory {
         }
     }
     
+    public func getShort(position: Int) -> UInt16? {
+        guard
+            let byte1 = get(position: position),
+            let byte2 = get(position: position+1) else { return nil }
+        return UInt16(bytes: (byte1, byte2))
+    }
+    
     private func assetBounds(position: Int) {
-        precondition(position >= 0 && position < memorySize)
+        precondition(position >= 0 && position < Emulator.memorySize)
     }
 }
