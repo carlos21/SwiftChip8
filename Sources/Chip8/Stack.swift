@@ -10,16 +10,7 @@ import Foundation
 
 let maxSize = 16
 
-public protocol Stackable {
-    
-    associatedtype Element
-    
-    func peek() -> Element?
-    mutating func push(_ element: Element)
-    @discardableResult mutating func pop() -> Element?
-}
-
-public struct Stack<Element>: Stackable where Element: Equatable {
+public struct Stack<Element> where Element: Equatable {
     
     private var storage = [Element]()
     
@@ -32,9 +23,9 @@ public struct Stack<Element>: Stackable where Element: Equatable {
         storage.append(element)
     }
     
-    public mutating func pop() -> Element? {
-        precondition(storage.count < maxSize)
-        return storage.popLast()
+    public mutating func pop() -> Element {
+        precondition(storage.count < maxSize && storage.count > 0)
+        return storage.popLast()!
     }
 }
 
@@ -54,7 +45,7 @@ extension Stack: CustomStringConvertible {
 
 extension Stack: ExpressibleByArrayLiteral {
     
-    public init(arrayLiteral elements: Self.Element...) {
+    public init(arrayLiteral elements: Element...) {
         storage = elements
     }
 }

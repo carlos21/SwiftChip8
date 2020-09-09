@@ -26,6 +26,7 @@
 		354F84C724FBAF9900FD1253 /* Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = 354F84B124FBAF3B00FD1253 /* Data.swift */; };
 		354F84C824FBAF9900FD1253 /* SpriteKit+KeyCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35DD778D24FB2877000164F7 /* SpriteKit+KeyCode.swift */; };
 		354F84C924FBAF9900FD1253 /* UInt16.swift in Sources */ = {isa = PBXBuildFile; fileRef = 354F84AA24FBA5D300FD1253 /* UInt16.swift */; };
+		35AF919C25042E3400756B7A /* Array+Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35AF919B25042E3400756B7A /* Array+Helper.swift */; };
 		35DD777624FB27A5000164F7 /* Screen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35DD776F24FB27A4000164F7 /* Screen.swift */; };
 		35DD777724FB27A5000164F7 /* Screen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35DD776F24FB27A4000164F7 /* Screen.swift */; };
 		35DD777824FB27A5000164F7 /* Screen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35DD776F24FB27A4000164F7 /* Screen.swift */; };
@@ -110,6 +111,7 @@
 		354F84A824FBA0CB00FD1253 /* INVADERS */ = {isa = PBXFileReference; lastKnownFileType = file; path = INVADERS; sourceTree = "<group>"; };
 		354F84AA24FBA5D300FD1253 /* UInt16.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UInt16.swift; sourceTree = "<group>"; };
 		354F84B124FBAF3B00FD1253 /* Data.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Data.swift; sourceTree = "<group>"; };
+		35AF919B25042E3400756B7A /* Array+Helper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+Helper.swift"; sourceTree = "<group>"; };
 		35DD776F24FB27A4000164F7 /* Screen.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Screen.swift; sourceTree = "<group>"; };
 		35DD777024FB27A4000164F7 /* Emulator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Emulator.swift; sourceTree = "<group>"; };
 		35DD777124FB27A4000164F7 /* Keyboard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Keyboard.swift; sourceTree = "<group>"; };
@@ -214,6 +216,7 @@
 				35DD777324FB27A5000164F7 /* Pixel.swift */,
 				35DD776F24FB27A4000164F7 /* Screen.swift */,
 				35DD777424FB27A5000164F7 /* Stack.swift */,
+				35AF919B25042E3400756B7A /* Array+Helper.swift */,
 			);
 			path = Chip8;
 			sourceTree = "<group>";
@@ -647,6 +650,7 @@
 				354F84BB24FBAF9700FD1253 /* Emulator.swift in Sources */,
 				354F84B824FBAF9700FD1253 /* Data.swift in Sources */,
 				354F84BF24FBAF9700FD1253 /* Screen.swift in Sources */,
+				35AF919C25042E3400756B7A /* Array+Helper.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

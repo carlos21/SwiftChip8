@@ -40,12 +40,12 @@ public class Screen {
         pixels[x][y].paint()
     }
     
-    public func clearPixels() {
+    public func clear() {
         pixels.flatMap { $0 }.forEach { $0.clear() }
     }
     
     @discardableResult
-    public func drawSprite(x: Int, y: Int, sprite: [UInt8], bytesToRead: Int) -> Bool {
+    public func drawSprite(x: UInt16, y: UInt16, sprite: [UInt8], bytesToRead: Int) -> Bool {
         var pixelCollision = false
         for ly in 0..<bytesToRead {
             let c = sprite[ly]
@@ -54,7 +54,7 @@ public class Screen {
                     continue
                 }
                 
-                let pixel = pixels[(lx+x) % Emulator.screenWidth][(ly+y) % Emulator.screenHeight]
+                let pixel = pixels[(lx+Int(x)) % Emulator.screenWidth][(ly+Int(y)) % Emulator.screenHeight]
                 if pixel.isOn {
                     pixelCollision = true
                 }

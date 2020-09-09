@@ -21,22 +21,27 @@ extension Emulator {
         }
         
         func isDown(key: KeyCode) -> Bool {
-            assetBounds(key)
+            assetBounds(key.rawValue)
             return contents[key] ?? false
         }
         
+        func isDown(key: UInt16) -> Bool {
+            guard let code = KeyCode(rawValue: key) else { return false }
+            return isDown(key: code)
+        }
+        
         mutating func down(key: KeyCode) {
-            assetBounds(key)
+            assetBounds(key.rawValue)
             contents[key] = true
         }
         
         mutating func up(key: KeyCode) {
-            assetBounds(key)
+            assetBounds(key.rawValue)
             contents[key] = false
         }
         
-        private func assetBounds(_ key: KeyCode) {
-            precondition(key.rawValue >= 0 && key.rawValue < totalKeys)
+        private func assetBounds(_ key: UInt16) {
+            precondition(key >= 0 && key < totalKeys)
         }
     }
 }

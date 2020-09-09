@@ -19,4 +19,8 @@ internal extension UInt16 {
     var bytes: (UInt8, UInt8) {
         return unsafeBitCast(self, to: (UInt8, UInt8).self)
     }
+    
+    var hexadecimalDescription: String {
+        return "0x\(String(format:"%02X", self))"
+    }
 }

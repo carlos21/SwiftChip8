@@ -43,15 +43,15 @@ class GameScene: SKScene {
         }
     }
     
-//    override func keyDown(with event: NSEvent) {
-//        guard let keyCode = SpriteKit.KeyCode(rawValue: event.keyCode) else { return }
-//        chip8.keyboard.down(key: keyCode.emulatorKeyCode)
-//    }
-//    
-//    override func keyUp(with event: NSEvent) {
-//        guard let keyCode = SpriteKit.KeyCode(rawValue: event.keyCode) else { return }
-//        chip8.keyboard.up(key: keyCode.emulatorKeyCode)
-//    }
+    override func keyDown(with event: UIEvent) {
+        guard let keyCode = SpriteKit.KeyCode(rawValue: event.keyCode) else { return }
+        emulator.keyboard.down(key: keyCode.emulatorKeyCode)
+    }
+    
+    override func keyUp(with event: UIEvent) {
+        guard let keyCode = SpriteKit.KeyCode(rawValue: event.keyCode) else { return }
+        chip8.keyboard.up(key: keyCode.emulatorKeyCode)
+    }
     
     override func update(_ currentTime: TimeInterval) {
         emulator.run(currentTime)
