@@ -11,17 +11,28 @@ import Chip8
 import SpriteKit
 
 class ViewController: UIViewController {
-
+    
+    // MARK: - IBOutlets
+    
     @IBOutlet weak var skView: SKView!
+    @IBOutlet var keyboardButtons: [Button]!
+    
+    // MARK: - Properties
+    
+    var scene: GameScene
+    
+    // MARK: - Override
+    
+    required init?(coder: NSCoder) {
+        scene = GameScene(size: CGSize(width: 640 , height: 320))
+        super.init(coder: coder)
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        guard
-            let url = Bundle.main.url(forResource: "INVADERS", withExtension: ""),
-            let data = try? Data(contentsOf: url) else { return }
-        
-        let scene = GameScene(size: CGSize(width: 640, height: 320), rom: data)
+        guard let rom = try? ROM(name: "INVADERS") else { return }
+        scene.load(rom: rom)
         scene.scaleMode = .aspectFit
         
         skView.presentScene(scene)
@@ -32,6 +43,23 @@ class ViewController: UIViewController {
 
     override var prefersStatusBarHidden: Bool {
         return true
+    }
+    
+    // MARK: - Action
+    
+    @IBAction func keyboardButtonTouchUpInside(_ button: Button) {
+        guard let key = button.key else { return }
+        scene.keyUp(key: key)
+    }
+    
+    @IBAction func keyboardButtonTouchUpOutside(_ button: Button) {
+        guard let key = button.key else { return }
+        scene.keyUp(key: key)
+    }
+    
+    @IBAction func keyboardButtonTouchDown(_ button: Button) {
+        guard let key = button.key else { return }
+        scene.keyDown(key: key)
     }
 }
 

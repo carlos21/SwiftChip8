@@ -13,27 +13,33 @@ import Chip8
 
 class GameScene: SKScene {
     
+    // MARK: - Properties
+    
     private var label: SKLabelNode?
     private var spinnyNode: SKShapeNode?
-    
     var emulator: Emulator!
     
-    init(size: CGSize, rom: Data) {
-        super.init(size: size)
-        
-        emulator = Emulator(rom: rom)
-//        emulator.load(buffer: [0x12, 0x19, 0x40, 0xF1])
-        
-        setupNodes()
-    }
+    // MARK: - Initialize
     
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     
+    override init(size: CGSize) {
+        super.init(size: size)
+    }
+    
+    // MARK: - Initialize
+    
+    func load(rom: ROM) {
+        emulator = Emulator(rom: rom)
+        emulator.load(buffer: [0x12, 0x19, 0x40, 0xF1])
+        setupNodes()
+    }
+    
     private func setupNodes() {
-        for x in 0..<Emulator.screenWidth {
-            for y in 0..<Emulator.screenHeight {
+        for x in 0..<Emulator.Hardware.screenRows {
+            for y in 0..<Emulator.Hardware.screenColumns {
                 let pixel = emulator.screen.pixelAt(x: x, y: y)
                 let node = SKSpriteNode(color: .black, size: CGSize(width: 10, height: 10))
                 node.position = CGPoint(x: 10*x + 5, y: 10*y + 5)
@@ -43,17 +49,15 @@ class GameScene: SKScene {
         }
     }
     
-    override func keyDown(with event: UIEvent) {
-        guard let keyCode = SpriteKit.KeyCode(rawValue: event.keyCode) else { return }
-        emulator.keyboard.down(key: keyCode.emulatorKeyCode)
+    func keyDown(key: Emulator.Keyboard.KeyCode) {
+        emulator.keyboard.down(key: key)
     }
     
-    override func keyUp(with event: UIEvent) {
-        guard let keyCode = SpriteKit.KeyCode(rawValue: event.keyCode) else { return }
-        chip8.keyboard.up(key: keyCode.emulatorKeyCode)
+    func keyUp(key: Emulator.Keyboard.KeyCode) {
+        emulator.keyboard.up(key: key)
     }
     
     override func update(_ currentTime: TimeInterval) {
-        emulator.run(currentTime)
+        try? emulator.runCycle()
     }
 }

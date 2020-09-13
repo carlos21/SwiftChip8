@@ -16,9 +16,9 @@ public class Screen {
 //        let rows = Array<Pixel>(repeating: Pixel(), count: screenHeight)
 //        pixels = Array<Array<Pixel>>(repeating: rows, count: screenWidth)
 //
-        for _ in 0..<Emulator.screenWidth {
+        for _ in 0..<Emulator.Hardware.screenRows {
             var rows = [Pixel]()
-            for _ in 0..<Emulator.screenHeight {
+            for _ in 0..<Emulator.Hardware.screenColumns {
                 rows.append(Pixel())
             }
             pixels.append(rows)
@@ -45,7 +45,7 @@ public class Screen {
     }
     
     @discardableResult
-    public func drawSprite(x: UInt16, y: UInt16, sprite: [UInt8], bytesToRead: Int) -> Bool {
+    public func drawSprite(x: UInt8, y: UInt8, sprite: [UInt8], bytesToRead: Int) -> Bool {
         var pixelCollision = false
         for ly in 0..<bytesToRead {
             let c = sprite[ly]
@@ -54,7 +54,7 @@ public class Screen {
                     continue
                 }
                 
-                let pixel = pixels[(lx+Int(x)) % Emulator.screenWidth][(ly+Int(y)) % Emulator.screenHeight]
+                let pixel = pixels[(lx+Int(x)) % Emulator.Hardware.screenRows][(ly+Int(y)) % Emulator.Hardware.screenColumns]
                 if pixel.isOn {
                     pixelCollision = true
                 }
@@ -66,6 +66,6 @@ public class Screen {
     }
     
     private func assetBounds(x: Int, y: Int) {
-        precondition(x < Emulator.screenWidth && x >= 0 && y < Emulator.screenHeight && y >= 0)
+        precondition(x < Emulator.Hardware.screenRows && x >= 0 && y < Emulator.Hardware.screenColumns && y >= 0)
     }
 }

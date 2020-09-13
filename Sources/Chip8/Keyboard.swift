@@ -30,12 +30,12 @@ extension Emulator {
             return isDown(key: code)
         }
         
-        mutating func down(key: KeyCode) {
+        mutating public func down(key: KeyCode) {
             assetBounds(key.rawValue)
             contents[key] = true
         }
         
-        mutating func up(key: KeyCode) {
+        mutating public func up(key: KeyCode) {
             assetBounds(key.rawValue)
             contents[key] = false
         }

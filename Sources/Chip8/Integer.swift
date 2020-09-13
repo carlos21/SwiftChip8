@@ -20,7 +20,13 @@ internal extension UInt16 {
         return unsafeBitCast(self, to: (UInt8, UInt8).self)
     }
     
-    var hexadecimalDescription: String {
+    var hex: String {
         return "0x\(String(format:"%02X", self))"
     }
+}
+
+infix operator ^+: AdditionPrecedence
+
+func ^+ (left: UInt8, right: UInt8) -> UInt16 {
+    return UInt16(left) + UInt16(right)
 }
