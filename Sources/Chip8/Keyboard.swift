@@ -25,7 +25,7 @@ extension Emulator {
             return contents[key] ?? false
         }
         
-        func isDown(key: UInt16) -> Bool {
+        func isDown(key: UInt8) -> Bool {
             guard let code = KeyCode(rawValue: key) else { return false }
             return isDown(key: code)
         }
@@ -40,7 +40,7 @@ extension Emulator {
             contents[key] = false
         }
         
-        private func assetBounds(_ key: UInt16) {
+        private func assetBounds(_ key: UInt8) {
             precondition(key >= 0 && key < totalKeys)
         }
     }
@@ -48,7 +48,18 @@ extension Emulator {
 
 extension Emulator.Keyboard {
     
-    public enum KeyCode: UInt16 {
+    // Default keypad layout:
+    // From http://devernay.free.fr/hacks/chip8/C8TECH10.HTM#keyboard
+    // -----------------
+    // | 1 | 2 | 3 | C |
+    // -----------------
+    // | 4 | 5 | 6 | D |
+    // -----------------
+    // | 7 | 8 | 9 | E |
+    // -----------------
+    // | A | 0 | B | F |
+    // -----------------
+    public enum KeyCode: UInt8 {
 
         case zero = 0x00
         case one = 0x01
@@ -92,9 +103,9 @@ extension Emulator.Keyboard {
 
 extension Emulator.Keyboard.KeyCode: ExpressibleByIntegerLiteral {
     
-    public typealias IntegerLiteralType = UInt16
+    public typealias IntegerLiteralType = UInt8
     
-    public init(integerLiteral value: UInt16) {
+    public init(integerLiteral value: UInt8) {
         self.init(rawValue: value)!
     }
 }

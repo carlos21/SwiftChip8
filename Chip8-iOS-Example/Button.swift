@@ -13,7 +13,7 @@ import Chip8
 class Button: UIButton {
     
     @IBInspectable
-    var keyCode: UInt16 {
+    var keyCode: UInt8 {
         get {
             return key?.rawValue ?? 0
         }

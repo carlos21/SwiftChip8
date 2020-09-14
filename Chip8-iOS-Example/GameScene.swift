@@ -50,14 +50,30 @@ class GameScene: SKScene {
     }
     
     func keyDown(key: Emulator.Keyboard.KeyCode) {
-        emulator.keyboard.down(key: key)
+        emulator.handleKey(touch: .down, keyCode: key)
     }
     
     func keyUp(key: Emulator.Keyboard.KeyCode) {
-        emulator.keyboard.up(key: key)
+        emulator.handleKey(touch: .up, keyCode: key)
     }
     
     override func update(_ currentTime: TimeInterval) {
         try? emulator.runCycle()
+    }
+}
+
+extension GameScene: EmulatorDelegate {
+    
+    func redraw() {
+        for x in 0..<Emulator.Hardware.screenRows {
+            for y in 0..<Emulator.Hardware.screenColumns {
+                let pixel = emulator.screen.pixelAt(x: x, y: y)
+                pixel.node?.color = pixel.color.nsColor
+            }
+        }
+    }
+    
+    func beep() {
+        
     }
 }
