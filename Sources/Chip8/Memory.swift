@@ -41,9 +41,7 @@ public struct Memory {
     
     public mutating func set(array: [UInt8], position: Int) {
         assetBounds(position: position + array.count)
-        for i in 0..<array.count {
-            buffer[position + i] = array[i]
-        }
+        buffer.replaceSubrange(position..<position+array.count, with: array)
     }
     
 //    public func getShort(position: Int) -> UInt16? {
@@ -55,5 +53,19 @@ public struct Memory {
     
     private func assetBounds(position: Int) {
         precondition(position >= 0 && position < self.size)
+    }
+}
+
+extension Memory: CustomStringConvertible {
+    
+    public var description: String {
+        var text = ""
+        for byte in buffer {
+//            if byte == 0x00 {
+//                break
+//            }
+            text.append("\(byte.hex), ")
+        }
+        return text
     }
 }

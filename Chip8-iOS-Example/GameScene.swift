@@ -17,7 +17,11 @@ class GameScene: SKScene {
     
     private var label: SKLabelNode?
     private var spinnyNode: SKShapeNode?
-    var emulator: Emulator!
+    
+    private var pixelSize = 10
+    private var lastUpdateTimeInterval: TimeInterval = 0
+    private var emulator: Emulator!
+    private var timer: TimeInterval = 0
     
     // MARK: - Initialize
     
@@ -33,16 +37,16 @@ class GameScene: SKScene {
     
     func load(rom: ROM) {
         emulator = Emulator(rom: rom)
-        emulator.load(buffer: [0x12, 0x19, 0x40, 0xF1])
+        emulator.delegate = self
         setupNodes()
     }
     
     private func setupNodes() {
-        for x in 0..<Emulator.Hardware.screenRows {
-            for y in 0..<Emulator.Hardware.screenColumns {
+        for y in 0..<Emulator.Hardware.screenRows {
+            for x in 0..<Emulator.Hardware.screenColumns {
                 let pixel = emulator.screen.pixelAt(x: x, y: y)
-                let node = SKSpriteNode(color: .black, size: CGSize(width: 10, height: 10))
-                node.position = CGPoint(x: 10*x + 5, y: 10*y + 5)
+                let node = SKSpriteNode(color: .black, size: CGSize(width: pixelSize, height: pixelSize))
+                node.position = CGPoint(x: pixelSize*x + pixelSize/2, y: pixelSize*y + pixelSize/2)
                 pixel.node = node
                 addChild(node)
             }
@@ -58,6 +62,17 @@ class GameScene: SKScene {
     }
     
     override func update(_ currentTime: TimeInterval) {
+        let delta: CFTimeInterval = currentTime - lastUpdateTimeInterval
+        lastUpdateTimeInterval = currentTime
+        timer += delta
+        
+        if timer >= 0.1 {
+            timer = 0
+            tick()
+        }
+    }
+    
+    func tick() {
         try? emulator.runCycle()
     }
 }
@@ -65,8 +80,9 @@ class GameScene: SKScene {
 extension GameScene: EmulatorDelegate {
     
     func redraw() {
-        for x in 0..<Emulator.Hardware.screenRows {
-            for y in 0..<Emulator.Hardware.screenColumns {
+        print("redraw")
+        for y in 0..<Emulator.Hardware.screenRows {
+            for x in 0..<Emulator.Hardware.screenColumns {
                 let pixel = emulator.screen.pixelAt(x: x, y: y)
                 pixel.node?.color = pixel.color.nsColor
             }

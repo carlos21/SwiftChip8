@@ -20,9 +20,9 @@ public struct ROM {
         self.data = data
     }
     
-    public init(name: String) throws {
+    public init(game: Game, bundle: Bundle = .main) throws {
         guard
-            let url = Bundle.main.url(forResource: name, withExtension: ""),
+            let url = bundle.url(forResource: game.name, withExtension: game.ext),
             let data = try? Data(contentsOf: url) else {
             throw FileError.openFailed
         }

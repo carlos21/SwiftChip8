@@ -25,6 +25,10 @@ public struct Stack<Element> where Element: Equatable {
     
     public mutating func pop() -> Element {
         precondition(storage.count < maxSize && storage.count > 0)
+        print("last on stack before", storage.last)
+        defer {
+            print("last on stack after", storage.last)
+        }
         return storage.popLast()!
     }
 }

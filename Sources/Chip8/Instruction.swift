@@ -436,10 +436,10 @@ extension Instruction: CustomStringConvertible {
             return "return from a subroutine"
             
         case let .jumpAbsolute(address):
-            return "jump to address \(address)"
+            return "jump to address \(address.hex)"
             
         case let .callSubroutine(address):
-            return "calls subroutine at \(address)"
+            return "calls subroutine at \(address.hex)"
             
         case let .skipNextIfEqualValue(x, value):
             return "skips the next opcode if V\(x.hex) equals V\(value)"

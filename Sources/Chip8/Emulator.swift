@@ -16,14 +16,14 @@ public protocol EmulatorDelegate: class {
 
 public class Emulator {
     
-    weak var delegate: EmulatorDelegate?
+    public weak var delegate: EmulatorDelegate?
     
     var V = [UInt8](repeating: 0, count: 16)
     var I: UInt16 = 0
     var delayTimer: UInt8 = 0
     var soundTimer: UInt8 = 0
     
-    public var currentPointer: UInt16 = 0
+    public var currentPointer: UInt16 = Hardware.programLoadAddress
     public var stack = Stack<UInt16>()
     public var screen = Screen()
     public var memory = Memory(size: Emulator.Hardware.memorySize)
@@ -50,7 +50,13 @@ public class Emulator {
     ]
     
     public init(rom: ROM) {
+        precondition(rom.bytes.count + Int(Hardware.programLoadAddress) < Hardware.memorySize)
+        
         memory.set(array: defaultCharacterSet, position: 0x00)
+//        print("Memory 1:", memory.description)
+        memory.set(array: rom.bytes, position: Int(Hardware.programLoadAddress))
+//        print("Memory 2:", memory.description)
+        
 //        screen.drawSprite(x: 62, y: 10, sprite: memory.buffer, bytesToRead: 5)
         
 //        currentPointer = 0
@@ -65,16 +71,10 @@ public class Emulator {
 //        print("Pointer", V[0].hexadecimalDescription)
 //        print("carry", V[0x0f].hexadecimalDescription)
         
-        I = 0
-        V[0] = 10
-        V[1] = 10
+//        I = 0
+//        V[0] = 10
+//        V[1] = 10
 //        exec(opcode: 0xD015)
-    }
-    
-    public func load(buffer: [UInt8]) {
-        precondition(buffer.count + Int(Hardware.programLoadAddress) < Hardware.memorySize)
-        memory.set(array: buffer, position: Int(Hardware.programLoadAddress))
-        currentPointer = Hardware.programLoadAddress
     }
     
     public func handleKey(touch: KeyboardTouch, keyCode: Keyboard.KeyCode) {
@@ -95,7 +95,8 @@ public class Emulator {
             throw EmulatorError.unrecognizedOpcode
         }
         
-//        var incrementCounter = true
+        print("instruction: ", instruction.description)
+        var incrementCounter = true
 //        var redraw = false
         
         switch instruction {
@@ -104,17 +105,19 @@ public class Emulator {
             
         case .clearScreen:
             screen.clear()
+            delegate?.redraw()
             
         case .returnFromSubroutine:
             currentPointer = stack.pop()
             
         case let .jumpAbsolute(address):
             currentPointer = address
+            incrementCounter = false
             
         case let .callSubroutine(address):
             stack.push(currentPointer)
             currentPointer = address
-//            incrementCounter = false
+            incrementCounter = false
 
         case let .skipNextIfEqualValue(x, value):
             if V[x] == value {
@@ -156,7 +159,7 @@ public class Emulator {
 
         case let .subtractYFromX(x, y):
             V[0xF] = (V[x] < V[y]) ? 0 : 1
-            V[x] = V[y] - V[x]
+            V[x] = V[x] &- V[y]
 
         case let .shiftRight(x, _):
             V[0x0f] = V[x] & 0b00000001
@@ -164,11 +167,11 @@ public class Emulator {
 
         case let .subtractXFromY(x, y):
             V[0x0f] = V[y] > V[x] ? 1 : 0
-            V[x] = V[y] - V[x]
+            V[x] = V[y] &- V[x]
 
         case let .shiftLeft(x, _):
             V[0x0f] = V[x] & 0b10000000
-            V[x] *= 2
+            V[x] <<= 1
 
         case let .skipIfNotEqualRegister(x, y):
             if V[x] != V[y] {
@@ -180,12 +183,16 @@ public class Emulator {
 
         case let .jumpRelative(address):
             currentPointer = address + UInt16(V[0])
+            incrementCounter = false
 
         case let .andRandom(x, value):
             V[x] = UInt8.random(in: 0...255) & value
 
         case let .draw(x, y, rows):
-            V[0x0F] = screen.drawSprite(x: V[x], y: V[y], sprite: memory.buffer, bytesToRead: Int(rows)) ? 1 : 0
+            V[0x0F] = screen.drawSprite(x: Instruction.Register(V[x]),
+                                        y: Instruction.Register(V[y]),
+                                        memory: memory,
+                                        rows: Instruction.Constant(rows)) ? 1 : 0
             delegate?.redraw()
 
         case let .skipIfKeyPressed(x):
@@ -217,7 +224,7 @@ public class Emulator {
             I += UInt16(V[x])
 
         case let .setIndexFontCharacter(x):
-            I = UInt16(V[x] * 10)
+            I = UInt16(V[x] * 5)
 
         case let .storeBCD(x):
             storeBCD(x: x)
@@ -231,6 +238,10 @@ public class Emulator {
             for i in 0...Int(x) {
                 V[i] = memory[Int(I) + i]
             }
+        }
+        
+        if incrementCounter {
+            currentPointer += 2
         }
     }
     
