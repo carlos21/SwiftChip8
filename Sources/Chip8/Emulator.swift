@@ -29,6 +29,7 @@ public class Emulator {
     public var memory = Memory(size: Emulator.Hardware.memorySize)
     public var keyboard = Keyboard()
     private var lastPressedKey: Keyboard.KeyCode?
+    private var state: EmulatorState = .idle
     
     public var defaultCharacterSet: [UInt8] = [
         0xf0, 0x90, 0x90, 0x90, 0xf0,
@@ -49,15 +50,11 @@ public class Emulator {
         0xf0, 0x80, 0xf0, 0x80, 0x80
     ]
     
-    public init(rom: ROM) {
-        precondition(rom.bytes.count + Int(Hardware.programLoadAddress) < Hardware.memorySize)
-        
-        memory.set(array: defaultCharacterSet, position: 0x00)
+    public init() {
 //        print("Memory 1:", memory.description)
-        memory.set(array: rom.bytes, position: Int(Hardware.programLoadAddress))
 //        print("Memory 2:", memory.description)
         
-//        screen.drawSprite(x: 62, y: 10, sprite: memory.buffer, bytesToRead: 5)
+//        print("ROM bytes:")
         
 //        currentPointer = 0
 //        V[0] = 0x20
@@ -77,6 +74,13 @@ public class Emulator {
 //        exec(opcode: 0xD015)
     }
     
+    public func load(rom: ROM) {
+        precondition(rom.bytes.count + Int(Hardware.programLoadAddress) < Hardware.memorySize)
+        reset()
+        memory.set(array: rom.bytes, position: Int(Hardware.programLoadAddress))
+        state = .playing(.running)
+    }
+    
     public func handleKey(touch: KeyboardTouch, keyCode: Keyboard.KeyCode) {
         switch touch {
         case .up:
@@ -89,16 +93,23 @@ public class Emulator {
     }
     
     public func runCycle() throws {
-        let opcode = (UInt16(memory[Int(currentPointer)]) << 8) | UInt16(memory[Int(currentPointer) + 1])
+        guard case .playing = state else { return }
         
+        let opcode = memory.getShort(position: currentPointer)
+
         guard let instruction = Instruction(opcode: opcode) else {
             throw EmulatorError.unrecognizedOpcode
         }
         
-        print("instruction: ", instruction.description)
-        var incrementCounter = true
-//        var redraw = false
+        timersTick()
         
+        print(opcode.hex, " - ", instruction.description)
+        
+        let gameState = exec(instruction, opcode: opcode)
+        state = .playing(gameState)
+    }
+    
+    private func exec(_ instruction: Instruction, opcode: UInt16) -> GameState {
         switch instruction {
         case .jumpsToMachineCodeRoutine:
             break
@@ -106,107 +117,145 @@ public class Emulator {
         case .clearScreen:
             screen.clear()
             delegate?.redraw()
+            nextInstruction()
             
         case .returnFromSubroutine:
+            
+            print("this.PC before", currentPointer);
             currentPointer = stack.pop()
+            
+            print("this.PC after", currentPointer);
+            print("this.SP", stack.pointer);
             
         case let .jumpAbsolute(address):
             currentPointer = address
-            incrementCounter = false
             
         case let .callSubroutine(address):
-            stack.push(currentPointer)
+            
+            
+            stack.push(currentPointer + 2)
+            print("this.SP before", stack.pointer);
+            print("stack value", stack.last());
             currentPointer = address
-            incrementCounter = false
+            print("this.PC", currentPointer);
 
         case let .skipNextIfEqualValue(x, value):
             if V[x] == value {
-                currentPointer += 2
+                skipInstruction()
+            } else {
+                nextInstruction()
             }
 
         case let .skipNextIfNotEqualValue(x, value):
             if V[x] != value {
-                currentPointer += 2
+                skipInstruction()
+            } else {
+                nextInstruction()
             }
 
         case let .skipNextIfEqualRegister(x, y):
             if V[x] == V[y] {
-                currentPointer += 2
+                skipInstruction()
+            } else {
+                nextInstruction()
             }
 
         case let .setValue(x, value):
             V[x] = value
+            print("x:", x, "value:", value)
+            nextInstruction()
 
         case let .addValue(x, value):
             V[x] += value
+            nextInstruction()
 
         case let .setRegister(x, y):
             V[x] = V[y]
+            nextInstruction()
 
         case let .or(x, y):
             V[x] |= V[y]
+            nextInstruction()
 
         case let .and(x, y):
             V[x] &= V[y]
+            nextInstruction()
 
         case let .xor(x, y):
             V[x] ^= V[y]
+            nextInstruction()
 
         case let .addRegister(x, y):
-            let sum = V[x] + V[y]
-            V[0xF] = (sum > 0xFF) ? 1 : 0
-            V[x] = sum
+            print("V[x]", V[x])
+            print("V[y]", V[y])
+            V[0xF] = (V[y] > (255 - V[x])) ? 1 : 0
+            V[x] += V[y]
+            nextInstruction()
 
         case let .subtractYFromX(x, y):
-            V[0xF] = (V[x] < V[y]) ? 0 : 1
-            V[x] = V[x] &- V[y]
+            V[0xF] = (V[x] > V[y]) ? 1 : 0
+            V[x] -= V[y]
+            nextInstruction()
 
         case let .shiftRight(x, _):
             V[0x0f] = V[x] & 0b00000001
-            V[x] /= 2
+            V[x] >>= 1
+            nextInstruction()
 
         case let .subtractXFromY(x, y):
             V[0x0f] = V[y] > V[x] ? 1 : 0
-            V[x] = V[y] &- V[x]
+            V[x] = V[y] - V[x]
+            nextInstruction()
 
         case let .shiftLeft(x, _):
-            V[0x0f] = V[x] & 0b10000000
+            V[0x0f] = V[x] >> 7
             V[x] <<= 1
+            nextInstruction()
 
         case let .skipIfNotEqualRegister(x, y):
             if V[x] != V[y] {
-                currentPointer += 2
+                skipInstruction()
+            } else {
+                nextInstruction()
             }
 
         case let .setIndex(address):
             I = address
+            nextInstruction()
 
         case let .jumpRelative(address):
             currentPointer = address + UInt16(V[0])
-            incrementCounter = false
 
         case let .andRandom(x, value):
             V[x] = UInt8.random(in: 0...255) & value
+            nextInstruction()
 
         case let .draw(x, y, rows):
             V[0x0F] = screen.drawSprite(x: Instruction.Register(V[x]),
                                         y: Instruction.Register(V[y]),
                                         memory: memory,
+                                        I: I,
                                         rows: Instruction.Constant(rows)) ? 1 : 0
             delegate?.redraw()
+            nextInstruction()
 
         case let .skipIfKeyPressed(x):
             if keyboard.isDown(key: UInt8(x)) {
-                currentPointer += 2
+                skipInstruction()
+            } else {
+                nextInstruction()
             }
 
         case let .skipIfKeyNotPressed(x):
             if !keyboard.isDown(key: UInt8(x)) {
-                currentPointer += 2
+                skipInstruction()
+            } else {
+                nextInstruction()
             }
 
         case let .storeDelayTimer(x):
             V[x] = delayTimer
+            nextInstruction()
 
         case let .awaitKeyPress(x):
             if let key = lastPressedKey {
@@ -216,36 +265,53 @@ public class Emulator {
 
         case let .setDelayTimer(x):
             delayTimer = V[x]
+            nextInstruction()
 
         case let .setSoundTimer(x):
             soundTimer = V[x]
+            nextInstruction()
 
         case let .addIndex(x):
             I += UInt16(V[x])
+            nextInstruction()
 
         case let .setIndexFontCharacter(x):
             I = UInt16(V[x] * 5)
+            nextInstruction()
 
         case let .storeBCD(x):
             storeBCD(x: x)
+            nextInstruction()
 
         case let .writeMemory(x):
             for i in 0...Int(x) {
                 memory[Int(I) + i] = V[i]
             }
+            nextInstruction()
 
         case let .readMemory(x):
             for i in 0...Int(x) {
                 V[i] = memory[Int(I) + i]
             }
+            nextInstruction()
         }
         
-        if incrementCounter {
-            currentPointer += 2
-        }
+        return .running
     }
     
-    // TODO
+    private func reset() {
+        memory.set(array: defaultCharacterSet, position: 0x00)
+        state = .idle
+    }
+    
+    private func skipInstruction() {
+        currentPointer += 4
+    }
+    
+    private func nextInstruction() {
+        currentPointer += 2
+    }
+    
     private func draw(x: Instruction.Register,
                       y: Instruction.Register,
                       rows: Instruction.Constant) {
@@ -258,18 +324,14 @@ public class Emulator {
         }
     }
     
-    private func timersTick() -> Bool {
+    private func timersTick() {
         if delayTimer > 0 {
             delayTimer -= 1
         }
         
-        var beep = false
         if soundTimer > 0 {
-            beep = soundTimer == 1
             soundTimer -= 1
         }
-        
-        return beep
     }
     
     private func storeBCD(x: Instruction.Register) {
@@ -309,13 +371,44 @@ extension Emulator {
 }
 
 extension Emulator {
-
-    public enum State {
+    
+    public enum EmulatorState {
         
-        case screen([UInt8])
-        case redraw(Bool)
+        case idle
+        case playing(GameState)
+    }
+    
+    public enum GameState {
+        
+        case running
+        case sleeping
     }
 }
+
+extension Emulator.EmulatorState: Equatable {
+    
+    public static func ==(lhs: Emulator.EmulatorState, rhs: Emulator.EmulatorState) -> Bool {
+        switch (lhs, rhs) {
+        case (.idle, .idle):
+            return true
+            
+        case let (.playing(value1), .playing(value2)):
+            return value1 == value2
+            
+        default:
+            return false
+        }
+    }
+}
+
+//extension Emulator {
+//
+//    public enum State {
+//
+//        case screen([UInt8])
+//        case redraw(Bool)
+//    }
+//}
 
 extension Emulator {
     

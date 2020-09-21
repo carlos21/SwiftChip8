@@ -44,12 +44,9 @@ public struct Memory {
         buffer.replaceSubrange(position..<position+array.count, with: array)
     }
     
-//    public func getShort(position: Int) -> UInt16? {
-//        guard
-//            let byte1 = self[position],
-//            let byte2 = get(position: position+1) else { return nil }
-//        return UInt16(bytes: (byte1, byte2))
-//    }
+    public func getShort(position: UInt16) -> UInt16 {
+        return (UInt16(self[Int(position)]) << 8) | UInt16(self[Int(position) + 1] << 0)
+    }
     
     private func assetBounds(position: Int) {
         precondition(position >= 0 && position < self.size)
@@ -61,9 +58,6 @@ extension Memory: CustomStringConvertible {
     public var description: String {
         var text = ""
         for byte in buffer {
-//            if byte == 0x00 {
-//                break
-//            }
             text.append("\(byte.hex), ")
         }
         return text

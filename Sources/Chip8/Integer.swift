@@ -32,6 +32,13 @@ internal extension UInt8 {
     }
 }
 
+internal extension Int {
+    
+    var hex: String {
+        return "0x\(String(format:"%02X", self))"
+    }
+}
+
 infix operator ^+: AdditionPrecedence
 
 func ^+ (left: UInt8, right: UInt8) -> UInt16 {

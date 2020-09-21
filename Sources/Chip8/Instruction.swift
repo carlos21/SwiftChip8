@@ -323,10 +323,10 @@ extension Instruction {
             self = .callSubroutine(address: opcode & 0xFFF)
             
         case let (0x3, x, _, _):
-            self = .skipNextIfEqualValue(x: UInt16(x), value: UInt8(opcode & 0xFF))
+            self = .skipNextIfEqualValue(x: UInt16(x), value: UInt8(opcode & 0x00FF))
             
         case let (0x4, x, _, _):
-            self = .skipNextIfNotEqualValue(x: UInt16(x), value: UInt8(opcode & 0xFF))
+            self = .skipNextIfNotEqualValue(x: UInt16(x), value: UInt8(opcode & 0x00FF))
             
         case let (0x5, x, y, 0x0):
             self = .skipNextIfEqualRegister(x: UInt16(x), y: UInt16(y))
@@ -421,7 +421,8 @@ extension Instruction {
 extension Instruction: CustomStringConvertible {
     
     public var description: String {
-        return "Opcode{code=\(opcode.hex), description=\(actionDescription)}"
+        return "\(actionDescription)"
+//        return "Opcode{code=\(opcode.hex), description=\(actionDescription)}"
     }
     
     public var actionDescription: String {
@@ -442,94 +443,94 @@ extension Instruction: CustomStringConvertible {
             return "calls subroutine at \(address.hex)"
             
         case let .skipNextIfEqualValue(x, value):
-            return "skips the next opcode if V\(x.hex) equals V\(value)"
+            return "skips the next opcode if equals value"
             
         case let .skipNextIfNotEqualValue(x, value):
-            return "skips the next opcode if V\(x.hex) is not equal V\(value)"
+            return "skips the next opcode if is not equal value"
             
         case let .skipNextIfEqualRegister(x, y):
-            return "skips the next opcode if V\(x.hex) equals V\(y.hex)"
+            return "skips the next opcode if x equals y"
             
         case let .setValue(x, value):
-            return "sets V\(x.hex) to \(value)"
+            return "sets x to value"
             
         case let .addValue(x, value):
-            return "adds V\(x.hex) to \(value)"
+            return "adds x to value"
             
         case let .setRegister(x, y):
-            return "sets V\(x.hex) to the value of V\(y.hex)"
+            return "sets x to the value of y"
             
         case let .or(x, y):
-            return "sets V\(x.hex) to V\(x.hex) OR V\(y.hex)"
+            return "sets x to x OR y"
             
         case let .and(x, y):
-            return "sets V\(x.hex) to V\(x.hex) AND V\(y.hex)"
+            return "sets x to x AND y"
             
         case let .xor(x, y):
-            return "sets V\(x.hex) to V\(x.hex) XOR V\(y.hex)"
+            return "sets x to x XOR y"
             
         case let .addRegister(x, y):
-            return "Adds V\(y.hex) to V\(x.hex). VF = carry bit"
+            return "Adds y to x. VF = carry bit"
             
         case let .subtractYFromX(x, y):
-            return "set V\(x.hex) to V\(x.hex) - V\(y.hex). VF = borrow bit"
+            return "set x to x - y. VF = borrow bit"
             
         case let .shiftRight(x, _):
-            return "shift V\(x.hex) right by 1. VF = LSB of V\(x.hex) before shift"
+            return "shift x right by 1. VF = LSB of x before shift"
             
         case let .subtractXFromY(x, y):
-            return "set V\(x.hex) to V\(y.hex) - V\(x.hex). VF = borrow bit"
+            return "set x to y - x. VF = borrow bit"
             
         case let .shiftLeft(x, _):
-            return "shift V\(x.hex) left by 1. VF = MSB of V\(x.hex) before shift"
+            return "shift x left by 1. VF = MSB of x before shift"
             
         case let .skipIfNotEqualRegister(x, y):
-            return "skips the next opcode if V\(x.hex) doesn't equal V\(y.hex)"
+            return "skips the next opcode if x doesn't equal y"
             
         case let .setIndex(address):
-            return "sets I to the address \(address.hex))"
+            return "sets I to the address"
             
         case let .jumpRelative(address):
-            return "jumps to the address \(address.hex) + V0"
+            return "jumps to the address address + V0"
             
         case let .andRandom(x, value):
-            return "sets V\(x.hex)) to <random number> AND \(value)"
+            return "sets x to <random number> AND value"
             
         case let .draw(x, y, rows):
-            return "draws sprites starting at (V\(x.hex), V\(y.hex)) for \(rows) rows"
+            return "draws"
             
         case let .skipIfKeyPressed(x):
-            return "skips the next opcode if the key stored in V\(x.hex) is pressed"
+            return "skips the next opcode if the key stored in x is pressed"
             
         case let .skipIfKeyNotPressed(x):
-            return "skips the next opcode if the key stored in V\(x.hex) is not pressed"
+            return "skips the next opcode if the key stored in x is not pressed"
             
         case let .storeDelayTimer(x):
-            return "stores the value of the delay timer in V\(x.hex)"
+            return "stores the value of the delay timer in x"
             
         case let .awaitKeyPress(x):
-            return "await a key press and store it in V\(x.hex)"
+            return "await a key press and store it in x"
             
         case let .setDelayTimer(x):
-            return "sets the delay timer to V\(x.hex)"
+            return "sets the delay timer to x"
             
         case let .setSoundTimer(x):
-            return "sets the sound timer to V\(x.hex)"
+            return "sets the sound timer to x"
             
         case let .addIndex(x):
-            return "adds V\(x.hex) to I"
+            return "adds x to I"
             
         case let .setIndexFontCharacter(x):
-            return "sets I to the location of the sprite for the character in V\(x.hex)"
+            return "sets I to the location of the sprite for the character in x"
             
         case let .storeBCD(x):
-            return "Store the Binary-coded decimal representation of V\(x.hex) in V\(x.hex)"
+            return "Store the Binary-coded decimal representation of x in x"
             
         case let .writeMemory(x):
-            return "stores V0 to V\(x.hex) in memory starting at address I"
+            return "stores V0 to x in memory starting at address I"
             
         case let .readMemory(x):
-            return "fills V0 to V\(x.hex) with values from memory starting at address I"
+            return "fills V0 to x with values from memory starting at address I"
         }
     }
 }

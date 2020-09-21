@@ -14,8 +14,16 @@ public struct Stack<Element> where Element: Equatable {
     
     private var storage = [Element]()
     
+    public var pointer: Int {
+        return storage.count - 1
+    }
+    
     public func peek() -> Element? {
         storage.first
+    }
+    
+    public func last() -> Element? {
+        storage.last
     }
     
     public mutating func push(_ element: Element) {
@@ -25,10 +33,10 @@ public struct Stack<Element> where Element: Equatable {
     
     public mutating func pop() -> Element {
         precondition(storage.count < maxSize && storage.count > 0)
-        print("last on stack before", storage.last)
-        defer {
-            print("last on stack after", storage.last)
-        }
+//        print("last on stack before", storage.last)
+//        defer {
+//            print("last on stack after", storage.last)
+//        }
         return storage.popLast()!
     }
 }

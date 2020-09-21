@@ -48,10 +48,11 @@ public class Screen {
     public func drawSprite(x: Instruction.Register,
                            y: Instruction.Register,
                            memory: Memory,
+                           I: UInt16,
                            rows: Instruction.Constant) -> Bool {
         var pixelCollision = false
         for ly in 0..<rows {
-            let c = memory[Int(ly)]
+            let c = memory[Int(I) + Int(ly)]
             for lx in 0..<8 {
                 if (c & (0b10000000) >> lx) == 0 {
                     continue
@@ -66,22 +67,6 @@ public class Screen {
             }
         }
         return pixelCollision
-        
-//        for y in 0..<Int(rows) {
-//            var pixelRow = memory[Int(I) + y]
-//            for x in 0..<8 {
-//                if (pixelRow & 0x80) != 0 {
-//                    let screenY = (startY + y) % Emulator.Hardware.screenRows
-//                    let screenX = (startX + x) % Emulator.Hardware.screenColumns
-//                    let screenIndex = (screenY * Emulator.Hardware.screenColumns) + screenX
-//                    if screen[screenIndex] == 1 {
-//                        V[0xF] = 1
-//                    }
-//                    screen[screenIndex] ^= 1
-//                }
-//                pixelRow <<= 1
-//            }
-//        }
     }
     
     private func assetBounds(x: Int, y: Int) {

@@ -10,7 +10,8 @@ import Foundation
 
 public struct ROM {
     
-    private let data: Data;
+    private let data: Data
+    private var name: String?
     
     public var bytes: [UInt8] {
         return data.bytes
@@ -27,6 +28,18 @@ public struct ROM {
             throw FileError.openFailed
         }
         self.data = data
+        self.name = game.name
+    }
+}
+
+extension ROM: CustomStringConvertible {
+    
+    public var description: String {
+        var text = ""
+        for byte in bytes {
+            text.append("\(byte.hex), ")
+        }
+        return text
     }
 }
 

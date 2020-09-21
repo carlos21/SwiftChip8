@@ -31,7 +31,7 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        guard let rom = try? ROM(game: .spaceInvaders) else { return }
+        guard let rom = try? ROM(game: .pong) else { return }
         scene.load(rom: rom)
         scene.scaleMode = .aspectFit
         

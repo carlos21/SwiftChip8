@@ -37,6 +37,13 @@
 		3578D73E250CCABF00B02F9F /* Array+Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35AF919B25042E3400756B7A /* Array+Helper.swift */; };
 		35AF919C25042E3400756B7A /* Array+Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35AF919B25042E3400756B7A /* Array+Helper.swift */; };
 		35B0F3A3250DBD55000E768C /* ROM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35B0F3A2250DBD55000E768C /* ROM.swift */; };
+		35B4AD8325187E0600C6D4C8 /* MAZE in Resources */ = {isa = PBXBuildFile; fileRef = 35B4AD7C25187E0500C6D4C8 /* MAZE */; };
+		35B4AD8425187E0600C6D4C8 /* TETRIS in Resources */ = {isa = PBXBuildFile; fileRef = 35B4AD7D25187E0500C6D4C8 /* TETRIS */; };
+		35B4AD8525187E0600C6D4C8 /* TICTACTOE in Resources */ = {isa = PBXBuildFile; fileRef = 35B4AD7E25187E0500C6D4C8 /* TICTACTOE */; };
+		35B4AD8625187E0600C6D4C8 /* SPACE in Resources */ = {isa = PBXBuildFile; fileRef = 35B4AD7F25187E0500C6D4C8 /* SPACE */; };
+		35B4AD8725187E0600C6D4C8 /* PONG in Resources */ = {isa = PBXBuildFile; fileRef = 35B4AD8025187E0500C6D4C8 /* PONG */; };
+		35B4AD8825187E0600C6D4C8 /* WALL in Resources */ = {isa = PBXBuildFile; fileRef = 35B4AD8125187E0500C6D4C8 /* WALL */; };
+		35B4AD8925187E0600C6D4C8 /* TANK in Resources */ = {isa = PBXBuildFile; fileRef = 35B4AD8225187E0600C6D4C8 /* TANK */; };
 		35D21E6A2509F5390090A2B1 /* Button.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35D21E692509F5390090A2B1 /* Button.swift */; };
 		35DD777624FB27A5000164F7 /* Screen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35DD776F24FB27A4000164F7 /* Screen.swift */; };
 		35DD777724FB27A5000164F7 /* Screen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35DD776F24FB27A4000164F7 /* Screen.swift */; };
@@ -68,6 +75,7 @@
 		35F3E13B2512F36B00785C0C /* EmptyROM in Resources */ = {isa = PBXBuildFile; fileRef = 35F2A7122511F01800BD678B /* EmptyROM */; };
 		35F3E13C2512F36C00785C0C /* EmptyROM in Resources */ = {isa = PBXBuildFile; fileRef = 35F2A7122511F01800BD678B /* EmptyROM */; };
 		35F3E13D2512F36C00785C0C /* EmptyROM in Resources */ = {isa = PBXBuildFile; fileRef = 35F2A7122511F01800BD678B /* EmptyROM */; };
+		35F3E1422513289600785C0C /* test_opcode.ch8 in Resources */ = {isa = PBXBuildFile; fileRef = 35F3E1412513289600785C0C /* test_opcode.ch8 */; };
 		52D6D9871BEFF229002C0205 /* Chip8.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 52D6D97C1BEFF229002C0205 /* Chip8.framework */; };
 		8933C78E1EB5B82C000D00A4 /* Chip8Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8933C7891EB5B82A000D00A4 /* Chip8Tests.swift */; };
 		8933C78F1EB5B82C000D00A4 /* Chip8Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8933C7891EB5B82A000D00A4 /* Chip8Tests.swift */; };
@@ -137,6 +145,13 @@
 		3578D736250CCAA300B02F9F /* Instruction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Instruction.swift; sourceTree = "<group>"; };
 		35AF919B25042E3400756B7A /* Array+Helper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+Helper.swift"; sourceTree = "<group>"; };
 		35B0F3A2250DBD55000E768C /* ROM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ROM.swift; sourceTree = "<group>"; };
+		35B4AD7C25187E0500C6D4C8 /* MAZE */ = {isa = PBXFileReference; lastKnownFileType = file; path = MAZE; sourceTree = "<group>"; };
+		35B4AD7D25187E0500C6D4C8 /* TETRIS */ = {isa = PBXFileReference; lastKnownFileType = file; path = TETRIS; sourceTree = "<group>"; };
+		35B4AD7E25187E0500C6D4C8 /* TICTACTOE */ = {isa = PBXFileReference; lastKnownFileType = file; path = TICTACTOE; sourceTree = "<group>"; };
+		35B4AD7F25187E0500C6D4C8 /* SPACE */ = {isa = PBXFileReference; lastKnownFileType = file; path = SPACE; sourceTree = "<group>"; };
+		35B4AD8025187E0500C6D4C8 /* PONG */ = {isa = PBXFileReference; lastKnownFileType = file; path = PONG; sourceTree = "<group>"; };
+		35B4AD8125187E0500C6D4C8 /* WALL */ = {isa = PBXFileReference; lastKnownFileType = file; path = WALL; sourceTree = "<group>"; };
+		35B4AD8225187E0600C6D4C8 /* TANK */ = {isa = PBXFileReference; lastKnownFileType = file; path = TANK; sourceTree = "<group>"; };
 		35D21E692509F5390090A2B1 /* Button.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Button.swift; sourceTree = "<group>"; };
 		35DD776F24FB27A4000164F7 /* Screen.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Screen.swift; sourceTree = "<group>"; };
 		35DD777024FB27A4000164F7 /* Emulator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Emulator.swift; sourceTree = "<group>"; };
@@ -155,6 +170,7 @@
 		35DD77CA24FB2FD3000164F7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		35DD77D424FB3131000164F7 /* GameScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameScene.swift; sourceTree = "<group>"; };
 		35F2A7122511F01800BD678B /* EmptyROM */ = {isa = PBXFileReference; lastKnownFileType = text; path = EmptyROM; sourceTree = "<group>"; };
+		35F3E1412513289600785C0C /* test_opcode.ch8 */ = {isa = PBXFileReference; lastKnownFileType = file; path = test_opcode.ch8; sourceTree = "<group>"; };
 		52D6D97C1BEFF229002C0205 /* Chip8.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Chip8.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		52D6D9861BEFF229002C0205 /* Chip8-iOS Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Chip8-iOS Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		52D6D9E21BEFFF6E002C0205 /* Chip8.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Chip8.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -254,7 +270,15 @@
 		35DD77BB24FB2FD1000164F7 /* Chip8-iOS-Example */ = {
 			isa = PBXGroup;
 			children = (
+				35B4AD7C25187E0500C6D4C8 /* MAZE */,
+				35B4AD8025187E0500C6D4C8 /* PONG */,
+				35B4AD7F25187E0500C6D4C8 /* SPACE */,
+				35B4AD8225187E0600C6D4C8 /* TANK */,
+				35B4AD7D25187E0500C6D4C8 /* TETRIS */,
+				35B4AD7E25187E0500C6D4C8 /* TICTACTOE */,
+				35B4AD8125187E0500C6D4C8 /* WALL */,
 				357805172510938700E5664B /* BC_test.ch8 */,
+				35F3E1412513289600785C0C /* test_opcode.ch8 */,
 				354F84A824FBA0CB00FD1253 /* INVADERS */,
 				35D21E692509F5390090A2B1 /* Button.swift */,
 				35DD77BC24FB2FD1000164F7 /* AppDelegate.swift */,
@@ -602,10 +626,18 @@
 			buildActionMask = 2147483647;
 			files = (
 				354F84A924FBA0CB00FD1253 /* INVADERS in Resources */,
+				35B4AD8425187E0600C6D4C8 /* TETRIS in Resources */,
 				357805182510938C00E5664B /* BC_test.ch8 in Resources */,
+				35B4AD8625187E0600C6D4C8 /* SPACE in Resources */,
+				35B4AD8825187E0600C6D4C8 /* WALL in Resources */,
 				35DD77C924FB2FD3000164F7 /* LaunchScreen.storyboard in Resources */,
+				35B4AD8525187E0600C6D4C8 /* TICTACTOE in Resources */,
+				35B4AD8325187E0600C6D4C8 /* MAZE in Resources */,
+				35F3E1422513289600785C0C /* test_opcode.ch8 in Resources */,
 				35DD77C624FB2FD3000164F7 /* Assets.xcassets in Resources */,
 				35DD77C424FB2FD1000164F7 /* Main.storyboard in Resources */,
+				35B4AD8925187E0600C6D4C8 /* TANK in Resources */,
+				35B4AD8725187E0600C6D4C8 /* PONG in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

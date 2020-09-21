@@ -12,5 +12,6 @@ extension Data {
     
     var bytes: [UInt8] {
         return [UInt8](self)
+//        return unsafeBitCast(self, to: [UInt8].self)
     }
 }
