@@ -20,8 +20,22 @@ class GameScene: SKScene {
     
     private var pixelSize = 10
     private var lastUpdateTimeInterval: TimeInterval = 0
-    private var emulator = Emulator()
+    private var emulator = Emulator(clockRate: 800.0)
+    
     private var timer: TimeInterval = 0
+    
+    var isGamePaused: Bool {
+        get {
+            return emulator.state == .idle
+        }
+        set {
+            if newValue {
+                emulator.suspend()
+            } else {
+                emulator.resume()
+            }
+        }
+    }
     
     // MARK: - Initialize
     
@@ -40,6 +54,10 @@ class GameScene: SKScene {
         setupNodes()
         emulator.delegate = self
         emulator.load(rom: rom)
+    }
+    
+    func run() {
+        
     }
     
     private func setupNodes() {
@@ -73,11 +91,6 @@ class GameScene: SKScene {
 //            tick()
 //        }
         
-        tick()
-    }
-    
-    func tick() {
-        try? emulator.runCycle()
     }
 }
 

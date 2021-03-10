@@ -31,14 +31,17 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        guard let rom = try? ROM(game: .pong) else { return }
+        guard let rom = try? ROM(game: .spaceInvaders) else { return }
         scene.load(rom: rom)
+        scene.isGamePaused = false
         scene.scaleMode = .aspectFit
         
         skView.presentScene(scene)
         skView.ignoresSiblingOrder = true
         skView.showsFPS = true
         skView.showsNodeCount = true
+        
+        view.backgroundColor = .white
     }
 
     override var prefersStatusBarHidden: Bool {
@@ -49,16 +52,23 @@ class ViewController: UIViewController {
     
     @IBAction func keyboardButtonTouchUpInside(_ button: Button) {
         guard let key = button.key else { return }
+//        print("keyboardButtonTouchUpInside key", key)
         scene.keyUp(key: key)
+        
+//        if key == .one {
+//            scene.isGamePaused = !scene.isGamePaused
+//        }
     }
     
     @IBAction func keyboardButtonTouchUpOutside(_ button: Button) {
         guard let key = button.key else { return }
+//        print("keyboardButtonTouchUpOutside key", key)
         scene.keyUp(key: key)
     }
     
     @IBAction func keyboardButtonTouchDown(_ button: Button) {
         guard let key = button.key else { return }
+//        print("keyboardButtonTouchDown key", key)
         scene.keyDown(key: key)
     }
 }

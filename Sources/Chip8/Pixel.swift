@@ -19,16 +19,23 @@ public class Pixel {
     }
     
     public func paint() {
-        paint(true)
+        if color == .white {
+            color = .black
+            return
+        }
+        color = .white
     }
     
     public func clear() {
-        paint(false)
+        color = .black
     }
     
-    private func paint(_ flag: Bool) {
-        color = flag ? .white : .black
-    }
+//    @discardableResult
+//    private func paint(_ flag: Bool) -> Bool {
+//        let wasPainted = flag && color == .black
+//        color = flag ? .white : .black
+//        return wasPainted
+//    }
 }
 
 extension Pixel {

@@ -29,7 +29,19 @@ public class Emulator {
     public var memory = Memory(size: Emulator.Hardware.memorySize)
     public var keyboard = Keyboard()
     private var lastPressedKey: Keyboard.KeyCode?
-    private var state: EmulatorState = .idle
+    
+    public private(set) var state: EmulatorState = .idle
+    
+    private var clockRate: Double {
+        didSet { self.cpuTimer.interval = 1 / clockRate }
+    }
+    
+    private let queue = DispatchQueue(label: "com.carlosduclos.chip8.run")
+    private lazy var cpuTimer: GCDTimer = {
+        return GCDTimer(interval: 1 / clockRate, queue: queue) { [weak self] in
+            try? self?.runCycle()
+        }
+    }()
     
     public var defaultCharacterSet: [UInt8] = [
         0xf0, 0x90, 0x90, 0x90, 0xf0,
@@ -50,7 +62,8 @@ public class Emulator {
         0xf0, 0x80, 0xf0, 0x80, 0x80
     ]
     
-    public init() {
+    public init(clockRate: Double) {
+        self.clockRate = clockRate
 //        print("Memory 1:", memory.description)
 //        print("Memory 2:", memory.description)
         
@@ -78,17 +91,18 @@ public class Emulator {
         precondition(rom.bytes.count + Int(Hardware.programLoadAddress) < Hardware.memorySize)
         reset()
         memory.set(array: rom.bytes, position: Int(Hardware.programLoadAddress))
-        state = .playing(.running)
     }
     
     public func handleKey(touch: KeyboardTouch, keyCode: Keyboard.KeyCode) {
-        switch touch {
-        case .up:
-            keyboard.up(key: keyCode)
-            
-        case .down:
-            lastPressedKey = keyCode
-            keyboard.down(key: keyCode)
+        queue.async {
+            switch touch {
+            case .up:
+                self.keyboard.up(key: keyCode)
+                
+            case .down:
+                self.lastPressedKey = keyCode
+                self.keyboard.down(key: keyCode)
+            }
         }
     }
     
@@ -103,10 +117,21 @@ public class Emulator {
         
         timersTick()
         
-        print(opcode.hex, " - ", instruction.description)
+//        print(opcode.hex, " - ", instruction.description)
         
         let gameState = exec(instruction, opcode: opcode)
         state = .playing(gameState)
+    }
+    
+    
+    public func resume() {
+        state = .playing(.running)
+        self.cpuTimer.resume()
+    }
+    
+    public func suspend() {
+        state = .idle
+        self.cpuTimer.suspend()
     }
     
     private func exec(_ instruction: Instruction, opcode: UInt16) -> GameState {
@@ -121,23 +146,21 @@ public class Emulator {
             
         case .returnFromSubroutine:
             
-            print("this.PC before", currentPointer);
+//            print("this.PC before", currentPointer);
             currentPointer = stack.pop()
             
-            print("this.PC after", currentPointer);
-            print("this.SP", stack.pointer);
+//            print("this.PC after", currentPointer);
+//            print("this.SP", stack.pointer);
             
         case let .jumpAbsolute(address):
             currentPointer = address
             
         case let .callSubroutine(address):
-            
-            
             stack.push(currentPointer + 2)
-            print("this.SP before", stack.pointer);
-            print("stack value", stack.last());
+//            print("this.SP before", stack.pointer);
+//            print("stack value", stack.last());
             currentPointer = address
-            print("this.PC", currentPointer);
+//            print("this.PC", currentPointer);
 
         case let .skipNextIfEqualValue(x, value):
             if V[x] == value {
@@ -162,11 +185,11 @@ public class Emulator {
 
         case let .setValue(x, value):
             V[x] = value
-            print("x:", x, "value:", value)
+//            print("x:", x, "value:", value)
             nextInstruction()
 
         case let .addValue(x, value):
-            V[x] += value
+            V[x] = V[x] &+ value
             nextInstruction()
 
         case let .setRegister(x, y):
@@ -186,15 +209,15 @@ public class Emulator {
             nextInstruction()
 
         case let .addRegister(x, y):
-            print("V[x]", V[x])
-            print("V[y]", V[y])
-            V[0xF] = (V[y] > (255 - V[x])) ? 1 : 0
-            V[x] += V[y]
+//            print("V[x]", V[x])
+//            print("V[y]", V[y])
+            V[0xF] = (Int(V[x]) + Int(V[y]) > Int(UInt8.max)) ? 1 : 0
+            V[x] = V[x] &+ V[y]
             nextInstruction()
 
         case let .subtractYFromX(x, y):
-            V[0xF] = (V[x] > V[y]) ? 1 : 0
-            V[x] -= V[y]
+            V[0xF] = (V[x] < V[y]) ? 0 : 1
+            V[x] = V[x] &- V[y]
             nextInstruction()
 
         case let .shiftRight(x, _):
@@ -204,7 +227,7 @@ public class Emulator {
 
         case let .subtractXFromY(x, y):
             V[0x0f] = V[y] > V[x] ? 1 : 0
-            V[x] = V[y] - V[x]
+            V[x] = V[x] &- V[y]
             nextInstruction()
 
         case let .shiftLeft(x, _):
@@ -240,14 +263,17 @@ public class Emulator {
             nextInstruction()
 
         case let .skipIfKeyPressed(x):
-            if keyboard.isDown(key: UInt8(x)) {
+            print("skipIfKeyPressed \(x)")
+            
+            if keyboard.isDown(key: V[Int(x)]) {
                 skipInstruction()
             } else {
                 nextInstruction()
             }
 
         case let .skipIfKeyNotPressed(x):
-            if !keyboard.isDown(key: UInt8(x)) {
+            print("skipIfKeyNotPressed \(x)")
+            if !keyboard.isDown(key: V[Int(x)]) {
                 skipInstruction()
             } else {
                 nextInstruction()
@@ -258,10 +284,14 @@ public class Emulator {
             nextInstruction()
 
         case let .awaitKeyPress(x):
-            if let key = lastPressedKey {
-                V[x] = key.rawValue
-                lastPressedKey = nil
+            print("awaitKeyPress")
+            guard let key = lastPressedKey else {
+                return .running
             }
+            print("setting V[x]", key.rawValue)
+            V[x] = key.rawValue
+            lastPressedKey = nil
+            nextInstruction()
 
         case let .setDelayTimer(x):
             delayTimer = V[x]

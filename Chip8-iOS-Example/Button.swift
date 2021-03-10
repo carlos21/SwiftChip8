@@ -23,4 +23,12 @@ class Button: UIButton {
     }
     
     var key: Emulator.Keyboard.KeyCode?
+    
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        setBackgroundColor(.blue, for: .normal)
+        setBackgroundColor(.red, for: .highlighted)
+        layer.cornerRadius = 4.0
+        layer.masksToBounds = true
+    }
 }

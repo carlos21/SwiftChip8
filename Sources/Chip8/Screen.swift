@@ -63,7 +63,7 @@ public class Screen {
                     pixelCollision = true
                 }
                 pixel.paint()
-
+                
             }
         }
         return pixelCollision

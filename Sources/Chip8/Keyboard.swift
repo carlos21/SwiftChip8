@@ -26,7 +26,11 @@ extension Emulator {
         }
         
         func isDown(key: UInt8) -> Bool {
-            guard let code = KeyCode(rawValue: key) else { return false }
+            guard let code = KeyCode(rawValue: key) else {
+                print("COULD CONVERT")
+                return false
+            }
+            print(">>> code \(code.description)", isDown(key: code))
             return isDown(key: code)
         }
         
