@@ -8,21 +8,11 @@
 
 import Foundation
 import UIKit
-import Chip8
 
 class Button: UIButton {
     
     @IBInspectable
-    var keyCode: UInt8 {
-        get {
-            return key?.rawValue ?? 0
-        }
-        set {
-            key = Emulator.Keyboard.KeyCode(rawValue: newValue)
-        }
-    }
-    
-    var key: Emulator.Keyboard.KeyCode?
+    var keyCode: UInt8 = 0
     
     override func awakeFromNib() {
         super.awakeFromNib()

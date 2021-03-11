@@ -10,5 +10,9 @@ import Foundation
 
 final class Runner {
     
+    private let emulator: Emulator
     
+    init(emulator: Emulator) {
+        self.emulator = emulator
+    }
 }

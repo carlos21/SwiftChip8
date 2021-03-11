@@ -8,42 +8,57 @@
 
 import Foundation
 
-public protocol EmulatorDelegate: class {
+protocol EmulatorDelegate: class {
     
-    func redraw()
     func beep()
+    func draw()
+    func emulatorThrew(error: Emulator.EmulatorError)
 }
 
-public class Emulator {
+extension EmulatorDelegate {
     
-    public weak var delegate: EmulatorDelegate?
+    func emulatorThrew(error: Emulator.EmulatorError) {}
+}
+
+/// <#Description#>
+class Emulator {
+    
+    weak var delegate: EmulatorDelegate?
     
     var V = [UInt8](repeating: 0, count: 16)
     var I: UInt16 = 0
     var delayTimer: UInt8 = 0
     var soundTimer: UInt8 = 0
+    var redraw = false
     
-    public var currentPointer: UInt16 = Hardware.programLoadAddress
-    public var stack = Stack<UInt16>()
-    public var screen = Screen()
-    public var memory = Memory(size: Emulator.Hardware.memorySize)
-    public var keyboard = Keyboard()
+    var currentPointer: UInt16 = Hardware.programLoadAddress
+    var stack = Stack<UInt16>()
+    var screen = Screen()
+    var memory = Memory(size: Emulator.Hardware.memorySize)
+    var keyboard = Keyboard()
     private var lastPressedKey: Keyboard.KeyCode?
     
-    public private(set) var state: EmulatorState = .idle
+    private(set) var state: EmulatorState = .idle
     
-    private var clockRate: Double {
-        didSet { self.cpuTimer.interval = 1 / clockRate }
-    }
+    private let cpuClockRate: Double = 1.0 / 800.0
+    private let displayClockRate: Double = 1.0 / 60.0
     
-    private let queue = DispatchQueue(label: "com.carlosduclos.chip8.run")
+    private let cpuQueue = DispatchQueue(label: "com.carlosduclos.chip8.cpuQueue")
+    private let displayQueue = DispatchQueue(label: "com.carlosduclos.chip8.displayQueue")
+    
     private lazy var cpuTimer: GCDTimer = {
-        return GCDTimer(interval: 1 / clockRate, queue: queue) { [weak self] in
-            try? self?.runCycle()
+        return GCDTimer(interval: cpuClockRate, queue: cpuQueue) { [unowned self] in
+            self.runCycle()
         }
     }()
     
-    public var defaultCharacterSet: [UInt8] = [
+    private lazy var displayTimer: GCDTimer = {
+        return GCDTimer(interval: displayClockRate, queue: displayQueue) { [unowned self] in
+            self.timersTick()
+        }
+    }()
+    
+    private var defaultCharacterSet: [UInt8] = [
         0xf0, 0x90, 0x90, 0x90, 0xf0,
         0x20, 0x60, 0x20, 0x20, 0x70,
         0xf0, 0x10, 0xf0, 0x80, 0xf0,
@@ -62,105 +77,86 @@ public class Emulator {
         0xf0, 0x80, 0xf0, 0x80, 0x80
     ]
     
-    public init(clockRate: Double) {
-        self.clockRate = clockRate
-//        print("Memory 1:", memory.description)
-//        print("Memory 2:", memory.description)
+    /// Loads the rom
+    /// Validates if the ROM is valid
+    /// - Parameter rom: ROM containing the bytes of the game
+    func load(rom: ROM) {
+        let isValidRom = rom.bytes.count + Int(Hardware.programLoadAddress) < Hardware.memorySize
+        guard isValidRom else {
+            delegate?.emulatorThrew(error: EmulatorError.invalidRom)
+            return
+        }
         
-//        print("ROM bytes:")
-        
-//        currentPointer = 0
-//        V[0] = 0x20
-//        V[1] = 0x30
-//        exec(opcode: 0x8010)
-//        print("Pointer", V[0].hexadecimalDescription)
-        
-//        V[0] = 200
-//        V[1] = 60
-//        exec(opcode: 0x8014)
-//        print("Pointer", V[0].hexadecimalDescription)
-//        print("carry", V[0x0f].hexadecimalDescription)
-        
-//        I = 0
-//        V[0] = 10
-//        V[1] = 10
-//        exec(opcode: 0xD015)
-    }
-    
-    public func load(rom: ROM) {
-        precondition(rom.bytes.count + Int(Hardware.programLoadAddress) < Hardware.memorySize)
         reset()
         memory.set(array: rom.bytes, position: Int(Hardware.programLoadAddress))
+        
+        state = .playing(.running)
+        
+        cpuTimer.resume()
+        displayTimer.resume()
     }
     
-    public func handleKey(touch: KeyboardTouch, keyCode: Keyboard.KeyCode) {
-        queue.async {
-            switch touch {
-            case .up:
-                self.keyboard.up(key: keyCode)
-                
-            case .down:
-                self.lastPressedKey = keyCode
-                self.keyboard.down(key: keyCode)
-            }
+    func handleKey(touch: KeyboardTouch, keyCode: Keyboard.KeyCode) {
+        switch touch {
+        case .up:
+            self.keyboard.up(key: keyCode)
+            
+        case .down:
+            self.lastPressedKey = keyCode
+            self.keyboard.down(key: keyCode)
         }
     }
     
-    public func runCycle() throws {
-        guard case .playing = state else { return }
+    func resume() {
+        state = .playing(.running)
+        cpuTimer.resume()
+    }
+    
+    func suspend() {
+        state = .idle
+        cpuTimer.suspend()
+    }
+    
+    /// Runs on each cycle
+    /// - Validates the instruction
+    /// - Executes the instruction
+    private func runCycle() {
+        guard case .playing = state else {
+            return
+        }
         
         let opcode = memory.getShort(position: currentPointer)
 
         guard let instruction = Instruction(opcode: opcode) else {
-            throw EmulatorError.unrecognizedOpcode
+            delegate?.emulatorThrew(error: EmulatorError.unrecognizedOpcode)
+            return
         }
         
-        timersTick()
-        
-//        print(opcode.hex, " - ", instruction.description)
-        
-        let gameState = exec(instruction, opcode: opcode)
+        let gameState = execute(instruction, opcode: opcode)
         state = .playing(gameState)
     }
     
-    
-    public func resume() {
-        state = .playing(.running)
-        self.cpuTimer.resume()
-    }
-    
-    public func suspend() {
-        state = .idle
-        self.cpuTimer.suspend()
-    }
-    
-    private func exec(_ instruction: Instruction, opcode: UInt16) -> GameState {
+    private func execute(_ instruction: Instruction, opcode: UInt16) -> GameState {
         switch instruction {
         case .jumpsToMachineCodeRoutine:
             break
             
         case .clearScreen:
             screen.clear()
-            delegate?.redraw()
+            displayQueue.async {
+                self.delegate?.draw()
+            }
             nextInstruction()
             
         case .returnFromSubroutine:
-            
-//            print("this.PC before", currentPointer);
             currentPointer = stack.pop()
-            
-//            print("this.PC after", currentPointer);
-//            print("this.SP", stack.pointer);
             
         case let .jumpAbsolute(address):
             currentPointer = address
             
         case let .callSubroutine(address):
             stack.push(currentPointer + 2)
-//            print("this.SP before", stack.pointer);
-//            print("stack value", stack.last());
             currentPointer = address
-//            print("this.PC", currentPointer);
 
         case let .skipNextIfEqualValue(x, value):
             if V[x] == value {
@@ -185,7 +181,6 @@ public class Emulator {
 
         case let .setValue(x, value):
             V[x] = value
-//            print("x:", x, "value:", value)
             nextInstruction()
 
         case let .addValue(x, value):
@@ -209,8 +204,6 @@ public class Emulator {
             nextInstruction()
 
         case let .addRegister(x, y):
-//            print("V[x]", V[x])
-//            print("V[y]", V[y])
             V[0xF] = (Int(V[x]) + Int(V[y]) > Int(UInt8.max)) ? 1 : 0
             V[x] = V[x] &+ V[y]
             nextInstruction()
@@ -259,12 +252,12 @@ public class Emulator {
                                         memory: memory,
                                         I: I,
                                         rows: Instruction.Constant(rows)) ? 1 : 0
-            delegate?.redraw()
+            displayQueue.async {
+                self.delegate?.draw()
+            }
             nextInstruction()
 
         case let .skipIfKeyPressed(x):
-            print("skipIfKeyPressed \(x)")
-            
             if keyboard.isDown(key: V[Int(x)]) {
                 skipInstruction()
             } else {
@@ -272,7 +265,6 @@ public class Emulator {
             }
 
         case let .skipIfKeyNotPressed(x):
-            print("skipIfKeyNotPressed \(x)")
             if !keyboard.isDown(key: V[Int(x)]) {
                 skipInstruction()
             } else {
@@ -284,11 +276,7 @@ public class Emulator {
             nextInstruction()
 
         case let .awaitKeyPress(x):
-            print("awaitKeyPress")
-            guard let key = lastPressedKey else {
-                return .running
-            }
-            print("setting V[x]", key.rawValue)
+            guard let key = lastPressedKey else { return .running }
             V[x] = key.rawValue
             lastPressedKey = nil
             nextInstruction()
@@ -342,18 +330,6 @@ public class Emulator {
         currentPointer += 2
     }
     
-    private func draw(x: Instruction.Register,
-                      y: Instruction.Register,
-                      rows: Instruction.Constant) {
-        for x in 0..<Emulator.Hardware.screenRows {
-            for y in 0..<Emulator.Hardware.screenColumns {
-                let pixel = screen.pixelAt(x: x, y: y)
-                guard let node = pixel.node else { continue }
-                node.color = pixel.color == .white ? .white : .blue
-            }
-        }
-    }
-    
     private func timersTick() {
         if delayTimer > 0 {
             delayTimer -= 1
@@ -390,59 +366,19 @@ public class Emulator {
 
 extension Emulator {
     
-    public struct Hardware {
+    struct Hardware {
         
-        public static let screenColumns = 64
-        public static let screenRows = 32
-        public static let programLoadAddress: UInt16 = 0x200
-        public static let memorySize = 4096
-        public static let timerClockRate = 60
+        static let screenColumns = 64
+        static let screenRows = 32
+        static let programLoadAddress: UInt16 = 0x200
+        static let memorySize = 4096
+        static let timerClockRate = 60
     }
 }
 
 extension Emulator {
     
-    public enum EmulatorState {
-        
-        case idle
-        case playing(GameState)
-    }
-    
-    public enum GameState {
-        
-        case running
-        case sleeping
-    }
-}
-
-extension Emulator.EmulatorState: Equatable {
-    
-    public static func ==(lhs: Emulator.EmulatorState, rhs: Emulator.EmulatorState) -> Bool {
-        switch (lhs, rhs) {
-        case (.idle, .idle):
-            return true
-            
-        case let (.playing(value1), .playing(value2)):
-            return value1 == value2
-            
-        default:
-            return false
-        }
-    }
-}
-
-//extension Emulator {
-//
-//    public enum State {
-//
-//        case screen([UInt8])
-//        case redraw(Bool)
-//    }
-//}
-
-extension Emulator {
-    
-    public enum KeyboardTouch {
+    enum KeyboardTouch {
         
         case up
         case down
@@ -451,8 +387,9 @@ extension Emulator {
 
 extension Emulator {
     
-    public enum EmulatorError: Error {
+    enum EmulatorError: Error {
         
+        case invalidRom
         case unrecognizedOpcode
     }
 }
