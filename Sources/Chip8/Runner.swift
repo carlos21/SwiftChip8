@@ -13,7 +13,6 @@ final class Runner {
     // MARK: - Properties
     
     private let emulator: Emulator
-    
     private let cpuClockRate: Double = 1.0 / 800.0
     private let displayClockRate: Double = 1.0 / 60.0
     
@@ -36,6 +35,10 @@ final class Runner {
     
     init(emulator: Emulator) {
         self.emulator = emulator
+    }
+    
+    deinit {
+        suspend()
     }
     
     func resume() {

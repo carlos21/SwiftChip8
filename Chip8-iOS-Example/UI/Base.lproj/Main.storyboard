@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="lwb-1I-O15">
     <device id="retina5_9" orientation="landscape" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
@@ -9,10 +9,56 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Game Selection View Controller-->
+        <scene sceneID="s57-VQ-Y3B">
+            <objects>
+                <tableViewController id="kry-5d-8eF" customClass="GameSelectionViewController" customModule="Chip8_iOS_Example" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="LJw-g5-9Ud">
+                        <rect key="frame" x="0.0" y="0.0" width="812" height="375"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="GameCell" rowHeight="63" id="L3E-4E-KkR" customClass="GameCell" customModule="Chip8_iOS_Example" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="812" height="63"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="L3E-4E-KkR" id="aoL-xa-mH1">
+                                    <rect key="frame" x="44" y="0.0" width="724" height="63"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="byJ-5Q-vdu">
+                                            <rect key="frame" x="16" y="16" width="692" height="31"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstAttribute="bottom" secondItem="byJ-5Q-vdu" secondAttribute="bottom" constant="16" id="IPx-I6-AaH"/>
+                                        <constraint firstItem="byJ-5Q-vdu" firstAttribute="leading" secondItem="aoL-xa-mH1" secondAttribute="leading" constant="16" id="MA5-qv-RKG"/>
+                                        <constraint firstAttribute="trailing" secondItem="byJ-5Q-vdu" secondAttribute="trailing" constant="16" id="jWt-qN-S7P"/>
+                                        <constraint firstItem="byJ-5Q-vdu" firstAttribute="top" secondItem="aoL-xa-mH1" secondAttribute="top" constant="16" id="k3l-jN-1Kl"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="titleLabel" destination="byJ-5Q-vdu" id="U21-qS-EAT"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="kry-5d-8eF" id="nDz-0g-kDr"/>
+                            <outlet property="delegate" destination="kry-5d-8eF" id="940-UB-MLy"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" id="Th0-S0-E1e"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="lyQ-36-Meh" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="470.68965517241384" y="-290.39999999999998"/>
+        </scene>
+        <!--Game Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Chip8_iOS_Example" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="GameController" id="BYZ-38-t0r" customClass="GameController" customModule="Chip8_iOS_Example" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="812" height="375"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -399,7 +445,25 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-249.7536945812808" y="101.59999999999999"/>
+            <point key="canvasLocation" x="1214.7783251231529" y="-290.39999999999998"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="WIE-o4-a0J">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="lwb-1I-O15" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="fPG-yc-NAR">
+                        <rect key="frame" x="0.0" y="0.0" width="812" height="32"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="kry-5d-8eF" kind="relationship" relationship="rootViewController" id="nih-gF-DCV"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="PXS-eo-P6M" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-287.4384236453202" y="-290.39999999999998"/>
         </scene>
     </scenes>
     <resources>

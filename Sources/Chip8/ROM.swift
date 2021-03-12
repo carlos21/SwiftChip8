@@ -11,7 +11,6 @@ import Foundation
 public struct ROM {
     
     private let data: Data
-    private var name: String?
     
     public var bytes: [UInt8] {
         return data.bytes
@@ -21,15 +20,15 @@ public struct ROM {
         self.data = data
     }
     
-    public init(game: Game, bundle: Bundle = .main) throws {
-        guard
-            let url = bundle.url(forResource: game.name, withExtension: game.ext),
-            let data = try? Data(contentsOf: url) else {
-            throw FileError.openFailed
-        }
-        self.data = data
-        self.name = game.name
-    }
+//    public init(game: Game, bundle: Bundle = .main) throws {
+//        guard
+//            let url = bundle.url(forResource: game.name, withExtension: game.ext),
+//            let data = try? Data(contentsOf: url) else {
+//            throw FileError.openFailed
+//        }
+//        self.data = data
+//        self.name = game.name
+//    }
 }
 
 extension ROM: CustomStringConvertible {
@@ -47,6 +46,7 @@ extension ROM: CustomStringConvertible {
 extension ROM {
     
     public enum FileError: Error {
+        
         case openFailed
     }
 }

@@ -11,6 +11,8 @@ import Dispatch
 
 final class GCDTimer {
     
+    // MARK: - Properties
+    
     private let timer: DispatchSourceTimer
     private var suspended = true
     
@@ -19,6 +21,8 @@ final class GCDTimer {
     var interval: Double {
         didSet { setTimer() }
     }
+    
+    // MARK: - Functions
     
     /// Initializes a timer that calls `handler` on `queue` every `interval`
     /// seconds.

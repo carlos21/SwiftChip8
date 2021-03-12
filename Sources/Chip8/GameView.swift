@@ -11,8 +11,12 @@ import UIKit
 
 final public class GameView: UIView {
     
+    // MARK: - Properties
+    
     private let emulator = Emulator()
     private var runner: Runner!
+    
+    // MARK: - Functions
     
     public func load(rom: ROM) {
         emulator.delegate = self

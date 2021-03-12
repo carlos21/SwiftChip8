@@ -10,33 +10,42 @@ import UIKit
 import Chip8
 import SpriteKit
 
-final class ViewController: UIViewController {
+final class GameController: UIViewController {
     
     // MARK: - IBOutlets
     
     @IBOutlet weak var gameView: GameView!
     @IBOutlet var keyboardButtons: [Button]!
     
-    // MARK: - Properties
+    var game: Game?
+    
+    override var prefersStatusBarHidden: Bool {
+        return true
+    }
     
     // MARK: - Functions
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        guard let rom = try? ROM(game: .spaceInvaders) else { return }
+        guard
+            let game = self.game,
+            let url = Bundle.main.url(forResource: game.name, withExtension: game.ext),
+            let data = try? Data(contentsOf: url) else {
+            return
+        }
+        
+        let rom = ROM(data: data)
         gameView.load(rom: rom)
-        view.backgroundColor = .white
     }
     
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
+    static func instance(game: Game) -> GameController {
+        let storyboard = UIStoryboard(name: "Main", bundle: .main)
+        let instance = storyboard.instantiateViewController(withIdentifier: String(describing: GameController.self)) as! GameController
+        instance.game = game
+        return instance
     }
 
-    override var prefersStatusBarHidden: Bool {
-        return true
-    }
-    
     // MARK: - Action
     
     @IBAction func keyboardButtonTouchUpInside(_ button: Button) {
