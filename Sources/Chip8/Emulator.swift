@@ -29,7 +29,6 @@ class Emulator {
     var I: UInt16 = 0
     var delayTimer: UInt8 = 0
     var soundTimer: UInt8 = 0
-    var redraw = false
     
     var currentPointer: UInt16 = Hardware.programLoadAddress
     var stack = Stack<UInt16>()
@@ -37,26 +36,6 @@ class Emulator {
     var memory = Memory(size: Emulator.Hardware.memorySize)
     var keyboard = Keyboard()
     private var lastPressedKey: Keyboard.KeyCode?
-    
-    private(set) var state: EmulatorState = .idle
-    
-    private let cpuClockRate: Double = 1.0 / 800.0
-    private let displayClockRate: Double = 1.0 / 60.0
-    
-    private let cpuQueue = DispatchQueue(label: "com.carlosduclos.chip8.cpuQueue")
-    private let displayQueue = DispatchQueue(label: "com.carlosduclos.chip8.displayQueue")
-    
-    private lazy var cpuTimer: GCDTimer = {
-        return GCDTimer(interval: cpuClockRate, queue: cpuQueue) { [unowned self] in
-            self.runCycle()
-        }
-    }()
-    
-    private lazy var displayTimer: GCDTimer = {
-        return GCDTimer(interval: displayClockRate, queue: displayQueue) { [unowned self] in
-            self.timersTick()
-        }
-    }()
     
     private var defaultCharacterSet: [UInt8] = [
         0xf0, 0x90, 0x90, 0x90, 0xf0,
@@ -89,11 +68,6 @@ class Emulator {
         
         reset()
         memory.set(array: rom.bytes, position: Int(Hardware.programLoadAddress))
-        
-        state = .playing(.running)
-        
-        cpuTimer.resume()
-        displayTimer.resume()
     }
     
     func handleKey(touch: KeyboardTouch, keyCode: Keyboard.KeyCode) {
@@ -107,24 +81,10 @@ class Emulator {
         }
     }
     
-    func resume() {
-        state = .playing(.running)
-        cpuTimer.resume()
-    }
-    
-    func suspend() {
-        state = .idle
-        cpuTimer.suspend()
-    }
-    
     /// Runs on each cycle
     /// - Validates the instruction
     /// - Executes the instruction
-    private func runCycle() {
-        guard case .playing = state else {
-            return
-        }
-        
+    func runCycle() {
         let opcode = memory.getShort(position: currentPointer)
 
         guard let instruction = Instruction(opcode: opcode) else {
@@ -132,20 +92,17 @@ class Emulator {
             return
         }
         
-        let gameState = execute(instruction, opcode: opcode)
-        state = .playing(gameState)
+        execute(instruction, opcode: opcode)
     }
     
-    private func execute(_ instruction: Instruction, opcode: UInt16) -> GameState {
+    private func execute(_ instruction: Instruction, opcode: UInt16) {
         switch instruction {
         case .jumpsToMachineCodeRoutine:
             break
             
         case .clearScreen:
             screen.clear()
-            displayQueue.async {
-                self.delegate?.draw()
-            }
+            delegate?.draw()
             nextInstruction()
             
         case .returnFromSubroutine:
@@ -252,9 +209,7 @@ class Emulator {
                                         memory: memory,
                                         I: I,
                                         rows: Instruction.Constant(rows)) ? 1 : 0
-            displayQueue.async {
-                self.delegate?.draw()
-            }
+            delegate?.draw()
             nextInstruction()
 
         case let .skipIfKeyPressed(x):
@@ -276,7 +231,7 @@ class Emulator {
             nextInstruction()
 
         case let .awaitKeyPress(x):
-            guard let key = lastPressedKey else { return .running }
+            guard let key = lastPressedKey else { return }
             V[x] = key.rawValue
             lastPressedKey = nil
             nextInstruction()
@@ -313,13 +268,10 @@ class Emulator {
             }
             nextInstruction()
         }
-        
-        return .running
     }
     
     private func reset() {
         memory.set(array: defaultCharacterSet, position: 0x00)
-        state = .idle
     }
     
     private func skipInstruction() {
@@ -330,7 +282,7 @@ class Emulator {
         currentPointer += 2
     }
     
-    private func timersTick() {
+    func timersTick() {
         if delayTimer > 0 {
             delayTimer -= 1
         }
@@ -350,16 +302,6 @@ class Emulator {
     
     private func beep() {
         soundTimer -= 1
-    }
-    
-    private func popStack() -> UInt16 {
-        currentPointer -= 1
-        return stack.pop()
-    }
-    
-    private func pushStack(value: UInt16) {
-        currentPointer += 1
-        stack.push(value)
     }
 }
 

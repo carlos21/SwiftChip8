@@ -8,9 +8,9 @@
 
 import Foundation
 
-public struct Memory {
+struct Memory {
     
-    public private(set) var buffer: [UInt8]
+    private(set) var buffer: [UInt8]
     private let size: Int
     
     init(size: Int) {
@@ -18,7 +18,7 @@ public struct Memory {
         self.size = size
     }
     
-    public subscript(index: Int) -> UInt8 {
+    subscript(index: Int) -> UInt8 {
         get {
             assetBounds(position: index)
             return self.buffer[index]
@@ -39,12 +39,12 @@ public struct Memory {
 //        buffer[position] = value
 //    }
     
-    public mutating func set(array: [UInt8], position: Int) {
+    mutating func set(array: [UInt8], position: Int) {
         assetBounds(position: position + array.count)
         buffer.replaceSubrange(position..<position+array.count, with: array)
     }
     
-    public func getShort(position: UInt16) -> UInt16 {
+    func getShort(position: UInt16) -> UInt16 {
         return (UInt16(self[Int(position)]) << 8) | UInt16(self[Int(position) + 1] << 0)
     }
     
@@ -55,7 +55,7 @@ public struct Memory {
 
 extension Memory: CustomStringConvertible {
     
-    public var description: String {
+    var description: String {
         var text = ""
         for byte in buffer {
             text.append("\(byte.hex), ")

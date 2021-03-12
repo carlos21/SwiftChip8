@@ -79,27 +79,6 @@ extension Emulator.Keyboard {
         case D = 0x0D
         case E = 0x0E
         case F = 0x0F
-        
-        var skCode: SpriteKit.KeyCode {
-            switch self {
-            case .zero: return .X
-            case .one: return .one
-            case .two: return .two
-            case .three: return .three
-            case .four: return .Q
-            case .five: return .W
-            case .six: return .E
-            case .seven: return .A
-            case .eigth: return .S
-            case .nine: return .D
-            case .A: return .Z
-            case .B: return .C
-            case .C: return .four
-            case .D: return .R
-            case .E: return .F
-            case .F: return .V
-            }
-        }
     }
 }
 

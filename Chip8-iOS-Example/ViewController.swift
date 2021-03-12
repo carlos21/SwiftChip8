@@ -10,7 +10,7 @@ import UIKit
 import Chip8
 import SpriteKit
 
-class ViewController: UIViewController {
+final class ViewController: UIViewController {
     
     // MARK: - IBOutlets
     
@@ -19,11 +19,7 @@ class ViewController: UIViewController {
     
     // MARK: - Properties
     
-    // MARK: - Override
-    
-    required init?(coder: NSCoder) {
-        super.init(coder: coder)
-    }
+    // MARK: - Functions
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -35,7 +31,6 @@ class ViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        
     }
 
     override var prefersStatusBarHidden: Bool {

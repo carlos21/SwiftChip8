@@ -10,28 +10,28 @@ import Foundation
 
 let maxSize = 16
 
-public struct Stack<Element> where Element: Equatable {
+struct Stack<Element> where Element: Equatable {
     
     private var storage = [Element]()
     
-    public var pointer: Int {
+    var pointer: Int {
         return storage.count - 1
     }
     
-    public func peek() -> Element? {
+    func peek() -> Element? {
         storage.first
     }
     
-    public func last() -> Element? {
+    func last() -> Element? {
         storage.last
     }
     
-    public mutating func push(_ element: Element) {
+    mutating func push(_ element: Element) {
         precondition(storage.count < maxSize)
         storage.append(element)
     }
     
-    public mutating func pop() -> Element {
+    mutating func pop() -> Element {
         precondition(storage.count < maxSize && storage.count > 0)
 //        print("last on stack before", storage.last)
 //        defer {
@@ -43,21 +43,21 @@ public struct Stack<Element> where Element: Equatable {
 
 extension Stack: Equatable {
     
-    public static func == (lhs: Stack<Element>, rhs: Stack<Element>) -> Bool {
+    static func == (lhs: Stack<Element>, rhs: Stack<Element>) -> Bool {
         lhs.storage == rhs.storage
     }
 }
 
 extension Stack: CustomStringConvertible {
     
-    public var description: String {
+var description: String {
         return "\(storage)"
     }
 }
 
 extension Stack: ExpressibleByArrayLiteral {
     
-    public init(arrayLiteral elements: Element...) {
+    init(arrayLiteral elements: Element...) {
         storage = elements
     }
 }

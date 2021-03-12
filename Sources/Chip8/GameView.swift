@@ -9,13 +9,17 @@
 import Foundation
 import UIKit
 
-public final class GameView: UIView {
+final public class GameView: UIView {
     
-    private var emulator = Emulator()
+    private let emulator = Emulator()
+    private var runner: Runner!
     
     public func load(rom: ROM) {
         emulator.delegate = self
         emulator.load(rom: rom)
+        
+        runner = Runner(emulator: emulator)
+        runner.resume()
     }
     
     public override func draw(_ rect: CGRect) {
@@ -23,9 +27,9 @@ public final class GameView: UIView {
         let pixelHeight = pixelWidth
         
         UIColor.black.setFill()
-        UIRectFill(self.bounds)
-        UIColor.white.setFill()
+        UIRectFill(bounds)
         
+        UIColor.white.setFill()
         for y in 0..<Emulator.Hardware.screenRows {
             for x in 0..<Emulator.Hardware.screenColumns {
                 let pixel = emulator.screen.pixelAt(x: x, y: y)
@@ -38,8 +42,6 @@ public final class GameView: UIView {
                 }
             }
         }
-        
-        emulator.redraw = false
     }
     
     public func keyDown(key: UInt8) {

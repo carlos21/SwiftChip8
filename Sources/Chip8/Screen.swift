@@ -8,14 +8,11 @@
 
 import Foundation
 
-public class Screen {
+class Screen {
     
     private var pixels = [[Pixel]]()
     
-    public init() {
-//        let rows = Array<Pixel>(repeating: Pixel(), count: screenHeight)
-//        pixels = Array<Array<Pixel>>(repeating: rows, count: screenWidth)
-//
+    init() {
         for _ in 0..<Emulator.Hardware.screenRows {
             var rows = [Pixel]()
             for _ in 0..<Emulator.Hardware.screenColumns {
@@ -25,27 +22,27 @@ public class Screen {
         }
     }
     
-    public func pixelAt(x: Int, y: Int) -> Pixel {
+    func pixelAt(x: Int, y: Int) -> Pixel {
         assetBounds(x: x, y: y)
         return pixels[y][x]
     }
     
-    public func isSet(x: Int, y: Int) -> Bool {
+    func isSet(x: Int, y: Int) -> Bool {
         assetBounds(x: x, y: y)
         return pixels[y][x].isOn
     }
     
-    public func drawPixel(x: Int, y: Int) {
+    func drawPixel(x: Int, y: Int) {
         assetBounds(x: x, y: y)
         pixels[y][x].paint()
     }
     
-    public func clear() {
+    func clear() {
         pixels.flatMap { $0 }.forEach { $0.clear() }
     }
     
     @discardableResult
-    public func drawSprite(x: Instruction.Register,
+    func drawSprite(x: Instruction.Register,
                            y: Instruction.Register,
                            memory: Memory,
                            I: UInt16,

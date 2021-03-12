@@ -421,8 +421,7 @@ extension Instruction {
 extension Instruction: CustomStringConvertible {
     
     public var description: String {
-        return "\(actionDescription)"
-//        return "Opcode{code=\(opcode.hex), description=\(actionDescription)}"
+        return "Opcode{code=\(opcode.hex), description=\(actionDescription)}"
     }
     
     public var actionDescription: String {

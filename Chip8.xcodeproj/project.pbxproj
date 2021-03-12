@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		354F84A924FBA0CB00FD1253 /* INVADERS in Resources */ = {isa = PBXBuildFile; fileRef = 354F84A824FBA0CB00FD1253 /* INVADERS */; };
 		354F84B824FBAF9700FD1253 /* Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = 354F84B124FBAF3B00FD1253 /* Data.swift */; };
-		354F84B924FBAF9700FD1253 /* SpriteKit+KeyCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35DD778D24FB2877000164F7 /* SpriteKit+KeyCode.swift */; };
 		354F84BA24FBAF9700FD1253 /* Integer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 354F84AA24FBA5D300FD1253 /* Integer.swift */; };
 		354F84BB24FBAF9700FD1253 /* Emulator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35DD777024FB27A4000164F7 /* Emulator.swift */; };
 		354F84BC24FBAF9700FD1253 /* Keyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35DD777124FB27A4000164F7 /* Keyboard.swift */; };
@@ -18,15 +17,11 @@
 		354F84BF24FBAF9700FD1253 /* Screen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35DD776F24FB27A4000164F7 /* Screen.swift */; };
 		354F84C024FBAF9700FD1253 /* Stack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35DD777424FB27A5000164F7 /* Stack.swift */; };
 		354F84C124FBAF9800FD1253 /* Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = 354F84B124FBAF3B00FD1253 /* Data.swift */; };
-		354F84C224FBAF9800FD1253 /* SpriteKit+KeyCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35DD778D24FB2877000164F7 /* SpriteKit+KeyCode.swift */; };
 		354F84C324FBAF9800FD1253 /* Integer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 354F84AA24FBA5D300FD1253 /* Integer.swift */; };
 		354F84C424FBAF9800FD1253 /* Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = 354F84B124FBAF3B00FD1253 /* Data.swift */; };
-		354F84C524FBAF9800FD1253 /* SpriteKit+KeyCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35DD778D24FB2877000164F7 /* SpriteKit+KeyCode.swift */; };
 		354F84C624FBAF9800FD1253 /* Integer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 354F84AA24FBA5D300FD1253 /* Integer.swift */; };
 		354F84C724FBAF9900FD1253 /* Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = 354F84B124FBAF3B00FD1253 /* Data.swift */; };
-		354F84C824FBAF9900FD1253 /* SpriteKit+KeyCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35DD778D24FB2877000164F7 /* SpriteKit+KeyCode.swift */; };
 		354F84C924FBAF9900FD1253 /* Integer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 354F84AA24FBA5D300FD1253 /* Integer.swift */; };
-		355736A725FA925800E79F53 /* Emulator+State.swift in Sources */ = {isa = PBXBuildFile; fileRef = 355736A625FA925800E79F53 /* Emulator+State.swift */; };
 		3564BAFF251DB8D1005CBFC5 /* Button+Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3564BAFE251DB8D1005CBFC5 /* Button+Helper.swift */; };
 		357805182510938C00E5664B /* BC_test.ch8 in Resources */ = {isa = PBXBuildFile; fileRef = 357805172510938700E5664B /* BC_test.ch8 */; };
 		3578051A2510946A00E5664B /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = 357805192510946A00E5664B /* Game.swift */; };
@@ -144,7 +139,6 @@
 		354F84A824FBA0CB00FD1253 /* INVADERS */ = {isa = PBXFileReference; lastKnownFileType = file; path = INVADERS; sourceTree = "<group>"; };
 		354F84AA24FBA5D300FD1253 /* Integer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Integer.swift; sourceTree = "<group>"; };
 		354F84B124FBAF3B00FD1253 /* Data.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Data.swift; sourceTree = "<group>"; };
-		355736A625FA925800E79F53 /* Emulator+State.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Emulator+State.swift"; sourceTree = "<group>"; };
 		3564BAFE251DB8D1005CBFC5 /* Button+Helper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Button+Helper.swift"; sourceTree = "<group>"; };
 		357805172510938700E5664B /* BC_test.ch8 */ = {isa = PBXFileReference; lastKnownFileType = file; path = BC_test.ch8; sourceTree = "<group>"; };
 		357805192510946A00E5664B /* Game.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Game.swift; sourceTree = "<group>"; };
@@ -167,7 +161,6 @@
 		35DD777224FB27A4000164F7 /* Memory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Memory.swift; sourceTree = "<group>"; };
 		35DD777324FB27A5000164F7 /* Pixel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Pixel.swift; sourceTree = "<group>"; };
 		35DD777424FB27A5000164F7 /* Stack.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Stack.swift; sourceTree = "<group>"; };
-		35DD778D24FB2877000164F7 /* SpriteKit+KeyCode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SpriteKit+KeyCode.swift"; sourceTree = "<group>"; };
 		35DD77BA24FB2FD1000164F7 /* Chip8-iOS-Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Chip8-iOS-Example.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		35DD77BC24FB2FD1000164F7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		35DD77BE24FB2FD1000164F7 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -258,10 +251,10 @@
 		35DD77B224FB2D26000164F7 /* Chip8 */ = {
 			isa = PBXGroup;
 			children = (
-				35DD778D24FB2877000164F7 /* SpriteKit+KeyCode.swift */,
 				354F84AA24FBA5D300FD1253 /* Integer.swift */,
 				354F84B124FBAF3B00FD1253 /* Data.swift */,
 				35DD777024FB27A4000164F7 /* Emulator.swift */,
+				35D320A125F87DCB005375A0 /* Runner.swift */,
 				35DD777124FB27A4000164F7 /* Keyboard.swift */,
 				35DD777224FB27A4000164F7 /* Memory.swift */,
 				35DD777324FB27A5000164F7 /* Pixel.swift */,
@@ -272,9 +265,7 @@
 				35B0F3A2250DBD55000E768C /* ROM.swift */,
 				357805192510946A00E5664B /* Game.swift */,
 				358CCB8D251B258300F5E27C /* GCDTimer.swift */,
-				35D320A125F87DCB005375A0 /* Runner.swift */,
 				35EB271B25F965E8003ABD99 /* GameView.swift */,
-				355736A625FA925800E79F53 /* Emulator+State.swift */,
 			);
 			path = Chip8;
 			sourceTree = "<group>";
@@ -730,7 +721,6 @@
 				35B0F3A3250DBD55000E768C /* ROM.swift in Sources */,
 				3578051A2510946A00E5664B /* Game.swift in Sources */,
 				354F84BD24FBAF9700FD1253 /* Memory.swift in Sources */,
-				354F84B924FBAF9700FD1253 /* SpriteKit+KeyCode.swift in Sources */,
 				358CCB8E251B258300F5E27C /* GCDTimer.swift in Sources */,
 				3578D738250CCAB800B02F9F /* Instruction.swift in Sources */,
 				354F84BA24FBAF9700FD1253 /* Integer.swift in Sources */,
@@ -739,7 +729,6 @@
 				354F84B824FBAF9700FD1253 /* Data.swift in Sources */,
 				35D320A225F87DCB005375A0 /* Runner.swift in Sources */,
 				354F84BF24FBAF9700FD1253 /* Screen.swift in Sources */,
-				355736A725FA925800E79F53 /* Emulator+State.swift in Sources */,
 				35EB271C25F965E8003ABD99 /* GameView.swift in Sources */,
 				35AF919C25042E3400756B7A /* Array+Helper.swift in Sources */,
 			);
@@ -757,7 +746,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				354F84C524FBAF9800FD1253 /* SpriteKit+KeyCode.swift in Sources */,
 				354F84C424FBAF9800FD1253 /* Data.swift in Sources */,
 				35DD777B24FB27A5000164F7 /* Emulator.swift in Sources */,
 				35DD778B24FB27A5000164F7 /* Stack.swift in Sources */,
@@ -775,7 +763,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				354F84C824FBAF9900FD1253 /* SpriteKit+KeyCode.swift in Sources */,
 				354F84C724FBAF9900FD1253 /* Data.swift in Sources */,
 				35DD777C24FB27A5000164F7 /* Emulator.swift in Sources */,
 				35DD778C24FB27A5000164F7 /* Stack.swift in Sources */,
@@ -793,7 +780,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				354F84C224FBAF9800FD1253 /* SpriteKit+KeyCode.swift in Sources */,
 				354F84C124FBAF9800FD1253 /* Data.swift in Sources */,
 				35DD777A24FB27A5000164F7 /* Emulator.swift in Sources */,
 				35DD778A24FB27A5000164F7 /* Stack.swift in Sources */,

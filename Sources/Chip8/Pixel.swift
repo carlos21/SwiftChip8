@@ -9,15 +9,15 @@
 import Foundation
 import SpriteKit
 
-public class Pixel {
+class Pixel {
     
-    public private(set) var color: Color = .black
+    private(set) var color: Color = .black
     
-    public var isOn: Bool {
+    var isOn: Bool {
         return color == .white
     }
     
-    public func paint() {
+    func paint() {
         if color == .white {
             color = .black
             return
@@ -25,26 +25,19 @@ public class Pixel {
         color = .white
     }
     
-    public func clear() {
+    func clear() {
         color = .black
     }
-    
-//    @discardableResult
-//    private func paint(_ flag: Bool) -> Bool {
-//        let wasPainted = flag && color == .black
-//        color = flag ? .white : .black
-//        return wasPainted
-//    }
 }
 
 extension Pixel {
     
-    public enum Color: Equatable {
+    enum Color: Equatable {
         
         case white
         case black
         
-        public var description: String {
+        var description: String {
             switch self {
             case .white: return "white"
             case .black: return "black"
@@ -57,7 +50,7 @@ extension Pixel {
 
 extension Pixel.Color {
     
-    public var nsColor: UIColor {
+    var nsColor: UIColor {
         switch self {
         case .white: return .white
         case .black: return .black
@@ -69,7 +62,7 @@ extension Pixel.Color {
 
 extension Pixel.Color {
     
-    public var nsColor: NSColor {
+    var nsColor: NSColor {
         switch self {
         case .white: return .white
         case .black: return .black
