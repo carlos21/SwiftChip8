@@ -27,7 +27,7 @@ final public class GameView: UIView {
     }
     
     public override func draw(_ rect: CGRect) {
-        let pixelWidth = (bounds.size.width / CGFloat(Emulator.Hardware.screenRows) / 2).rounded()
+        let pixelWidth = (bounds.size.width / CGFloat(Emulator.Hardware.screenRows) / 2).round(to: 1)
         let pixelHeight = pixelWidth
         
         UIColor.black.setFill()

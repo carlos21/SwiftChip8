@@ -10,30 +10,40 @@ import Foundation
 
 public enum Game {
     
-    case spaceInvaders
+    case invaders
     case pong
-    case test
-    case empty
+    case maze
+    case space
+    case tank
+    case tetris
+    case tictactoe
+    case wall
     
     public var name: String {
         switch self {
-        case .spaceInvaders:
+        case .invaders:
             return "INVADERS"
+            
         case .pong:
             return "PONG"
-        case .test:
-            return "BC_test"
-        case .empty:
-            return "EmptyROM"
-        }
-    }
-    
-    public var ext: String {
-        switch self {
-        case .test:
-            return "ch8"
-        default:
-            return ""
+            
+        case .maze:
+            return "MAZE"
+            
+        case .space:
+            return "SPACE"
+            
+        case .tank:
+            return "TANK"
+            
+        case .tetris:
+            return "TETRIS"
+            
+        case .tictactoe:
+            return "TICTACTOE"
+            
+        case .wall:
+            return "WALL"
         }
     }
 }

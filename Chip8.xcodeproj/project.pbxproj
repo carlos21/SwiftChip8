@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3503C6F825FC039F00E322A1 /* Double.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3503C6F725FC039F00E322A1 /* Double.swift */; };
+		3503C71925FC84A200E322A1 /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3503C71825FC84A200E322A1 /* UIColor.swift */; };
 		354DED4625FBD14F007FB9A1 /* GameSelectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 354DED4525FBD14F007FB9A1 /* GameSelectionViewController.swift */; };
 		354DED5025FBD2B2007FB9A1 /* GameCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 354DED4F25FBD2B2007FB9A1 /* GameCell.swift */; };
 		354F84A924FBA0CB00FD1253 /* INVADERS in Resources */ = {isa = PBXBuildFile; fileRef = 354F84A824FBA0CB00FD1253 /* INVADERS */; };
@@ -138,6 +140,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		3503C6F725FC039F00E322A1 /* Double.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Double.swift; sourceTree = "<group>"; };
+		3503C71825FC84A200E322A1 /* UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
 		354DED4525FBD14F007FB9A1 /* GameSelectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameSelectionViewController.swift; sourceTree = "<group>"; };
 		354DED4F25FBD2B2007FB9A1 /* GameCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameCell.swift; sourceTree = "<group>"; };
 		354F84A824FBA0CB00FD1253 /* INVADERS */ = {isa = PBXFileReference; lastKnownFileType = file; path = INVADERS; sourceTree = "<group>"; };
@@ -290,6 +294,7 @@
 			isa = PBXGroup;
 			children = (
 				3564BAFE251DB8D1005CBFC5 /* Button+Helper.swift */,
+				3503C71825FC84A200E322A1 /* UIColor.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -340,6 +345,7 @@
 				35B0F3A2250DBD55000E768C /* ROM.swift */,
 				358CCB8D251B258300F5E27C /* GCDTimer.swift */,
 				35EB271B25F965E8003ABD99 /* GameView.swift */,
+				3503C6F725FC039F00E322A1 /* Double.swift */,
 			);
 			path = Chip8;
 			sourceTree = "<group>";
@@ -770,6 +776,7 @@
 				354DED4625FBD14F007FB9A1 /* GameSelectionViewController.swift in Sources */,
 				35937AF225FBC6EC00067115 /* Game.swift in Sources */,
 				354DED5025FBD2B2007FB9A1 /* GameCell.swift in Sources */,
+				3503C71925FC84A200E322A1 /* UIColor.swift in Sources */,
 				35DD77C124FB2FD1000164F7 /* GameController.swift in Sources */,
 				35DD77BD24FB2FD1000164F7 /* AppDelegate.swift in Sources */,
 				3564BAFF251DB8D1005CBFC5 /* Button+Helper.swift in Sources */,
@@ -794,6 +801,7 @@
 				35D320A225F87DCB005375A0 /* Runner.swift in Sources */,
 				354F84BF24FBAF9700FD1253 /* Screen.swift in Sources */,
 				35EB271C25F965E8003ABD99 /* GameView.swift in Sources */,
+				3503C6F825FC039F00E322A1 /* Double.swift in Sources */,
 				35AF919C25042E3400756B7A /* Array+Helper.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

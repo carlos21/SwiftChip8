@@ -27,10 +27,14 @@ final class GameController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        title = game?.name
+        loadROM()
+    }
+    
+    private func loadROM() {
         guard
             let game = self.game,
-            let url = Bundle.main.url(forResource: game.name, withExtension: game.ext),
+            let url = Bundle.main.url(forResource: game.name, withExtension: ""),
             let data = try? Data(contentsOf: url) else {
             return
         }

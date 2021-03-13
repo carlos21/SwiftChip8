@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="lwb-1I-O15">
-    <device id="retina5_9" orientation="landscape" appearance="light"/>
+    <device id="retina5_9" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
@@ -9,24 +9,24 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Game Selection View Controller-->
+        <!--Games-->
         <scene sceneID="s57-VQ-Y3B">
             <objects>
                 <tableViewController id="kry-5d-8eF" customClass="GameSelectionViewController" customModule="Chip8_iOS_Example" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="LJw-g5-9Ud">
-                        <rect key="frame" x="0.0" y="0.0" width="812" height="375"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="GameCell" rowHeight="63" id="L3E-4E-KkR" customClass="GameCell" customModule="Chip8_iOS_Example" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="28" width="812" height="63"/>
+                                <rect key="frame" x="0.0" y="28" width="375" height="63"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="L3E-4E-KkR" id="aoL-xa-mH1">
-                                    <rect key="frame" x="44" y="0.0" width="724" height="63"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="63"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="byJ-5Q-vdu">
-                                            <rect key="frame" x="16" y="16" width="692" height="31"/>
+                                            <rect key="frame" x="16" y="16" width="343" height="31"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
@@ -49,7 +49,7 @@
                             <outlet property="delegate" destination="kry-5d-8eF" id="940-UB-MLy"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="Th0-S0-E1e"/>
+                    <navigationItem key="navigationItem" title="Games" id="Th0-S0-E1e"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lyQ-36-Meh" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -60,33 +60,45 @@
             <objects>
                 <viewController storyboardIdentifier="GameController" id="BYZ-38-t0r" customClass="GameController" customModule="Chip8_iOS_Example" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="812" height="375"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BXG-SH-XoW" customClass="GameView" customModule="Chip8">
-                                <rect key="frame" x="44" y="57.666666666666657" width="519" height="259.66666666666674"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JHb-bw-Xjy" userLabel="GameContainer">
+                                <rect key="frame" x="0.0" y="44" width="375" height="367"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BXG-SH-XoW" customClass="GameView" customModule="Chip8">
+                                        <rect key="frame" x="0.0" y="89.666666666666671" width="375" height="187.66666666666663"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="BXG-SH-XoW" secondAttribute="height" multiplier="2:1" id="EHi-LU-nDF"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" secondItem="BXG-SH-XoW" secondAttribute="height" multiplier="2:1" id="EHi-LU-nDF"/>
+                                    <constraint firstItem="BXG-SH-XoW" firstAttribute="leading" secondItem="JHb-bw-Xjy" secondAttribute="leading" id="GnS-Rn-uqh"/>
+                                    <constraint firstItem="BXG-SH-XoW" firstAttribute="centerY" secondItem="JHb-bw-Xjy" secondAttribute="centerY" id="MRb-LX-tuc"/>
+                                    <constraint firstAttribute="trailing" secondItem="BXG-SH-XoW" secondAttribute="trailing" id="bre-GR-TaH"/>
                                 </constraints>
                             </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="E59-gE-rfq">
-                                <rect key="frame" x="568" y="0.0" width="200" height="354"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="E59-gE-rfq" userLabel="Buttons Container">
+                                <rect key="frame" x="0.0" y="411" width="375" height="367"/>
                                 <subviews>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KL2-Jg-BqP">
-                                        <rect key="frame" x="0.0" y="77" width="200" height="200"/>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KL2-Jg-BqP" userLabel="Buttons">
+                                        <rect key="frame" x="0.0" y="12" width="375" height="343"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="gA7-R8-I2l">
-                                                <rect key="frame" x="0.0" y="0.0" width="200" height="200"/>
+                                                <rect key="frame" x="16" y="0.0" width="343" height="343"/>
                                                 <subviews>
                                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="Nqu-Et-wKb">
-                                                        <rect key="frame" x="0.0" y="0.0" width="200" height="48.666666666666664"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="343" height="84.333333333333329"/>
                                                         <subviews>
-                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Smm-6l-hfT" customClass="Button" customModule="Chip8_iOS_Example" customModuleProvider="target">
-                                                                <rect key="frame" x="0.0" y="0.0" width="48.666666666666664" height="48.666666666666664"/>
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Smm-6l-hfT" customClass="Button" customModule="Chip8_iOS_Example" customModuleProvider="target">
+                                                                <rect key="frame" x="0.0" y="0.0" width="84.333333333333329" height="84.333333333333329"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="width" secondItem="Smm-6l-hfT" secondAttribute="height" multiplier="1:1" id="Trf-ID-AJ2"/>
                                                                 </constraints>
+                                                                <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 <state key="normal" title="1"/>
                                                                 <userDefinedRuntimeAttributes>
                                                                     <userDefinedRuntimeAttribute type="number" keyPath="keyCode">
@@ -99,8 +111,8 @@
                                                                     <action selector="keyboardButtonTouchUpOutside:" destination="BYZ-38-t0r" eventType="touchUpOutside" id="Ufq-Ma-vpl"/>
                                                                 </connections>
                                                             </button>
-                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dHw-rF-i1i" customClass="Button" customModule="Chip8_iOS_Example" customModuleProvider="target">
-                                                                <rect key="frame" x="50.666666666666629" y="0.0" width="48.333333333333343" height="48.666666666666664"/>
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dHw-rF-i1i" customClass="Button" customModule="Chip8_iOS_Example" customModuleProvider="target">
+                                                                <rect key="frame" x="86.333333333333343" y="0.0" width="84.333333333333343" height="84.333333333333329"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="width" secondItem="dHw-rF-i1i" secondAttribute="height" multiplier="1:1" id="8Gg-Ec-2TS"/>
                                                                 </constraints>
@@ -116,8 +128,8 @@
                                                                     <action selector="keyboardButtonTouchUpOutside:" destination="BYZ-38-t0r" eventType="touchUpOutside" id="anb-I2-qZ8"/>
                                                                 </connections>
                                                             </button>
-                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ctf-rD-XAw" customClass="Button" customModule="Chip8_iOS_Example" customModuleProvider="target">
-                                                                <rect key="frame" x="101" y="0.0" width="48.666666666666657" height="48.666666666666664"/>
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ctf-rD-XAw" customClass="Button" customModule="Chip8_iOS_Example" customModuleProvider="target">
+                                                                <rect key="frame" x="172.66666666666666" y="0.0" width="83.999999999999972" height="84.333333333333329"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="width" secondItem="Ctf-rD-XAw" secondAttribute="height" multiplier="1:1" id="e8V-uq-6IE"/>
                                                                 </constraints>
@@ -133,8 +145,8 @@
                                                                     <action selector="keyboardButtonTouchUpOutside:" destination="BYZ-38-t0r" eventType="touchUpOutside" id="Oat-Tr-Hfw"/>
                                                                 </connections>
                                                             </button>
-                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PRU-DD-gzt" customClass="Button" customModule="Chip8_iOS_Example" customModuleProvider="target">
-                                                                <rect key="frame" x="151.66666666666663" y="0.0" width="48.333333333333343" height="48.666666666666664"/>
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PRU-DD-gzt" customClass="Button" customModule="Chip8_iOS_Example" customModuleProvider="target">
+                                                                <rect key="frame" x="258.66666666666669" y="0.0" width="84.333333333333314" height="84.333333333333329"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="width" secondItem="PRU-DD-gzt" secondAttribute="height" multiplier="1:1" id="Y1H-jj-iGC"/>
                                                                 </constraints>
@@ -158,10 +170,10 @@
                                                         </constraints>
                                                     </stackView>
                                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="KnJ-4v-l8Z">
-                                                        <rect key="frame" x="0.0" y="50.666666666666671" width="200" height="48.333333333333329"/>
+                                                        <rect key="frame" x="0.0" y="86.333333333333314" width="343" height="84.333333333333314"/>
                                                         <subviews>
-                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="R3t-bf-EXu" customClass="Button" customModule="Chip8_iOS_Example" customModuleProvider="target">
-                                                                <rect key="frame" x="0.0" y="0.0" width="48.666666666666664" height="48.333333333333336"/>
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="R3t-bf-EXu" customClass="Button" customModule="Chip8_iOS_Example" customModuleProvider="target">
+                                                                <rect key="frame" x="0.0" y="0.0" width="84.333333333333329" height="84.333333333333329"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="width" secondItem="R3t-bf-EXu" secondAttribute="height" multiplier="1:1" id="sIS-1s-Ee7"/>
                                                                 </constraints>
@@ -177,8 +189,8 @@
                                                                     <action selector="keyboardButtonTouchUpOutside:" destination="BYZ-38-t0r" eventType="touchUpOutside" id="jaV-ZW-Zfs"/>
                                                                 </connections>
                                                             </button>
-                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="meo-w0-PVU" customClass="Button" customModule="Chip8_iOS_Example" customModuleProvider="target">
-                                                                <rect key="frame" x="50.666666666666629" y="0.0" width="48.333333333333343" height="48.333333333333336"/>
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="meo-w0-PVU" customClass="Button" customModule="Chip8_iOS_Example" customModuleProvider="target">
+                                                                <rect key="frame" x="86.333333333333343" y="0.0" width="84.333333333333343" height="84.333333333333329"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="width" secondItem="meo-w0-PVU" secondAttribute="height" multiplier="1:1" id="YST-QH-PgJ"/>
                                                                 </constraints>
@@ -194,8 +206,8 @@
                                                                     <action selector="keyboardButtonTouchUpOutside:" destination="BYZ-38-t0r" eventType="touchUpOutside" id="SX6-c1-GTc"/>
                                                                 </connections>
                                                             </button>
-                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zpS-HM-W7o" customClass="Button" customModule="Chip8_iOS_Example" customModuleProvider="target">
-                                                                <rect key="frame" x="101" y="0.0" width="48.666666666666657" height="48.333333333333336"/>
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zpS-HM-W7o" customClass="Button" customModule="Chip8_iOS_Example" customModuleProvider="target">
+                                                                <rect key="frame" x="172.66666666666666" y="0.0" width="83.999999999999972" height="84.333333333333329"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="width" secondItem="zpS-HM-W7o" secondAttribute="height" multiplier="1:1" id="JLF-YH-mS3"/>
                                                                 </constraints>
@@ -211,8 +223,8 @@
                                                                     <action selector="keyboardButtonTouchUpOutside:" destination="BYZ-38-t0r" eventType="touchUpOutside" id="fp0-FS-lEG"/>
                                                                 </connections>
                                                             </button>
-                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SeG-Ub-cl5" customClass="Button" customModule="Chip8_iOS_Example" customModuleProvider="target">
-                                                                <rect key="frame" x="151.66666666666663" y="0.0" width="48.333333333333343" height="48.333333333333336"/>
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SeG-Ub-cl5" customClass="Button" customModule="Chip8_iOS_Example" customModuleProvider="target">
+                                                                <rect key="frame" x="258.66666666666669" y="0.0" width="84.333333333333314" height="84.333333333333329"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="width" secondItem="SeG-Ub-cl5" secondAttribute="height" multiplier="1:1" id="8dN-LE-Y03"/>
                                                                 </constraints>
@@ -236,10 +248,10 @@
                                                         </constraints>
                                                     </stackView>
                                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="s6b-zJ-Hr7">
-                                                        <rect key="frame" x="0.0" y="101" width="200" height="48.666666666666657"/>
+                                                        <rect key="frame" x="0.0" y="172.66666666666663" width="343" height="84"/>
                                                         <subviews>
-                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lT7-9S-bXu" customClass="Button" customModule="Chip8_iOS_Example" customModuleProvider="target">
-                                                                <rect key="frame" x="0.0" y="0.0" width="48.666666666666664" height="48.666666666666664"/>
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lT7-9S-bXu" customClass="Button" customModule="Chip8_iOS_Example" customModuleProvider="target">
+                                                                <rect key="frame" x="0.0" y="0.0" width="84.333333333333329" height="84"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="width" secondItem="lT7-9S-bXu" secondAttribute="height" multiplier="1:1" id="P6q-gM-4kH"/>
                                                                 </constraints>
@@ -255,8 +267,8 @@
                                                                     <action selector="keyboardButtonTouchUpOutside:" destination="BYZ-38-t0r" eventType="touchUpOutside" id="VWd-jQ-kKs"/>
                                                                 </connections>
                                                             </button>
-                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2IU-nz-72f" customClass="Button" customModule="Chip8_iOS_Example" customModuleProvider="target">
-                                                                <rect key="frame" x="50.666666666666629" y="0.0" width="48.333333333333343" height="48.666666666666664"/>
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2IU-nz-72f" customClass="Button" customModule="Chip8_iOS_Example" customModuleProvider="target">
+                                                                <rect key="frame" x="86.333333333333343" y="0.0" width="84.333333333333343" height="84"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="width" secondItem="2IU-nz-72f" secondAttribute="height" multiplier="1:1" id="coG-cn-fV4"/>
                                                                 </constraints>
@@ -272,8 +284,8 @@
                                                                     <action selector="keyboardButtonTouchUpOutside:" destination="BYZ-38-t0r" eventType="touchUpOutside" id="B6M-mQ-alx"/>
                                                                 </connections>
                                                             </button>
-                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bzG-aX-xRk" customClass="Button" customModule="Chip8_iOS_Example" customModuleProvider="target">
-                                                                <rect key="frame" x="101" y="0.0" width="48.666666666666657" height="48.666666666666664"/>
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bzG-aX-xRk" customClass="Button" customModule="Chip8_iOS_Example" customModuleProvider="target">
+                                                                <rect key="frame" x="172.66666666666666" y="0.0" width="83.999999999999972" height="84"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="width" secondItem="bzG-aX-xRk" secondAttribute="height" multiplier="1:1" id="i1U-Hh-x9w"/>
                                                                 </constraints>
@@ -289,8 +301,8 @@
                                                                     <action selector="keyboardButtonTouchUpOutside:" destination="BYZ-38-t0r" eventType="touchUpOutside" id="P3a-eg-3co"/>
                                                                 </connections>
                                                             </button>
-                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="O1N-Qo-Mhc" customClass="Button" customModule="Chip8_iOS_Example" customModuleProvider="target">
-                                                                <rect key="frame" x="151.66666666666663" y="0.0" width="48.333333333333343" height="48.666666666666664"/>
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="O1N-Qo-Mhc" customClass="Button" customModule="Chip8_iOS_Example" customModuleProvider="target">
+                                                                <rect key="frame" x="258.66666666666669" y="0.0" width="84.333333333333314" height="84"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="width" secondItem="O1N-Qo-Mhc" secondAttribute="height" multiplier="1:1" id="N91-Wd-3D4"/>
                                                                 </constraints>
@@ -314,10 +326,10 @@
                                                         </constraints>
                                                     </stackView>
                                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="3Nd-yz-DxO">
-                                                        <rect key="frame" x="0.0" y="151.66666666666666" width="200" height="48.333333333333343"/>
+                                                        <rect key="frame" x="0.0" y="258.66666666666663" width="343" height="84.333333333333314"/>
                                                         <subviews>
-                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MJu-wR-U5j" customClass="Button" customModule="Chip8_iOS_Example" customModuleProvider="target">
-                                                                <rect key="frame" x="0.0" y="0.0" width="48.666666666666664" height="48.333333333333336"/>
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MJu-wR-U5j" customClass="Button" customModule="Chip8_iOS_Example" customModuleProvider="target">
+                                                                <rect key="frame" x="0.0" y="0.0" width="84.333333333333329" height="84.333333333333329"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="width" secondItem="MJu-wR-U5j" secondAttribute="height" multiplier="1:1" id="NzN-kx-pNO"/>
                                                                 </constraints>
@@ -333,8 +345,8 @@
                                                                     <action selector="keyboardButtonTouchUpOutside:" destination="BYZ-38-t0r" eventType="touchUpOutside" id="I7c-f7-AHI"/>
                                                                 </connections>
                                                             </button>
-                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IuH-Bq-gTI" customClass="Button" customModule="Chip8_iOS_Example" customModuleProvider="target">
-                                                                <rect key="frame" x="50.666666666666629" y="0.0" width="48.333333333333343" height="48.333333333333336"/>
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IuH-Bq-gTI" customClass="Button" customModule="Chip8_iOS_Example" customModuleProvider="target">
+                                                                <rect key="frame" x="86.333333333333343" y="0.0" width="84.333333333333343" height="84.333333333333329"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="width" secondItem="IuH-Bq-gTI" secondAttribute="height" multiplier="1:1" id="3tV-xc-9fT"/>
                                                                 </constraints>
@@ -350,8 +362,8 @@
                                                                     <action selector="keyboardButtonTouchUpOutside:" destination="BYZ-38-t0r" eventType="touchUpOutside" id="coS-aG-rup"/>
                                                                 </connections>
                                                             </button>
-                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ljX-nQ-iDV" customClass="Button" customModule="Chip8_iOS_Example" customModuleProvider="target">
-                                                                <rect key="frame" x="101" y="0.0" width="48.666666666666657" height="48.333333333333336"/>
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ljX-nQ-iDV" customClass="Button" customModule="Chip8_iOS_Example" customModuleProvider="target">
+                                                                <rect key="frame" x="172.66666666666666" y="0.0" width="83.999999999999972" height="84.333333333333329"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="width" secondItem="ljX-nQ-iDV" secondAttribute="height" multiplier="1:1" id="5DE-O5-59a"/>
                                                                 </constraints>
@@ -367,8 +379,8 @@
                                                                     <action selector="keyboardButtonTouchUpOutside:" destination="BYZ-38-t0r" eventType="touchUpOutside" id="zKe-fH-PrN"/>
                                                                 </connections>
                                                             </button>
-                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZFI-DE-D2B" customClass="Button" customModule="Chip8_iOS_Example" customModuleProvider="target">
-                                                                <rect key="frame" x="151.66666666666663" y="0.0" width="48.333333333333343" height="48.333333333333336"/>
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZFI-DE-D2B" customClass="Button" customModule="Chip8_iOS_Example" customModuleProvider="target">
+                                                                <rect key="frame" x="258.66666666666669" y="0.0" width="84.333333333333314" height="84.333333333333329"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="width" secondItem="ZFI-DE-D2B" secondAttribute="height" multiplier="1:1" id="iGb-AB-Cq0"/>
                                                                 </constraints>
@@ -392,60 +404,64 @@
                                                         </constraints>
                                                     </stackView>
                                                 </subviews>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" secondItem="gA7-R8-I2l" secondAttribute="height" multiplier="1:1" id="a4V-jV-xiW"/>
+                                                </constraints>
                                             </stackView>
                                         </subviews>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstAttribute="bottom" secondItem="gA7-R8-I2l" secondAttribute="bottom" id="1c7-29-od7"/>
-                                            <constraint firstAttribute="trailing" secondItem="gA7-R8-I2l" secondAttribute="trailing" id="DmT-cY-xqB"/>
+                                            <constraint firstAttribute="trailing" secondItem="gA7-R8-I2l" secondAttribute="trailing" constant="16" id="DmT-cY-xqB"/>
                                             <constraint firstItem="gA7-R8-I2l" firstAttribute="top" secondItem="KL2-Jg-BqP" secondAttribute="top" id="gzw-zO-FBp"/>
-                                            <constraint firstItem="gA7-R8-I2l" firstAttribute="leading" secondItem="KL2-Jg-BqP" secondAttribute="leading" id="ngW-XL-zdY"/>
+                                            <constraint firstItem="gA7-R8-I2l" firstAttribute="leading" secondItem="KL2-Jg-BqP" secondAttribute="leading" constant="16" id="ngW-XL-zdY"/>
                                         </constraints>
                                     </view>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="200" id="Awc-bM-gMG"/>
-                                    <constraint firstItem="KL2-Jg-BqP" firstAttribute="leading" secondItem="E59-gE-rfq" secondAttribute="leading" id="Oin-CV-dZ2"/>
-                                    <constraint firstItem="KL2-Jg-BqP" firstAttribute="centerY" secondItem="E59-gE-rfq" secondAttribute="centerY" id="Phf-1R-QVG"/>
-                                    <constraint firstAttribute="trailing" secondItem="KL2-Jg-BqP" secondAttribute="trailing" id="ulf-4e-XnM"/>
+                                    <constraint firstItem="KL2-Jg-BqP" firstAttribute="centerY" secondItem="E59-gE-rfq" secondAttribute="centerY" id="GLz-8f-xe9"/>
+                                    <constraint firstAttribute="trailing" secondItem="KL2-Jg-BqP" secondAttribute="trailing" id="Rm3-sO-dTV"/>
+                                    <constraint firstItem="KL2-Jg-BqP" firstAttribute="leading" secondItem="E59-gE-rfq" secondAttribute="leading" id="nJA-rL-tLC"/>
                                 </constraints>
                             </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="E59-gE-rfq" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="GNh-U0-tsn"/>
-                            <constraint firstItem="BXG-SH-XoW" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="KVy-Lw-8BS"/>
-                            <constraint firstItem="E59-gE-rfq" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="RKD-9Q-UU6"/>
-                            <constraint firstItem="E59-gE-rfq" firstAttribute="leading" secondItem="BXG-SH-XoW" secondAttribute="trailing" constant="5" id="Vz1-L0-Qe4"/>
-                            <constraint firstItem="E59-gE-rfq" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="kgE-8m-gNJ"/>
-                            <constraint firstItem="BXG-SH-XoW" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="r00-aQ-VoT"/>
+                            <constraint firstItem="E59-gE-rfq" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="67P-tO-y6p"/>
+                            <constraint firstItem="JHb-bw-Xjy" firstAttribute="height" secondItem="E59-gE-rfq" secondAttribute="height" id="7Dv-0K-egd"/>
+                            <constraint firstItem="E59-gE-rfq" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="F5E-XS-8xH"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="E59-gE-rfq" secondAttribute="bottom" id="Kcn-zh-hAk"/>
+                            <constraint firstItem="JHb-bw-Xjy" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="efc-YO-itc"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="JHb-bw-Xjy" secondAttribute="trailing" id="imE-BD-Q6l"/>
+                            <constraint firstItem="JHb-bw-Xjy" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="yUM-ws-b9F"/>
+                            <constraint firstItem="E59-gE-rfq" firstAttribute="top" secondItem="JHb-bw-Xjy" secondAttribute="bottom" id="z9q-d9-mCx"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="gameView" destination="BXG-SH-XoW" id="I5A-cn-wwU"/>
                         <outletCollection property="keyboardButtons" destination="Smm-6l-hfT" collectionClass="NSMutableArray" id="cYN-LX-gge"/>
-                        <outletCollection property="keyboardButtons" destination="zpS-HM-W7o" collectionClass="NSMutableArray" id="zz0-wk-Ri9"/>
-                        <outletCollection property="keyboardButtons" destination="dHw-rF-i1i" collectionClass="NSMutableArray" id="UmG-8a-0Y5"/>
-                        <outletCollection property="keyboardButtons" destination="Ctf-rD-XAw" collectionClass="NSMutableArray" id="KZ7-HE-42b"/>
-                        <outletCollection property="keyboardButtons" destination="PRU-DD-gzt" collectionClass="NSMutableArray" id="brf-cY-Gon"/>
-                        <outletCollection property="keyboardButtons" destination="R3t-bf-EXu" collectionClass="NSMutableArray" id="Hrd-Xe-f3Y"/>
-                        <outletCollection property="keyboardButtons" destination="meo-w0-PVU" collectionClass="NSMutableArray" id="Idc-f7-jJf"/>
-                        <outletCollection property="keyboardButtons" destination="SeG-Ub-cl5" collectionClass="NSMutableArray" id="bNK-vn-635"/>
-                        <outletCollection property="keyboardButtons" destination="lT7-9S-bXu" collectionClass="NSMutableArray" id="M7r-AN-jTj"/>
-                        <outletCollection property="keyboardButtons" destination="2IU-nz-72f" collectionClass="NSMutableArray" id="EtQ-T4-hws"/>
                         <outletCollection property="keyboardButtons" destination="bzG-aX-xRk" collectionClass="NSMutableArray" id="okj-gR-N5o"/>
-                        <outletCollection property="keyboardButtons" destination="O1N-Qo-Mhc" collectionClass="NSMutableArray" id="JWe-Ks-dv7"/>
-                        <outletCollection property="keyboardButtons" destination="MJu-wR-U5j" collectionClass="NSMutableArray" id="R7e-iC-XNZ"/>
                         <outletCollection property="keyboardButtons" destination="IuH-Bq-gTI" collectionClass="NSMutableArray" id="Pvx-3m-bdy"/>
-                        <outletCollection property="keyboardButtons" destination="ljX-nQ-iDV" collectionClass="NSMutableArray" id="nTp-7U-cm4"/>
+                        <outletCollection property="keyboardButtons" destination="Ctf-rD-XAw" collectionClass="NSMutableArray" id="KZ7-HE-42b"/>
+                        <outletCollection property="keyboardButtons" destination="O1N-Qo-Mhc" collectionClass="NSMutableArray" id="JWe-Ks-dv7"/>
+                        <outletCollection property="keyboardButtons" destination="meo-w0-PVU" collectionClass="NSMutableArray" id="Idc-f7-jJf"/>
+                        <outletCollection property="keyboardButtons" destination="lT7-9S-bXu" collectionClass="NSMutableArray" id="M7r-AN-jTj"/>
+                        <outletCollection property="keyboardButtons" destination="R3t-bf-EXu" collectionClass="NSMutableArray" id="Hrd-Xe-f3Y"/>
+                        <outletCollection property="keyboardButtons" destination="dHw-rF-i1i" collectionClass="NSMutableArray" id="UmG-8a-0Y5"/>
+                        <outletCollection property="keyboardButtons" destination="2IU-nz-72f" collectionClass="NSMutableArray" id="EtQ-T4-hws"/>
                         <outletCollection property="keyboardButtons" destination="ZFI-DE-D2B" collectionClass="NSMutableArray" id="j6O-8z-bn2"/>
+                        <outletCollection property="keyboardButtons" destination="SeG-Ub-cl5" collectionClass="NSMutableArray" id="bNK-vn-635"/>
+                        <outletCollection property="keyboardButtons" destination="zpS-HM-W7o" collectionClass="NSMutableArray" id="zz0-wk-Ri9"/>
+                        <outletCollection property="keyboardButtons" destination="PRU-DD-gzt" collectionClass="NSMutableArray" id="brf-cY-Gon"/>
+                        <outletCollection property="keyboardButtons" destination="MJu-wR-U5j" collectionClass="NSMutableArray" id="R7e-iC-XNZ"/>
+                        <outletCollection property="keyboardButtons" destination="ljX-nQ-iDV" collectionClass="NSMutableArray" id="nTp-7U-cm4"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1214.7783251231529" y="-290.39999999999998"/>
+            <point key="canvasLocation" x="1213.5999999999999" y="-291.13300492610841"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="WIE-o4-a0J">
@@ -453,7 +469,7 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="lwb-1I-O15" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="fPG-yc-NAR">
-                        <rect key="frame" x="0.0" y="0.0" width="812" height="32"/>
+                        <rect key="frame" x="0.0" y="44" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
