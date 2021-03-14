@@ -7,76 +7,84 @@
 //
 
 import Foundation
-//import UIKit
-import Cocoa
 
-//class caca: NSView {
-//
-//}
+#if os(iOS)
 
-final public class GameView: UIView {
+import UIKit
+
+final public class GameView: UIView, GameViewProtocol {
     
     // MARK: - Properties
     
-    private let emulator = Emulator()
-    private var runner: Runner!
+    public var emulator = Emulator()
+    public var runner: Runner!
     
     // MARK: - Functions
     
-    public func load(rom: ROM) {
-        emulator.delegate = self
-        emulator.load(rom: rom)
-        
-        runner = Runner(emulator: emulator)
-        runner.resume()
-    }
-    
     public override func draw(_ rect: CGRect) {
-        let pixelWidth = (bounds.size.width / CGFloat(Emulator.Hardware.screenRows) / 2).round(to: 1)
-        let pixelHeight = pixelWidth
-        
         UIColor.black.setFill()
         UIRectFill(bounds)
-        
+
         UIColor.white.setFill()
-        for y in 0..<Emulator.Hardware.screenRows {
-            for x in 0..<Emulator.Hardware.screenColumns {
-                let pixel = emulator.screen.pixelAt(x: x, y: y)
-                if pixel.isOn {
-                    let pixelRect = CGRect(x: CGFloat(x) * pixelWidth,
-                                           y: CGFloat(y) * pixelHeight,
-                                           width: pixelWidth,
-                                           height: pixelHeight)
-                    UIRectFill(pixelRect)
-                }
-            }
+
+        calculatePixelRect { rect in
+            UIRectFill(rect)
         }
-    }
-    
-    public func keyDown(key: UInt8) {
-        guard let keyCode = Emulator.Keyboard.KeyCode(rawValue: key) else {
-            return
-        }
-        emulator.handleKey(touch: .down, keyCode: keyCode)
-    }
-    
-    public func keyUp(key: UInt8) {
-        guard let keyCode = Emulator.Keyboard.KeyCode(rawValue: key) else {
-            return
-        }
-        emulator.handleKey(touch: .up, keyCode: keyCode)
     }
 }
 
 extension GameView: EmulatorDelegate {
-    
+
     public func draw() {
         DispatchQueue.main.async {
             self.setNeedsDisplay()
         }
     }
-    
+
     public func beep() {
-        
+
     }
 }
+
+#endif
+
+#if os(macOS)
+
+import Cocoa
+
+final public class GameView: NSView, GameViewProtocol {
+    
+    // MARK: - Properties
+    
+    public var emulator = Emulator()
+    public var runner: Runner!
+    
+    // MARK: - Functions
+    
+    public override func draw(_ rect: CGRect) {
+        NSColor.black.setFill()
+        bounds.fill()
+        
+        NSColor.white.setFill()
+        
+        calculatePixelRect { rect in
+            rect.fill()
+        }
+    }
+    
+}
+
+extension GameView: EmulatorDelegate {
+
+    public func draw() {
+        DispatchQueue.main.async {
+            self.setNeedsDisplay(self.bounds)
+        }
+    }
+
+    public func beep() {
+
+    }
+}
+
+#endif

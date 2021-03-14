@@ -7,7 +7,6 @@
 //
 
 import Foundation
-import SpriteKit
 
 class Pixel {
     
@@ -45,29 +44,3 @@ extension Pixel {
         }
     }
 }
-
-#if os(iOS)
-
-extension Pixel.Color {
-    
-    var nsColor: UIColor {
-        switch self {
-        case .white: return .white
-        case .black: return .black
-        }
-    }
-}
-
-#else
-
-extension Pixel.Color {
-    
-    var nsColor: NSColor {
-        switch self {
-        case .white: return .white
-        case .black: return .black
-        }
-    }
-}
-
-#endif

@@ -83,6 +83,9 @@
 		35EC41C925FDB828009C2678 /* ROM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35B0F3A2250DBD55000E768C /* ROM.swift */; };
 		35EC41CA25FDB828009C2678 /* GCDTimer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 358CCB8D251B258300F5E27C /* GCDTimer.swift */; };
 		35EC41CB25FDB828009C2678 /* Double.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3503C6F725FC039F00E322A1 /* Double.swift */; };
+		35EC41E525FDBE32009C2678 /* GameViewProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35EC41E425FDBE32009C2678 /* GameViewProtocol.swift */; };
+		35EC41E625FDBE32009C2678 /* GameViewProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35EC41E425FDBE32009C2678 /* GameViewProtocol.swift */; };
+		35EC41EF25FDC2FB009C2678 /* GameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35EB271B25F965E8003ABD99 /* GameView.swift */; };
 		35F3E13B2512F36B00785C0C /* EmptyROM in Resources */ = {isa = PBXBuildFile; fileRef = 35F2A7122511F01800BD678B /* EmptyROM */; };
 		35F3E13C2512F36C00785C0C /* EmptyROM in Resources */ = {isa = PBXBuildFile; fileRef = 35F2A7122511F01800BD678B /* EmptyROM */; };
 		35F3E13D2512F36C00785C0C /* EmptyROM in Resources */ = {isa = PBXBuildFile; fileRef = 35F2A7122511F01800BD678B /* EmptyROM */; };
@@ -193,6 +196,7 @@
 		35DD77C824FB2FD3000164F7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		35DD77CA24FB2FD3000164F7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		35EB271B25F965E8003ABD99 /* GameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameView.swift; sourceTree = "<group>"; };
+		35EC41E425FDBE32009C2678 /* GameViewProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewProtocol.swift; sourceTree = "<group>"; };
 		35F2A7122511F01800BD678B /* EmptyROM */ = {isa = PBXFileReference; lastKnownFileType = text; path = EmptyROM; sourceTree = "<group>"; };
 		35F3E1412513289600785C0C /* test_opcode.ch8 */ = {isa = PBXFileReference; lastKnownFileType = file; path = test_opcode.ch8; sourceTree = "<group>"; };
 		52D6D97C1BEFF229002C0205 /* Chip8.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Chip8.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -366,8 +370,7 @@
 		35DD77B224FB2D26000164F7 /* Chip8 */ = {
 			isa = PBXGroup;
 			children = (
-				354F84AA24FBA5D300FD1253 /* Integer.swift */,
-				354F84B124FBAF3B00FD1253 /* Data.swift */,
+				35EC41F825FDC56F009C2678 /* Extensions */,
 				35DD777024FB27A4000164F7 /* Emulator.swift */,
 				35D320A125F87DCB005375A0 /* Runner.swift */,
 				35DD777124FB27A4000164F7 /* Keyboard.swift */,
@@ -375,12 +378,11 @@
 				35DD777324FB27A5000164F7 /* Pixel.swift */,
 				35DD776F24FB27A4000164F7 /* Screen.swift */,
 				35DD777424FB27A5000164F7 /* Stack.swift */,
-				35AF919B25042E3400756B7A /* Array+Helper.swift */,
 				3578D736250CCAA300B02F9F /* Instruction.swift */,
 				35B0F3A2250DBD55000E768C /* ROM.swift */,
 				358CCB8D251B258300F5E27C /* GCDTimer.swift */,
 				35EB271B25F965E8003ABD99 /* GameView.swift */,
-				3503C6F725FC039F00E322A1 /* Double.swift */,
+				35EC41E425FDBE32009C2678 /* GameViewProtocol.swift */,
 			);
 			path = Chip8;
 			sourceTree = "<group>";
@@ -404,6 +406,17 @@
 			children = (
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		35EC41F825FDC56F009C2678 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				354F84AA24FBA5D300FD1253 /* Integer.swift */,
+				3503C6F725FC039F00E322A1 /* Double.swift */,
+				354F84B124FBAF3B00FD1253 /* Data.swift */,
+				35AF919B25042E3400756B7A /* Array+Helper.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 		52D6D9721BEFF229002C0205 = {
@@ -889,6 +902,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				354F84BE24FBAF9700FD1253 /* Pixel.swift in Sources */,
+				35EC41E525FDBE32009C2678 /* GameViewProtocol.swift in Sources */,
 				354F84C024FBAF9700FD1253 /* Stack.swift in Sources */,
 				35B0F3A3250DBD55000E768C /* ROM.swift in Sources */,
 				354F84BD24FBAF9700FD1253 /* Memory.swift in Sources */,
@@ -901,6 +915,7 @@
 				35D320A225F87DCB005375A0 /* Runner.swift in Sources */,
 				354F84BF24FBAF9700FD1253 /* Screen.swift in Sources */,
 				3503C6F825FC039F00E322A1 /* Double.swift in Sources */,
+				35EC41EF25FDC2FB009C2678 /* GameView.swift in Sources */,
 				35AF919C25042E3400756B7A /* Array+Helper.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -959,6 +974,7 @@
 				35EC41C725FDB828009C2678 /* GameView.swift in Sources */,
 				35EC41CA25FDB828009C2678 /* GCDTimer.swift in Sources */,
 				35DD778224FB27A5000164F7 /* Memory.swift in Sources */,
+				35EC41E625FDBE32009C2678 /* GameViewProtocol.swift in Sources */,
 				35DD778624FB27A5000164F7 /* Pixel.swift in Sources */,
 				35EC41C925FDB828009C2678 /* ROM.swift in Sources */,
 				3578D739250CCAB900B02F9F /* Instruction.swift in Sources */,

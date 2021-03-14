@@ -8,7 +8,6 @@
 
 import UIKit
 import Chip8
-import SpriteKit
 
 final class GameController: UIViewController {
     

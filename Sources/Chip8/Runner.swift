@@ -8,7 +8,7 @@
 
 import Foundation
 
-final class Runner {
+final public class Runner {
     
     // MARK: - Properties
     

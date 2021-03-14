@@ -8,7 +8,7 @@
 
 import Foundation
 
-protocol EmulatorDelegate: class {
+public protocol EmulatorDelegate: class {
     
     func beep()
     func draw()
@@ -17,10 +17,12 @@ protocol EmulatorDelegate: class {
 
 extension EmulatorDelegate {
     
-    func emulatorThrew(error: Emulator.EmulatorError) {}
+    func beep() {}
+    func draw() {}
+    public func emulatorThrew(error: Emulator.EmulatorError) {}
 }
 
-class Emulator {
+public class Emulator {
     
     weak var delegate: EmulatorDelegate?
     
@@ -327,7 +329,7 @@ extension Emulator {
 
 extension Emulator {
     
-    enum EmulatorError: Error {
+    public enum EmulatorError: Error {
         
         case invalidRom
         case unrecognizedOpcode

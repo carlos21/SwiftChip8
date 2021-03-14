@@ -19,6 +19,7 @@ let package = Package(
             dependencies: []),
         .testTarget(
             name: "Chip8Tests",
-            dependencies: ["Chip8"])
+            dependencies: ["Chip8"],
+            resources: [.copy("EmptyROM")])
     ]
 )
