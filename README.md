@@ -1,1 +1,1 @@
-# Chip8
+[![Build Status](https://travis-ci.com/carlos21/SwiftChip8.svg?branch=master)](https://travis-ci.com/carlos21/SwiftChip8)
