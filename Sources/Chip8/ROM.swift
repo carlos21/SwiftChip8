@@ -19,16 +19,6 @@ public struct ROM {
     public init(data: Data) {
         self.data = data
     }
-    
-//    public init(game: Game, bundle: Bundle = .main) throws {
-//        guard
-//            let url = bundle.url(forResource: game.name, withExtension: game.ext),
-//            let data = try? Data(contentsOf: url) else {
-//            throw FileError.openFailed
-//        }
-//        self.data = data
-//        self.name = game.name
-//    }
 }
 
 extension ROM: CustomStringConvertible {
@@ -41,7 +31,6 @@ extension ROM: CustomStringConvertible {
         return text
     }
 }
-
 
 extension ROM {
     

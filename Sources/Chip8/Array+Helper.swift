@@ -10,7 +10,7 @@ import Foundation
 
 extension Array {
     
-    public subscript(index: UInt16) -> Element {
+    subscript(index: UInt16) -> Element {
         get {
             return self[Int(index)]
         }

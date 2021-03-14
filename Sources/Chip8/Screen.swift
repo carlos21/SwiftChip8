@@ -43,10 +43,10 @@ class Screen {
     
     @discardableResult
     func drawSprite(x: Instruction.Register,
-                           y: Instruction.Register,
-                           memory: Memory,
-                           I: UInt16,
-                           rows: Instruction.Constant) -> Bool {
+                    y: Instruction.Register,
+                    memory: Memory,
+                    I: UInt16,
+                    rows: Instruction.Constant) -> Bool {
         var pixelCollision = false
         for ly in 0..<rows {
             let c = memory[Int(I) + Int(ly)]

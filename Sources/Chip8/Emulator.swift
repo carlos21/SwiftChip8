@@ -20,7 +20,6 @@ extension EmulatorDelegate {
     func emulatorThrew(error: Emulator.EmulatorError) {}
 }
 
-/// <#Description#>
 class Emulator {
     
     weak var delegate: EmulatorDelegate?
@@ -304,7 +303,6 @@ class Emulator {
         soundTimer -= 1
     }
 }
-
 
 extension Emulator {
     

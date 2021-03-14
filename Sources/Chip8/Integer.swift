@@ -15,27 +15,22 @@ internal extension UInt16 {
         self = unsafeBitCast(bytes, to: UInt16.self)
     }
     
-    /// Converts to two bytes.
-//    var bytes: (UInt8, UInt8) {
-//        return unsafeBitCast(self, to: (UInt8, UInt8).self)
-//    }
-    
     var hex: String {
-        return "0x\(String(format:"%02X", self))"
+        return "0x\(String(format: "%02X", self))"
     }
 }
 
 internal extension UInt8 {
     
     var hex: String {
-        return "0x\(String(format:"%02X", self))"
+        return "0x\(String(format: "%02X", self))"
     }
 }
 
 internal extension Int {
     
     var hex: String {
-        return "0x\(String(format:"%02X", self))"
+        return "0x\(String(format: "%02X", self))"
     }
 }
 

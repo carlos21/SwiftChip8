@@ -1,0 +1,13 @@
+language: swift
+matrix:
+   include:
+       - os: osx
+         osx_image: xcode12.4
+
+script:
+
+  # Compile with Xcodex
+  - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then xcodebuild clean test -project Xcode/Chip8.xcodeproj -scheme KangarooStore-iOS -destination "platform=iOS Simulator,name=iPhone X" -sdk iphonesimulator -enableCodeCoverage YES ; fi
+
+after_success:
+  - bash <(curl -s https://codecov.io/bash)

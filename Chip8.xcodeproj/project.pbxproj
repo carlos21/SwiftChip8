@@ -37,6 +37,10 @@
 		3578D73E250CCABF00B02F9F /* Array+Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35AF919B25042E3400756B7A /* Array+Helper.swift */; };
 		358CCB8E251B258300F5E27C /* GCDTimer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 358CCB8D251B258300F5E27C /* GCDTimer.swift */; };
 		35937AF225FBC6EC00067115 /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = 357805192510946A00E5664B /* Game.swift */; };
+		35955CBB25FD669F00278994 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35955CBA25FD669F00278994 /* AppDelegate.swift */; };
+		35955CBD25FD669F00278994 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35955CBC25FD669F00278994 /* ViewController.swift */; };
+		35955CBF25FD66A000278994 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 35955CBE25FD66A000278994 /* Assets.xcassets */; };
+		35955CC225FD66A000278994 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 35955CC025FD66A000278994 /* Main.storyboard */; };
 		35AF919C25042E3400756B7A /* Array+Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35AF919B25042E3400756B7A /* Array+Helper.swift */; };
 		35B0F3A3250DBD55000E768C /* ROM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35B0F3A2250DBD55000E768C /* ROM.swift */; };
 		35B4AD8325187E0600C6D4C8 /* MAZE in Resources */ = {isa = PBXBuildFile; fileRef = 35B4AD7C25187E0500C6D4C8 /* MAZE */; };
@@ -74,7 +78,11 @@
 		35DD77C924FB2FD3000164F7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 35DD77C724FB2FD3000164F7 /* LaunchScreen.storyboard */; };
 		35DD77CF24FB30E6000164F7 /* Chip8.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 52D6D97C1BEFF229002C0205 /* Chip8.framework */; };
 		35DD77D024FB30E6000164F7 /* Chip8.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 52D6D97C1BEFF229002C0205 /* Chip8.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		35EB271C25F965E8003ABD99 /* GameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35EB271B25F965E8003ABD99 /* GameView.swift */; };
+		35EC41C725FDB828009C2678 /* GameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35EB271B25F965E8003ABD99 /* GameView.swift */; };
+		35EC41C825FDB828009C2678 /* Runner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35D320A125F87DCB005375A0 /* Runner.swift */; };
+		35EC41C925FDB828009C2678 /* ROM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35B0F3A2250DBD55000E768C /* ROM.swift */; };
+		35EC41CA25FDB828009C2678 /* GCDTimer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 358CCB8D251B258300F5E27C /* GCDTimer.swift */; };
+		35EC41CB25FDB828009C2678 /* Double.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3503C6F725FC039F00E322A1 /* Double.swift */; };
 		35F3E13B2512F36B00785C0C /* EmptyROM in Resources */ = {isa = PBXBuildFile; fileRef = 35F2A7122511F01800BD678B /* EmptyROM */; };
 		35F3E13C2512F36C00785C0C /* EmptyROM in Resources */ = {isa = PBXBuildFile; fileRef = 35F2A7122511F01800BD678B /* EmptyROM */; };
 		35F3E13D2512F36C00785C0C /* EmptyROM in Resources */ = {isa = PBXBuildFile; fileRef = 35F2A7122511F01800BD678B /* EmptyROM */; };
@@ -152,6 +160,13 @@
 		357805192510946A00E5664B /* Game.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Game.swift; sourceTree = "<group>"; };
 		3578D736250CCAA300B02F9F /* Instruction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Instruction.swift; sourceTree = "<group>"; };
 		358CCB8D251B258300F5E27C /* GCDTimer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GCDTimer.swift; sourceTree = "<group>"; };
+		35955CB825FD669F00278994 /* Chip8-Mac-Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Chip8-Mac-Example.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		35955CBA25FD669F00278994 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		35955CBC25FD669F00278994 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		35955CBE25FD66A000278994 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		35955CC125FD66A000278994 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		35955CC325FD66A000278994 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		35955CC425FD66A000278994 /* Chip8_Mac_Example.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Chip8_Mac_Example.entitlements; sourceTree = "<group>"; };
 		35AF919B25042E3400756B7A /* Array+Helper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+Helper.swift"; sourceTree = "<group>"; };
 		35B0F3A2250DBD55000E768C /* ROM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ROM.swift; sourceTree = "<group>"; };
 		35B4AD7C25187E0500C6D4C8 /* MAZE */ = {isa = PBXFileReference; lastKnownFileType = file; path = MAZE; sourceTree = "<group>"; };
@@ -193,6 +208,13 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		35955CB525FD669F00278994 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		35DD77B724FB2FD1000164F7 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -328,6 +350,19 @@
 			path = Resources;
 			sourceTree = "<group>";
 		};
+		35955CB925FD669F00278994 /* Chip8-Mac-Example */ = {
+			isa = PBXGroup;
+			children = (
+				35955CBA25FD669F00278994 /* AppDelegate.swift */,
+				35955CBC25FD669F00278994 /* ViewController.swift */,
+				35955CBE25FD66A000278994 /* Assets.xcassets */,
+				35955CC025FD66A000278994 /* Main.storyboard */,
+				35955CC325FD66A000278994 /* Info.plist */,
+				35955CC425FD66A000278994 /* Chip8_Mac_Example.entitlements */,
+			);
+			path = "Chip8-Mac-Example";
+			sourceTree = "<group>";
+		};
 		35DD77B224FB2D26000164F7 /* Chip8 */ = {
 			isa = PBXGroup;
 			children = (
@@ -378,6 +413,7 @@
 				8933C7831EB5B7EB000D00A4 /* Tests */,
 				52D6D99C1BEFF38C002C0205 /* Configs */,
 				35DD77BB24FB2FD1000164F7 /* Chip8-iOS-Example */,
+				35955CB925FD669F00278994 /* Chip8-Mac-Example */,
 				52D6D97D1BEFF229002C0205 /* Products */,
 				35DD77CE24FB30E6000164F7 /* Frameworks */,
 			);
@@ -394,6 +430,7 @@
 				DD75027A1C68FCFC006590AF /* Chip8-macOS Tests.xctest */,
 				DD75028D1C690C7A006590AF /* Chip8-tvOS Tests.xctest */,
 				35DD77BA24FB2FD1000164F7 /* Chip8-iOS-Example.app */,
+				35955CB825FD669F00278994 /* Chip8-Mac-Example.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -475,6 +512,23 @@
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
+		35955CB725FD669F00278994 /* Chip8-Mac-Example */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 35955CE125FD66A100278994 /* Build configuration list for PBXNativeTarget "Chip8-Mac-Example" */;
+			buildPhases = (
+				35955CB425FD669F00278994 /* Sources */,
+				35955CB525FD669F00278994 /* Frameworks */,
+				35955CB625FD669F00278994 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Chip8-Mac-Example";
+			productName = "Chip8-Mac-Example";
+			productReference = 35955CB825FD669F00278994 /* Chip8-Mac-Example.app */;
+			productType = "com.apple.product-type.application";
+		};
 		35DD77B924FB2FD1000164F7 /* Chip8-iOS-Example */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 35DD77CB24FB2FD3000164F7 /* Build configuration list for PBXNativeTarget "Chip8-iOS-Example" */;
@@ -498,6 +552,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 52D6D9901BEFF229002C0205 /* Build configuration list for PBXNativeTarget "Chip8-iOS" */;
 			buildPhases = (
+				35955D0725FD71A700278994 /* Swiftlint */,
 				52D6D9771BEFF229002C0205 /* Sources */,
 				52D6D9781BEFF229002C0205 /* Frameworks */,
 				52D6D9791BEFF229002C0205 /* Headers */,
@@ -627,10 +682,15 @@
 		52D6D9731BEFF229002C0205 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 1160;
+				LastSwiftUpdateCheck = 1240;
 				LastUpgradeCheck = 1240;
 				ORGANIZATIONNAME = Chip8;
 				TargetAttributes = {
+					35955CB725FD669F00278994 = {
+						CreatedOnToolsVersion = 12.4;
+						DevelopmentTeam = RH4PC25J9C;
+						ProvisioningStyle = Automatic;
+					};
 					35DD77B924FB2FD1000164F7 = {
 						CreatedOnToolsVersion = 11.6;
 						DevelopmentTeam = A5FP7L6CSA;
@@ -688,11 +748,21 @@
 				DD7502791C68FCFC006590AF /* Chip8-macOS Tests */,
 				DD75028C1C690C7A006590AF /* Chip8-tvOS Tests */,
 				35DD77B924FB2FD1000164F7 /* Chip8-iOS-Example */,
+				35955CB725FD669F00278994 /* Chip8-Mac-Example */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		35955CB625FD669F00278994 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				35955CBF25FD66A000278994 /* Assets.xcassets in Resources */,
+				35955CC225FD66A000278994 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		35DD77B824FB2FD1000164F7 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -767,7 +837,37 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		35955D0725FD71A700278994 /* Swiftlint */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = Swiftlint;
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if which swiftlint >/dev/null; then\n  swiftlint\nelse\n  echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
+		35955CB425FD669F00278994 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				35955CBD25FD669F00278994 /* ViewController.swift in Sources */,
+				35955CBB25FD669F00278994 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		35DD77B624FB2FD1000164F7 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -800,7 +900,6 @@
 				354F84B824FBAF9700FD1253 /* Data.swift in Sources */,
 				35D320A225F87DCB005375A0 /* Runner.swift in Sources */,
 				354F84BF24FBAF9700FD1253 /* Screen.swift in Sources */,
-				35EB271C25F965E8003ABD99 /* GameView.swift in Sources */,
 				3503C6F825FC039F00E322A1 /* Double.swift in Sources */,
 				35AF919C25042E3400756B7A /* Array+Helper.swift in Sources */,
 			);
@@ -857,10 +956,15 @@
 				35DD778A24FB27A5000164F7 /* Stack.swift in Sources */,
 				354F84C324FBAF9800FD1253 /* Integer.swift in Sources */,
 				35DD777E24FB27A5000164F7 /* Keyboard.swift in Sources */,
+				35EC41C725FDB828009C2678 /* GameView.swift in Sources */,
+				35EC41CA25FDB828009C2678 /* GCDTimer.swift in Sources */,
 				35DD778224FB27A5000164F7 /* Memory.swift in Sources */,
 				35DD778624FB27A5000164F7 /* Pixel.swift in Sources */,
+				35EC41C925FDB828009C2678 /* ROM.swift in Sources */,
 				3578D739250CCAB900B02F9F /* Instruction.swift in Sources */,
+				35EC41C825FDB828009C2678 /* Runner.swift in Sources */,
 				35DD777624FB27A5000164F7 /* Screen.swift in Sources */,
+				35EC41CB25FDB828009C2678 /* Double.swift in Sources */,
 				3578D73E250CCABF00B02F9F /* Array+Helper.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -912,6 +1016,14 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
+		35955CC025FD66A000278994 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				35955CC125FD66A000278994 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
 		35DD77C224FB2FD1000164F7 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -931,6 +1043,65 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		35955CDB25FD66A100278994 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_ENTITLEMENTS = "Chip8-Mac-Example/Chip8_Mac_Example.entitlements";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = RH4PC25J9C;
+				ENABLE_HARDENED_RUNTIME = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				INFOPLIST_FILE = "Chip8-Mac-Example/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 11.1;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.carlosduclos.demo.Chip8-Mac-Example";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		35955CDC25FD66A100278994 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_ENTITLEMENTS = "Chip8-Mac-Example/Chip8_Mac_Example.entitlements";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = RH4PC25J9C;
+				ENABLE_HARDENED_RUNTIME = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				INFOPLIST_FILE = "Chip8-Mac-Example/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 11.1;
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.carlosduclos.demo.Chip8-Mac-Example";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
 		35DD77CC24FB2FD3000164F7 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -1374,6 +1545,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		35955CE125FD66A100278994 /* Build configuration list for PBXNativeTarget "Chip8-Mac-Example" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				35955CDB25FD66A100278994 /* Debug */,
+				35955CDC25FD66A100278994 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		35DD77CB24FB2FD3000164F7 /* Build configuration list for PBXNativeTarget "Chip8-iOS-Example" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

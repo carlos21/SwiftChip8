@@ -33,10 +33,6 @@ struct Stack<Element> where Element: Equatable {
     
     mutating func pop() -> Element {
         precondition(storage.count < maxSize && storage.count > 0)
-//        print("last on stack before", storage.last)
-//        defer {
-//            print("last on stack after", storage.last)
-//        }
         return storage.popLast()!
     }
 }
@@ -61,58 +57,3 @@ extension Stack: ExpressibleByArrayLiteral {
         storage = elements
     }
 }
-
-//class Stack<T>: ExpressibleByArrayLiteral {
-//
-//    typealias ArrayLiteralElement = T
-//
-//    private let buffer: UnsafeMutableBufferPointer<T>
-//
-//    public var count: Int {
-//        return buffer.count
-//    }
-//
-//    init(_ count: Int) {
-//        buffer = UnsafeMutableBufferPointer.allocate(capacity: count)
-//    }
-//
-//    convenience init(count: Int, repeating value: T) {
-//        self.init(count)
-//        buffer.initialize(repeating: value)
-//    }
-//
-//    required convenience init(arrayLiteral elements: T...) {
-//        self.init(elements.count)
-//        let _ = buffer.initialize(from: elements)
-//    }
-//
-//    deinit {
-//        buffer.deallocate()
-//    }
-//
-//    subscript(index: Int) -> T {
-//        set(newValue) {
-//            precondition((0...endIndex).contains(index))
-//            buffer[index] = newValue
-//        }
-//        get {
-//            precondition((0...endIndex).contains(index))
-//            return buffer[index]
-//        }
-//    }
-//}
-//
-//extension Stack: MutableCollection {
-//
-//    public var startIndex: Int {
-//        return 0
-//    }
-//
-//    public var endIndex: Int {
-//        return count - 1
-//    }
-//
-//    func index(after i: Int) -> Int {
-//        return i + 1;
-//    }
-//}

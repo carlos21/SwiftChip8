@@ -8,7 +8,7 @@
 
 import Foundation
 
-public enum Game {
+enum Game {
     
     case invaders
     case pong
@@ -19,7 +19,7 @@ public enum Game {
     case tictactoe
     case wall
     
-    public var name: String {
+    var name: String {
         switch self {
         case .invaders:
             return "INVADERS"

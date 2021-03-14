@@ -64,4 +64,3 @@ final class GameController: UIViewController {
         gameView.keyDown(key: button.keyCode)
     }
 }
-

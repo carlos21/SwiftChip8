@@ -7,7 +7,12 @@
 //
 
 import Foundation
-import UIKit
+//import UIKit
+import Cocoa
+
+//class caca: NSView {
+//
+//}
 
 final public class GameView: UIView {
     

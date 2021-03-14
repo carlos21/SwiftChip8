@@ -8,11 +8,11 @@
 
 import Foundation
 
-public enum Instruction {
+enum Instruction {
     
-    public typealias Address = UInt16
-    public typealias Register = UInt16
-    public typealias Constant = UInt8
+    typealias Address = UInt16
+    typealias Register = UInt16
+    typealias Constant = UInt8
     
     /// 0nnn - SYS addr
     /// Jump to a machine code routine at nnn.
@@ -191,7 +191,7 @@ public enum Instruction {
 
 extension Instruction {
     
-    public var opcode: UInt16 {
+    var opcode: UInt16 {
         switch self {
         case let .jumpsToMachineCodeRoutine(address):
             return address
@@ -300,7 +300,7 @@ extension Instruction {
         }
     }
     
-    public init?(opcode: UInt16) {
+    init?(opcode: UInt16) {
         let hex1 = UInt8((opcode & 0xF000) >> 12)
         let hex2 = UInt8((opcode & 0x0F00) >> 8)
         let hex3 = UInt8((opcode & 0x00F0) >> 4)
@@ -420,11 +420,11 @@ extension Instruction {
 
 extension Instruction: CustomStringConvertible {
     
-    public var description: String {
+    var description: String {
         return "Opcode{code=\(opcode.hex), description=\(actionDescription)}"
     }
     
-    public var actionDescription: String {
+    var actionDescription: String {
         switch self {
         case let .jumpsToMachineCodeRoutine(address):
             return "calls the machine language subroutine at \(address.hex)"

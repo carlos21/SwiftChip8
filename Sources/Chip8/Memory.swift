@@ -29,16 +29,6 @@ struct Memory {
         }
     }
     
-//    public func get(position: Int) -> UInt8? {
-//        assetBounds(position: position)
-//        return buffer[position]
-//    }
-//    
-//    public mutating func set(value: UInt8, position: Int) {
-//        assetBounds(position: position)
-//        buffer[position] = value
-//    }
-    
     mutating func set(array: [UInt8], position: Int) {
         assetBounds(position: position + array.count)
         buffer.replaceSubrange(position..<position+array.count, with: array)

@@ -12,7 +12,7 @@ let totalKeys = 16
 
 extension Emulator {
     
-    public struct Keyboard {
+    struct Keyboard {
         
         fileprivate var contents: [KeyCode: Bool] = [:]
         
@@ -32,12 +32,12 @@ extension Emulator {
             return isDown(key: code)
         }
         
-        mutating public func down(key: KeyCode) {
+        mutating func down(key: KeyCode) {
             assetBounds(key.rawValue)
             contents[key] = true
         }
         
-        mutating public func up(key: KeyCode) {
+        mutating func up(key: KeyCode) {
             assetBounds(key.rawValue)
             contents[key] = false
         }
@@ -50,18 +50,18 @@ extension Emulator {
 
 extension Emulator.Keyboard {
     
-    // Default keypad layout:
-    // From http://devernay.free.fr/hacks/chip8/C8TECH10.HTM#keyboard
-    // -----------------
-    // | 1 | 2 | 3 | C |
-    // -----------------
-    // | 4 | 5 | 6 | D |
-    // -----------------
-    // | 7 | 8 | 9 | E |
-    // -----------------
-    // | A | 0 | B | F |
-    // -----------------
-    public enum KeyCode: UInt8 {
+    /// Default keypad layout:
+    /// From http://devernay.free.fr/hacks/chip8/C8TECH10.HTM#keyboard
+    /// -----------------
+    /// | 1 | 2 | 3 | C |
+    /// -----------------
+    /// | 4 | 5 | 6 | D |
+    /// -----------------
+    /// | 7 | 8 | 9 | E |
+    /// -----------------
+    /// | A | 0 | B | F |
+    /// -----------------
+    enum KeyCode: UInt8 {
 
         case zero = 0x00
         case one = 0x01
@@ -84,16 +84,16 @@ extension Emulator.Keyboard {
 
 extension Emulator.Keyboard.KeyCode: ExpressibleByIntegerLiteral {
     
-    public typealias IntegerLiteralType = UInt8
+    typealias IntegerLiteralType = UInt8
     
-    public init(integerLiteral value: UInt8) {
+    init(integerLiteral value: UInt8) {
         self.init(rawValue: value)!
     }
 }
 
 extension Emulator.Keyboard.KeyCode: CustomStringConvertible {
     
-    public var description: String {
+    var description: String {
         switch self {
         case .zero: return "0"
         case .one: return "1"
@@ -114,72 +114,3 @@ extension Emulator.Keyboard.KeyCode: CustomStringConvertible {
         }
     }
 }
-
-//struct Keyboard<Element: Hashable>: Sequence {
-//
-//    typealias Iterator = DictionaryIterator<Element, Bool>
-//
-//    fileprivate var contents: [Element: Bool] = [:]
-//
-//    init<S: Sequence>(_ sequence: S) where S.Iterator.Element == Element {
-//        for element in sequence {
-//            add(element)
-//        }
-//    }
-//
-//    init<S: Sequence>(_ sequence: S) where S.Iterator.Element == (key: Element, value: Bool) {
-//        for (element, count) in sequence {
-//            add(element, occurrences: count)
-//        }
-//    }
-//
-//    mutating func add(_ member: Element, occurrences: Int = 1) {
-//        precondition(occurrences > 0, "Can only add a positive number of occurrences")
-//
-//        if let currentCount = contents[member] {
-//            contents[member] = currentCount + occurrences
-//        } else {
-//            contents[member] = occurrences
-//        }
-//    }
-//
-//    func makeIterator() -> Iterator {
-//        return contents.makeIterator()
-//    }
-//}
-//
-//extension Keyboard: ExpressibleByArrayLiteral {
-//
-//    typealias ArrayLiteralElement = [Element: Bool]
-//
-//    init(arrayLiteral elements: ArrayLiteralElement...) {
-//        self.init(elements)
-//    }
-//}
-//
-//extension Keyboard: ExpressibleByDictionaryLiteral {
-//
-//    init(dictionaryLiteral elements: (Element, Bool)...) {
-//        self.init(elements.map { (key: $0.0, value: $0.1) })
-//    }
-//}
-//
-//let keyboard: Keyboard
-//
-//struct Bag<Element: Hashable> {
-//
-//    fileprivate var contents: [UInt8: Bool] = [:]
-//
-//    var uniqueCount: Int {
-//      return contents.count
-//    }
-//}
-//
-//extension Bag: Sequence {
-//
-//  typealias Iterator = DictionaryIterator<Element, Int>
-//
-//  func makeIterator() -> Iterator {
-//    return contents.makeIterator()
-//  }
-//}
