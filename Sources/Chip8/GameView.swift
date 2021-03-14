@@ -26,7 +26,6 @@ final public class GameView: UIView, GameViewProtocol {
         UIRectFill(bounds)
 
         UIColor.white.setFill()
-
         calculatePixelRect { rect in
             UIRectFill(rect)
         }
@@ -66,7 +65,6 @@ final public class GameView: NSView, GameViewProtocol {
         bounds.fill()
         
         NSColor.white.setFill()
-        
         calculatePixelRect { rect in
             rect.fill()
         }

@@ -44,7 +44,8 @@ final class GameController: UIViewController {
     
     static func instance(game: Game) -> GameController {
         let storyboard = UIStoryboard(name: "Main", bundle: .main)
-        let instance = storyboard.instantiateViewController(withIdentifier: String(describing: GameController.self)) as! GameController
+        let identifier = String(describing: GameController.self)
+        let instance = storyboard.instantiateViewController(withIdentifier: identifier) as! GameController
         instance.game = game
         return instance
     }

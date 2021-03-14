@@ -7,7 +7,7 @@ matrix:
 
 script:
   - xcodebuild -scheme Chip8-iOS -sdk iphonesimulator -destination 'platform=iOS Simulator,name=iPhone X,OS=12.1' build test
-  - xcodebuild -scheme Chip8-macOS -sdk iphonesimulator -destination 'platform=iOS Simulator,name=iPhone X,OS=12.1' build test
+  - xcodebuild -scheme Chip8-macOS -destination 'platform=macOS,arch=x86_64' build test
 
 after_success:
   - bash <(curl -s https://codecov.io/bash)
