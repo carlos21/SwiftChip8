@@ -7,3 +7,8 @@
 //
 
 import Foundation
+
+extension NSNotification.Name {
+    
+    static let load = NSNotification.Name(rawValue: "load")
+}

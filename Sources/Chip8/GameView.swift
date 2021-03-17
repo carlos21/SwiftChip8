@@ -19,6 +19,10 @@ final public class GameView: UIView, GameViewProtocol {
     public var emulator = Emulator()
     public var runner: Runner!
     
+    public var coordinatesInverted: Bool {
+        return false
+    }
+    
     // MARK: - Functions
     
     public override func draw(_ rect: CGRect) {
@@ -57,6 +61,21 @@ final public class GameView: NSView, GameViewProtocol {
     
     public var emulator = Emulator()
     public var runner: Runner!
+    public var coordinatesInverted: Bool {
+        return true
+    }
+    
+    public override var canBecomeKeyView: Bool {
+        return true
+    }
+    
+    public override func becomeFirstResponder() -> Bool {
+        return true
+    }
+    
+    public override var acceptsFirstResponder: Bool {
+        return true
+    }
     
     // MARK: - Functions
     
@@ -70,6 +89,13 @@ final public class GameView: NSView, GameViewProtocol {
         }
     }
     
+    public override func keyDown(with event: NSEvent) {
+        guard let character = event.characters?.first else {
+            return
+        }
+        
+        
+    }
 }
 
 extension GameView: EmulatorDelegate {

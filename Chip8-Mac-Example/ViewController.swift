@@ -7,13 +7,22 @@
 //
 
 import Cocoa
+import Chip8
 
 class ViewController: NSViewController {
 
+    @IBOutlet var gameView: GameView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        NotificationCenter.default.addObserver(self, selector: #selector(load(notification:)), name: .load, object: nil)
+    }
+    
+    @objc func load(notification: Notification) {
+        guard let data = notification.userInfo?["data"] as? Data else { return }
+        let rom = ROM(data: data)
+        gameView.load(rom: rom)
     }
 
     override var representedObject: Any? {

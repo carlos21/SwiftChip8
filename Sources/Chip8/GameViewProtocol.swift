@@ -14,6 +14,7 @@ public protocol GameViewProtocol: EmulatorDelegate {
     var emulator: Emulator { get set }
     var runner: Runner! { get set }
     var bounds: CGRect { get }
+    var coordinatesInverted: Bool { get }
 }
 
 extension GameViewProtocol {
@@ -34,8 +35,10 @@ extension GameViewProtocol {
             for x in 0..<Emulator.Hardware.screenColumns {
                 let pixel = emulator.screen.pixelAt(x: x, y: y)
                 if pixel.isOn {
-                    let pixelRect = CGRect(x: CGFloat(x) * pixelWidth,
-                                           y: CGFloat(y) * pixelHeight,
+                    let axisX = CGFloat(x) * pixelWidth
+                    let axisY = coordinatesInverted ? bounds.size.height - CGFloat(y) * pixelHeight : CGFloat(y) * pixelHeight
+                    let pixelRect = CGRect(x: axisX,
+                                           y: axisY,
                                            width: pixelWidth,
                                            height: pixelHeight)
                     block(pixelRect)

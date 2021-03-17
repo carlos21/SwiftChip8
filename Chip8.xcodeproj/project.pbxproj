@@ -39,6 +39,8 @@
 		35955CBD25FD669F00278994 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35955CBC25FD669F00278994 /* ViewController.swift */; };
 		35955CBF25FD66A000278994 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 35955CBE25FD66A000278994 /* Assets.xcassets */; };
 		35955CC225FD66A000278994 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 35955CC025FD66A000278994 /* Main.storyboard */; };
+		35A3CC2725FEB62C003C037E /* Chip8.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 52D6DA0F1BF000BD002C0205 /* Chip8.framework */; };
+		35A3CC3125FEC230003C037E /* Notification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35A3CC3025FEC230003C037E /* Notification.swift */; };
 		35AF919C25042E3400756B7A /* Array+Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35AF919B25042E3400756B7A /* Array+Helper.swift */; };
 		35B0F3A3250DBD55000E768C /* ROM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35B0F3A2250DBD55000E768C /* ROM.swift */; };
 		35D21E6A2509F5390090A2B1 /* Button.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35D21E692509F5390090A2B1 /* Button.swift */; };
@@ -99,6 +101,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		35A3CC1D25FEB621003C037E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 52D6D9731BEFF229002C0205 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 52D6DA0E1BF000BD002C0205;
+			remoteInfo = "Chip8-macOS";
+		};
 		35DD77D124FB30E6000164F7 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 52D6D9731BEFF229002C0205 /* Project object */;
@@ -168,6 +177,7 @@
 		35955CC125FD66A000278994 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		35955CC325FD66A000278994 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		35955CC425FD66A000278994 /* Chip8_Mac_Example.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Chip8_Mac_Example.entitlements; sourceTree = "<group>"; };
+		35A3CC3025FEC230003C037E /* Notification.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Notification.swift; sourceTree = "<group>"; };
 		35AF919B25042E3400756B7A /* Array+Helper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+Helper.swift"; sourceTree = "<group>"; };
 		35B0F3A2250DBD55000E768C /* ROM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ROM.swift; sourceTree = "<group>"; };
 		35D21E692509F5390090A2B1 /* Button.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Button.swift; sourceTree = "<group>"; };
@@ -216,6 +226,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				35A3CC2725FEB62C003C037E /* Chip8.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -346,6 +357,7 @@
 				35955CC025FD66A000278994 /* Main.storyboard */,
 				35955CC325FD66A000278994 /* Info.plist */,
 				35955CC425FD66A000278994 /* Chip8_Mac_Example.entitlements */,
+				35A3CC3025FEC230003C037E /* Notification.swift */,
 			);
 			path = "Chip8-Mac-Example";
 			sourceTree = "<group>";
@@ -536,6 +548,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				35A3CC1E25FEB621003C037E /* PBXTargetDependency */,
 			);
 			name = "Chip8-Mac-Example";
 			productName = "Chip8-Mac-Example";
@@ -728,6 +741,7 @@
 					};
 					52D6DA0E1BF000BD002C0205 = {
 						CreatedOnToolsVersion = 7.1;
+						DevelopmentTeam = RH4PC25J9C;
 						LastSwiftMigration = 1020;
 					};
 					DD7502791C68FCFC006590AF = {
@@ -878,6 +892,7 @@
 			files = (
 				35955CBD25FD669F00278994 /* ViewController.swift in Sources */,
 				35955CBB25FD669F00278994 /* AppDelegate.swift in Sources */,
+				35A3CC3125FEC230003C037E /* Notification.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1004,6 +1019,11 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		35A3CC1E25FEB621003C037E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 52D6DA0E1BF000BD002C0205 /* Chip8-macOS */;
+			targetProxy = 35A3CC1D25FEB621003C037E /* PBXContainerItemProxy */;
+		};
 		35DD77D224FB30E6000164F7 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 52D6D97B1BEFF229002C0205 /* Chip8-iOS */;
@@ -1457,9 +1477,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				APPLICATION_EXTENSION_API_ONLY = YES;
-				CODE_SIGN_IDENTITY = "-";
+				CODE_SIGN_IDENTITY = "Apple Development";
 				COMBINE_HIDPI_IMAGES = YES;
 				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = RH4PC25J9C;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
@@ -1480,9 +1501,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				APPLICATION_EXTENSION_API_ONLY = YES;
-				CODE_SIGN_IDENTITY = "-";
+				CODE_SIGN_IDENTITY = "Apple Development";
 				COMBINE_HIDPI_IMAGES = YES;
 				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = RH4PC25J9C;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
