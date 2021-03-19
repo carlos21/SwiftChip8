@@ -93,8 +93,6 @@ final public class GameView: NSView, GameViewProtocol {
         guard let character = event.characters?.first else {
             return
         }
-        
-        
     }
 }
 
