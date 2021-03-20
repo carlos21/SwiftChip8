@@ -321,7 +321,7 @@ extension Emulator {
 
 extension Emulator {
     
-    enum KeyboardTouch {
+    public enum KeyboardTouch {
         
         case up
         case down

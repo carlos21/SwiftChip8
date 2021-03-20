@@ -109,15 +109,19 @@ final public class GameView: NSView, GameViewProtocol {
     }
     
     public override func keyDown(with event: NSEvent) {
-        guard let character = event.characters?.first,
-              let keyCode = keys[character.lowercased()] else { return }
-        keyDown(code: keyCode)
+        guard let code = getKeyCode(event: event) else { return }
+        keyEvent(touch: .down, code: keyCode)
     }
     
     public override func keyUp(with event: NSEvent) {
+        guard let code = getKeyCode(event: event) else { return }
+        keyEvent(touch: .up, code: code)
+    }
+    
+    private func getKeyCode(event: NSEvent) -> Emulator.Keyboard.KeyCode? {
         guard let character = event.characters?.first,
-              let keyCode = keys[character.lowercased()] else { return }
-        keyUp(code: keyCode)
+              let keyCode = keys[character.lowercased()] else { return nil }
+        return keyCode
     }
 }
 

@@ -47,11 +47,7 @@ extension GameViewProtocol {
         }
     }
     
-    public func keyDown(code: Emulator.Keyboard.KeyCode) {
-        emulator.handleKey(touch: .down, keyCode: code)
-    }
-    
-    public func keyUp(code: Emulator.Keyboard.KeyCode) {
-        emulator.handleKey(touch: .up, keyCode: code)
+    public func keyEvent(touch: Emulator.KeyboardTouch, code: Emulator.Keyboard.KeyCode) {
+        emulator.handleKey(touch: touch, keyCode: code)
     }
 }

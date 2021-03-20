@@ -108,7 +108,6 @@
                                                                 <connections>
                                                                     <action selector="keyboardButtonTouchDown:" destination="BYZ-38-t0r" eventType="touchDown" id="xcy-3m-mka"/>
                                                                     <action selector="keyboardButtonTouchUpInside:" destination="BYZ-38-t0r" eventType="touchUpInside" id="z2D-cg-j7n"/>
-                                                                    <action selector="keyboardButtonTouchUpOutside:" destination="BYZ-38-t0r" eventType="touchUpOutside" id="Ufq-Ma-vpl"/>
                                                                 </connections>
                                                             </button>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dHw-rF-i1i" customClass="Button" customModule="Chip8_iOS_Example" customModuleProvider="target">
@@ -125,7 +124,6 @@
                                                                 <connections>
                                                                     <action selector="keyboardButtonTouchDown:" destination="BYZ-38-t0r" eventType="touchDown" id="NuW-eq-j8l"/>
                                                                     <action selector="keyboardButtonTouchUpInside:" destination="BYZ-38-t0r" eventType="touchUpInside" id="i8z-a4-5St"/>
-                                                                    <action selector="keyboardButtonTouchUpOutside:" destination="BYZ-38-t0r" eventType="touchUpOutside" id="anb-I2-qZ8"/>
                                                                 </connections>
                                                             </button>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ctf-rD-XAw" customClass="Button" customModule="Chip8_iOS_Example" customModuleProvider="target">
@@ -142,7 +140,6 @@
                                                                 <connections>
                                                                     <action selector="keyboardButtonTouchDown:" destination="BYZ-38-t0r" eventType="touchDown" id="bcd-D2-Ebr"/>
                                                                     <action selector="keyboardButtonTouchUpInside:" destination="BYZ-38-t0r" eventType="touchUpInside" id="MJh-JU-sEU"/>
-                                                                    <action selector="keyboardButtonTouchUpOutside:" destination="BYZ-38-t0r" eventType="touchUpOutside" id="Oat-Tr-Hfw"/>
                                                                 </connections>
                                                             </button>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PRU-DD-gzt" customClass="Button" customModule="Chip8_iOS_Example" customModuleProvider="target">
@@ -159,7 +156,6 @@
                                                                 <connections>
                                                                     <action selector="keyboardButtonTouchDown:" destination="BYZ-38-t0r" eventType="touchDown" id="mxg-ss-SYL"/>
                                                                     <action selector="keyboardButtonTouchUpInside:" destination="BYZ-38-t0r" eventType="touchUpInside" id="z5l-F9-bfk"/>
-                                                                    <action selector="keyboardButtonTouchUpOutside:" destination="BYZ-38-t0r" eventType="touchUpOutside" id="RVJ-Uw-p39"/>
                                                                 </connections>
                                                             </button>
                                                         </subviews>
@@ -186,7 +182,6 @@
                                                                 <connections>
                                                                     <action selector="keyboardButtonTouchDown:" destination="BYZ-38-t0r" eventType="touchDown" id="ePB-lH-RMT"/>
                                                                     <action selector="keyboardButtonTouchUpInside:" destination="BYZ-38-t0r" eventType="touchUpInside" id="jC8-3B-5z2"/>
-                                                                    <action selector="keyboardButtonTouchUpOutside:" destination="BYZ-38-t0r" eventType="touchUpOutside" id="jaV-ZW-Zfs"/>
                                                                 </connections>
                                                             </button>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="meo-w0-PVU" customClass="Button" customModule="Chip8_iOS_Example" customModuleProvider="target">
@@ -203,7 +198,6 @@
                                                                 <connections>
                                                                     <action selector="keyboardButtonTouchDown:" destination="BYZ-38-t0r" eventType="touchDown" id="Dq7-ic-nPd"/>
                                                                     <action selector="keyboardButtonTouchUpInside:" destination="BYZ-38-t0r" eventType="touchUpInside" id="g2V-Jw-e7h"/>
-                                                                    <action selector="keyboardButtonTouchUpOutside:" destination="BYZ-38-t0r" eventType="touchUpOutside" id="SX6-c1-GTc"/>
                                                                 </connections>
                                                             </button>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zpS-HM-W7o" customClass="Button" customModule="Chip8_iOS_Example" customModuleProvider="target">
@@ -220,7 +214,6 @@
                                                                 <connections>
                                                                     <action selector="keyboardButtonTouchDown:" destination="BYZ-38-t0r" eventType="touchDown" id="Y9p-3c-fEi"/>
                                                                     <action selector="keyboardButtonTouchUpInside:" destination="BYZ-38-t0r" eventType="touchUpInside" id="8GI-aX-U5N"/>
-                                                                    <action selector="keyboardButtonTouchUpOutside:" destination="BYZ-38-t0r" eventType="touchUpOutside" id="fp0-FS-lEG"/>
                                                                 </connections>
                                                             </button>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SeG-Ub-cl5" customClass="Button" customModule="Chip8_iOS_Example" customModuleProvider="target">
@@ -237,7 +230,6 @@
                                                                 <connections>
                                                                     <action selector="keyboardButtonTouchDown:" destination="BYZ-38-t0r" eventType="touchDown" id="wNq-pE-ycQ"/>
                                                                     <action selector="keyboardButtonTouchUpInside:" destination="BYZ-38-t0r" eventType="touchUpInside" id="coi-EW-S2s"/>
-                                                                    <action selector="keyboardButtonTouchUpOutside:" destination="BYZ-38-t0r" eventType="touchUpOutside" id="57s-Ug-0n6"/>
                                                                 </connections>
                                                             </button>
                                                         </subviews>
@@ -264,7 +256,6 @@
                                                                 <connections>
                                                                     <action selector="keyboardButtonTouchDown:" destination="BYZ-38-t0r" eventType="touchDown" id="tM1-JQ-CQH"/>
                                                                     <action selector="keyboardButtonTouchUpInside:" destination="BYZ-38-t0r" eventType="touchUpInside" id="xam-rw-rBH"/>
-                                                                    <action selector="keyboardButtonTouchUpOutside:" destination="BYZ-38-t0r" eventType="touchUpOutside" id="VWd-jQ-kKs"/>
                                                                 </connections>
                                                             </button>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2IU-nz-72f" customClass="Button" customModule="Chip8_iOS_Example" customModuleProvider="target">
@@ -281,7 +272,6 @@
                                                                 <connections>
                                                                     <action selector="keyboardButtonTouchDown:" destination="BYZ-38-t0r" eventType="touchDown" id="Gmd-cg-xC5"/>
                                                                     <action selector="keyboardButtonTouchUpInside:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ysm-4O-qV4"/>
-                                                                    <action selector="keyboardButtonTouchUpOutside:" destination="BYZ-38-t0r" eventType="touchUpOutside" id="B6M-mQ-alx"/>
                                                                 </connections>
                                                             </button>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bzG-aX-xRk" customClass="Button" customModule="Chip8_iOS_Example" customModuleProvider="target">
@@ -298,7 +288,6 @@
                                                                 <connections>
                                                                     <action selector="keyboardButtonTouchDown:" destination="BYZ-38-t0r" eventType="touchDown" id="UGC-G0-aUR"/>
                                                                     <action selector="keyboardButtonTouchUpInside:" destination="BYZ-38-t0r" eventType="touchUpInside" id="5f7-cK-7Up"/>
-                                                                    <action selector="keyboardButtonTouchUpOutside:" destination="BYZ-38-t0r" eventType="touchUpOutside" id="P3a-eg-3co"/>
                                                                 </connections>
                                                             </button>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="O1N-Qo-Mhc" customClass="Button" customModule="Chip8_iOS_Example" customModuleProvider="target">
@@ -315,7 +304,6 @@
                                                                 <connections>
                                                                     <action selector="keyboardButtonTouchDown:" destination="BYZ-38-t0r" eventType="touchDown" id="Npn-3w-4cy"/>
                                                                     <action selector="keyboardButtonTouchUpInside:" destination="BYZ-38-t0r" eventType="touchUpInside" id="PiY-3R-Rg6"/>
-                                                                    <action selector="keyboardButtonTouchUpOutside:" destination="BYZ-38-t0r" eventType="touchUpOutside" id="eF1-7d-Efc"/>
                                                                 </connections>
                                                             </button>
                                                         </subviews>
@@ -342,7 +330,6 @@
                                                                 <connections>
                                                                     <action selector="keyboardButtonTouchDown:" destination="BYZ-38-t0r" eventType="touchDown" id="E4X-8r-CzV"/>
                                                                     <action selector="keyboardButtonTouchUpInside:" destination="BYZ-38-t0r" eventType="touchUpInside" id="PX2-4N-AfV"/>
-                                                                    <action selector="keyboardButtonTouchUpOutside:" destination="BYZ-38-t0r" eventType="touchUpOutside" id="I7c-f7-AHI"/>
                                                                 </connections>
                                                             </button>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IuH-Bq-gTI" customClass="Button" customModule="Chip8_iOS_Example" customModuleProvider="target">
@@ -359,7 +346,6 @@
                                                                 <connections>
                                                                     <action selector="keyboardButtonTouchDown:" destination="BYZ-38-t0r" eventType="touchDown" id="NX3-Lz-BNr"/>
                                                                     <action selector="keyboardButtonTouchUpInside:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Qxb-xM-Oib"/>
-                                                                    <action selector="keyboardButtonTouchUpOutside:" destination="BYZ-38-t0r" eventType="touchUpOutside" id="coS-aG-rup"/>
                                                                 </connections>
                                                             </button>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ljX-nQ-iDV" customClass="Button" customModule="Chip8_iOS_Example" customModuleProvider="target">
@@ -376,7 +362,6 @@
                                                                 <connections>
                                                                     <action selector="keyboardButtonTouchDown:" destination="BYZ-38-t0r" eventType="touchDown" id="IXf-c3-HyQ"/>
                                                                     <action selector="keyboardButtonTouchUpInside:" destination="BYZ-38-t0r" eventType="touchUpInside" id="NBT-6G-DaK"/>
-                                                                    <action selector="keyboardButtonTouchUpOutside:" destination="BYZ-38-t0r" eventType="touchUpOutside" id="zKe-fH-PrN"/>
                                                                 </connections>
                                                             </button>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZFI-DE-D2B" customClass="Button" customModule="Chip8_iOS_Example" customModuleProvider="target">
@@ -393,7 +378,6 @@
                                                                 <connections>
                                                                     <action selector="keyboardButtonTouchDown:" destination="BYZ-38-t0r" eventType="touchDown" id="PSG-5s-pe3"/>
                                                                     <action selector="keyboardButtonTouchUpInside:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Zzq-3d-6Jg"/>
-                                                                    <action selector="keyboardButtonTouchUpOutside:" destination="BYZ-38-t0r" eventType="touchUpOutside" id="axg-FS-Hmb"/>
                                                                 </connections>
                                                             </button>
                                                         </subviews>
