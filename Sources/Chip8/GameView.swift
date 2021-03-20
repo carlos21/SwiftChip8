@@ -77,6 +77,25 @@ final public class GameView: NSView, GameViewProtocol {
         return true
     }
     
+    public let keys: [String: Emulator.Keyboard.KeyCode] = [
+        "1": .one,
+        "2": .two,
+        "3": .three,
+        "4": .C,
+        "q": .four,
+        "w": .five,
+        "e": .six,
+        "r": .D,
+        "a": .seven,
+        "s": .eigth,
+        "d": .nine,
+        "f": .E,
+        "z": .A,
+        "x": .zero,
+        "c": .B,
+        "v": .F
+    ]
+    
     // MARK: - Functions
     
     public override func draw(_ rect: CGRect) {
@@ -90,9 +109,15 @@ final public class GameView: NSView, GameViewProtocol {
     }
     
     public override func keyDown(with event: NSEvent) {
-        guard let character = event.characters?.first else {
-            return
-        }
+        guard let character = event.characters?.first,
+              let keyCode = keys[character.lowercased()] else { return }
+        keyDown(code: keyCode)
+    }
+    
+    public override func keyUp(with event: NSEvent) {
+        guard let character = event.characters?.first,
+              let keyCode = keys[character.lowercased()] else { return }
+        keyUp(code: keyCode)
     }
 }
 

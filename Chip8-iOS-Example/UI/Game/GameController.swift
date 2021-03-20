@@ -53,14 +53,17 @@ final class GameController: UIViewController {
     // MARK: - Action
     
     @IBAction func keyboardButtonTouchUpInside(_ button: Button) {
-        gameView.keyUp(key: button.keyCode)
+        guard let keyCode = Emulator.Keyboard.KeyCode(rawValue: button.keyCode) else { return }
+        gameView.keyUp(code: keyCode)
     }
     
     @IBAction func keyboardButtonTouchUpOutside(_ button: Button) {
-        gameView.keyUp(key: button.keyCode)
+        guard let keyCode = Emulator.Keyboard.KeyCode(rawValue: button.keyCode) else { return }
+        gameView.keyUp(code: keyCode)
     }
     
     @IBAction func keyboardButtonTouchDown(_ button: Button) {
-        gameView.keyDown(key: button.keyCode)
+        guard let keyCode = Emulator.Keyboard.KeyCode(rawValue: button.keyCode) else { return }
+        gameView.keyDown(code: keyCode)
     }
 }

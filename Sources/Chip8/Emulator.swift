@@ -36,6 +36,7 @@ public class Emulator {
     var screen = Screen()
     var memory = Memory(size: Emulator.Hardware.memorySize)
     var keyboard = Keyboard()
+    
     private var lastPressedKey: Keyboard.KeyCode?
     
     private var defaultCharacterSet: [UInt8] = [

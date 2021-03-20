@@ -12,7 +12,7 @@ let totalKeys = 16
 
 extension Emulator {
     
-    struct Keyboard {
+    public struct Keyboard {
         
         fileprivate var contents: [KeyCode: Bool] = [:]
         
@@ -61,7 +61,7 @@ extension Emulator.Keyboard {
     /// -----------------
     /// | A | 0 | B | F |
     /// -----------------
-    enum KeyCode: UInt8 {
+    public enum KeyCode: UInt8 {
 
         case zero = 0x00
         case one = 0x01
@@ -84,16 +84,16 @@ extension Emulator.Keyboard {
 
 extension Emulator.Keyboard.KeyCode: ExpressibleByIntegerLiteral {
     
-    typealias IntegerLiteralType = UInt8
+    public typealias IntegerLiteralType = UInt8
     
-    init(integerLiteral value: UInt8) {
+    public init(integerLiteral value: UInt8) {
         self.init(rawValue: value)!
     }
 }
 
 extension Emulator.Keyboard.KeyCode: CustomStringConvertible {
     
-    var description: String {
+    public var description: String {
         switch self {
         case .zero: return "0"
         case .one: return "1"
