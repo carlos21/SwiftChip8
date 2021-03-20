@@ -110,7 +110,7 @@ final public class GameView: NSView, GameViewProtocol {
     
     public override func keyDown(with event: NSEvent) {
         guard let code = getKeyCode(event: event) else { return }
-        keyEvent(touch: .down, code: keyCode)
+        keyEvent(touch: .down, code: code)
     }
     
     public override func keyUp(with event: NSEvent) {
