@@ -3,7 +3,6 @@
 [![License][mit-badge]][mit-url]
 [![Build Status][build-status-badge]][build-status-url]
 [![CodeBeat][codebeat-badge]][codebeat-url]
-[![][linkedin-badge]][linkedin-url]
 
 ![Chip8](https://user-images.githubusercontent.com/1591321/111880352-fc7c0880-8978-11eb-8002-354634ed84a5.png)
 ![Chip8](https://user-images.githubusercontent.com/1591321/111880560-3ac5f780-897a-11eb-9418-5cbddbfe9bbb.png)
