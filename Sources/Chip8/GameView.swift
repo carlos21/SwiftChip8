@@ -16,8 +16,8 @@ final public class GameView: UIView, GameViewProtocol {
     
     // MARK: - Properties
     
-    public var emulator = Emulator()
-    public var runner: Runner!
+    public var emulator: Emulator?
+    public var runner: Runner?
     
     public var coordinatesInverted: Bool {
         return false
@@ -29,7 +29,7 @@ final public class GameView: UIView, GameViewProtocol {
         UIColor.black.setFill()
         UIRectFill(bounds)
 
-        UIColor.white.setFill()
+        UIColor.green.setFill()
         calculatePixelRect { rect in
             UIRectFill(rect)
         }
@@ -59,8 +59,8 @@ final public class GameView: NSView, GameViewProtocol {
     
     // MARK: - Properties
     
-    public var emulator = Emulator()
-    public var runner: Runner!
+    public var emulator: Emulator?
+    public var runner: Runner?
     public var coordinatesInverted: Bool {
         return true
     }
@@ -102,7 +102,7 @@ final public class GameView: NSView, GameViewProtocol {
         NSColor.black.setFill()
         bounds.fill()
         
-        NSColor.white.setFill()
+        NSColor.green.setFill()
         calculatePixelRect { rect in
             rect.fill()
         }

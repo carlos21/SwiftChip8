@@ -32,7 +32,7 @@
 		358CCB8E251B258300F5E27C /* GCDTimer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 358CCB8D251B258300F5E27C /* GCDTimer.swift */; };
 		35937AF225FBC6EC00067115 /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = 357805192510946A00E5664B /* Game.swift */; };
 		35955CBB25FD669F00278994 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35955CBA25FD669F00278994 /* AppDelegate.swift */; };
-		35955CBD25FD669F00278994 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35955CBC25FD669F00278994 /* ViewController.swift */; };
+		35955CBD25FD669F00278994 /* GameController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35955CBC25FD669F00278994 /* GameController.swift */; };
 		35955CBF25FD66A000278994 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 35955CBE25FD66A000278994 /* Assets.xcassets */; };
 		35955CC225FD66A000278994 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 35955CC025FD66A000278994 /* Main.storyboard */; };
 		35A3CC2725FEB62C003C037E /* Chip8.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 52D6DA0F1BF000BD002C0205 /* Chip8.framework */; };
@@ -125,7 +125,7 @@
 		358CCB8D251B258300F5E27C /* GCDTimer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GCDTimer.swift; sourceTree = "<group>"; };
 		35955CB825FD669F00278994 /* Chip8-Mac-Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Chip8-Mac-Example.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		35955CBA25FD669F00278994 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		35955CBC25FD669F00278994 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		35955CBC25FD669F00278994 /* GameController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameController.swift; sourceTree = "<group>"; };
 		35955CBE25FD66A000278994 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		35955CC125FD66A000278994 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		35955CC325FD66A000278994 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -133,6 +133,7 @@
 		35A3CC3025FEC230003C037E /* Notification.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Notification.swift; sourceTree = "<group>"; };
 		35AF919B25042E3400756B7A /* Array+Helper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+Helper.swift"; sourceTree = "<group>"; };
 		35B0F3A2250DBD55000E768C /* ROM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ROM.swift; sourceTree = "<group>"; };
+		35BE1C522606A7F000296387 /* MemoryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoryTests.swift; sourceTree = "<group>"; };
 		35D21E692509F5390090A2B1 /* Button.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Button.swift; sourceTree = "<group>"; };
 		35D320A125F87DCB005375A0 /* Runner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Runner.swift; sourceTree = "<group>"; };
 		35DD776F24FB27A4000164F7 /* Screen.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Screen.swift; sourceTree = "<group>"; };
@@ -270,7 +271,7 @@
 			isa = PBXGroup;
 			children = (
 				35955CBA25FD669F00278994 /* AppDelegate.swift */,
-				35955CBC25FD669F00278994 /* ViewController.swift */,
+				35955CBC25FD669F00278994 /* GameController.swift */,
 				35955CBE25FD66A000278994 /* Assets.xcassets */,
 				35955CC025FD66A000278994 /* Main.storyboard */,
 				35955CC325FD66A000278994 /* Info.plist */,
@@ -395,6 +396,7 @@
 			isa = PBXGroup;
 			children = (
 				8933C7891EB5B82A000D00A4 /* Chip8Tests.swift */,
+				35BE1C522606A7F000296387 /* MemoryTests.swift */,
 				35F2A7122511F01800BD678B /* EmptyROM */,
 			);
 			name = Tests;
@@ -673,7 +675,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				35955CBD25FD669F00278994 /* ViewController.swift in Sources */,
+				35955CBD25FD669F00278994 /* GameController.swift in Sources */,
 				35955CBB25FD669F00278994 /* AppDelegate.swift in Sources */,
 				35A3CC3125FEC230003C037E /* Notification.swift in Sources */,
 			);

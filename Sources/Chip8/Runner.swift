@@ -20,14 +20,14 @@ final public class Runner {
     private let displayQueue = DispatchQueue(label: "com.carlosduclos.chip8.displayQueue")
     
     private lazy var cpuTimer: GCDTimer = {
-        return GCDTimer(interval: cpuClockRate, queue: cpuQueue) { [unowned self] in
-            self.emulator.runCycle()
+        return GCDTimer(interval: cpuClockRate, queue: cpuQueue) { [weak self] in
+            self?.emulator.runCycle()
         }
     }()
     
     private lazy var displayTimer: GCDTimer = {
-        return GCDTimer(interval: displayClockRate, queue: displayQueue) { [unowned self] in
-            self.emulator.timersTick()
+        return GCDTimer(interval: displayClockRate, queue: displayQueue) { [weak self] in
+            self?.emulator.timersTick()
         }
     }()
     

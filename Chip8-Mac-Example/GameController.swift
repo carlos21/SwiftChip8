@@ -9,7 +9,7 @@
 import Cocoa
 import Chip8
 
-class ViewController: NSViewController {
+class GameController: NSViewController {
 
     @IBOutlet var gameView: GameView!
     

@@ -11,8 +11,8 @@ import CoreGraphics
 
 public protocol GameViewProtocol: EmulatorDelegate {
     
-    var emulator: Emulator { get set }
-    var runner: Runner! { get set }
+    var emulator: Emulator? { get set }
+    var runner: Runner? { get set }
     var bounds: CGRect { get }
     var coordinatesInverted: Bool { get }
 }
@@ -20,14 +20,20 @@ public protocol GameViewProtocol: EmulatorDelegate {
 extension GameViewProtocol {
     
     public func load(rom: ROM) {
+        let emulator = Emulator()
         emulator.delegate = self
         emulator.load(rom: rom)
         
-        runner = Runner(emulator: emulator)
+        let runner = Runner(emulator: emulator)
         runner.resume()
+        
+        self.emulator = emulator
+        self.runner = runner
     }
     
     func calculatePixelRect(block: (CGRect) -> Void) {
+        guard let emulator = self.emulator else { return }
+        
         let pixelWidth = (bounds.size.width / CGFloat(Emulator.Hardware.screenRows) / 2).round(to: 1)
         let pixelHeight = pixelWidth
         
@@ -48,6 +54,6 @@ extension GameViewProtocol {
     }
     
     public func keyEvent(touch: Emulator.KeyboardTouch, code: Emulator.Keyboard.KeyCode) {
-        emulator.handleKey(touch: touch, keyCode: code)
+        emulator?.handleKey(touch: touch, keyCode: code)
     }
 }
