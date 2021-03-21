@@ -37,6 +37,8 @@
 		35955CC225FD66A000278994 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 35955CC025FD66A000278994 /* Main.storyboard */; };
 		35A3CC2725FEB62C003C037E /* Chip8.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 52D6DA0F1BF000BD002C0205 /* Chip8.framework */; };
 		35A3CC3125FEC230003C037E /* Notification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35A3CC3025FEC230003C037E /* Notification.swift */; };
+		35A9BC332606AAE400BDEB0C /* Chip8_Mac_ExampleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35A9BC322606AAE400BDEB0C /* Chip8_Mac_ExampleTests.swift */; };
+		35A9BC3F2606AAED00BDEB0C /* MemoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35BE1C522606A7F000296387 /* MemoryTests.swift */; };
 		35AF919C25042E3400756B7A /* Array+Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35AF919B25042E3400756B7A /* Array+Helper.swift */; };
 		35B0F3A3250DBD55000E768C /* ROM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35B0F3A2250DBD55000E768C /* ROM.swift */; };
 		35D21E6A2509F5390090A2B1 /* Button.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35D21E692509F5390090A2B1 /* Button.swift */; };
@@ -89,6 +91,20 @@
 			remoteGlobalIDString = 52D6DA0E1BF000BD002C0205;
 			remoteInfo = "Chip8-macOS";
 		};
+		35A9BC352606AAE400BDEB0C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 52D6D9731BEFF229002C0205 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 35955CB725FD669F00278994;
+			remoteInfo = "Chip8-Mac-Example";
+		};
+		35A9BC4A2606AB0000BDEB0C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 52D6D9731BEFF229002C0205 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 52D6DA0E1BF000BD002C0205;
+			remoteInfo = "Chip8-macOS";
+		};
 		35DD77D124FB30E6000164F7 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 52D6D9731BEFF229002C0205 /* Project object */;
@@ -131,6 +147,9 @@
 		35955CC325FD66A000278994 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		35955CC425FD66A000278994 /* Chip8_Mac_Example.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Chip8_Mac_Example.entitlements; sourceTree = "<group>"; };
 		35A3CC3025FEC230003C037E /* Notification.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Notification.swift; sourceTree = "<group>"; };
+		35A9BC302606AAE400BDEB0C /* Chip8-Mac-ExampleTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Chip8-Mac-ExampleTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		35A9BC322606AAE400BDEB0C /* Chip8_Mac_ExampleTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Chip8_Mac_ExampleTests.swift; sourceTree = "<group>"; };
+		35A9BC342606AAE400BDEB0C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		35AF919B25042E3400756B7A /* Array+Helper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+Helper.swift"; sourceTree = "<group>"; };
 		35B0F3A2250DBD55000E768C /* ROM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ROM.swift; sourceTree = "<group>"; };
 		35BE1C522606A7F000296387 /* MemoryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoryTests.swift; sourceTree = "<group>"; };
@@ -177,6 +196,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				35A3CC2725FEB62C003C037E /* Chip8.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		35A9BC2D2606AAE400BDEB0C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -281,6 +307,16 @@
 			path = "Chip8-Mac-Example";
 			sourceTree = "<group>";
 		};
+		35A9BC312606AAE400BDEB0C /* Chip8-Mac-ExampleTests */ = {
+			isa = PBXGroup;
+			children = (
+				35A9BC322606AAE400BDEB0C /* Chip8_Mac_ExampleTests.swift */,
+				35BE1C522606A7F000296387 /* MemoryTests.swift */,
+				35A9BC342606AAE400BDEB0C /* Info.plist */,
+			);
+			path = "Chip8-Mac-ExampleTests";
+			sourceTree = "<group>";
+		};
 		35DD77B224FB2D26000164F7 /* Chip8 */ = {
 			isa = PBXGroup;
 			children = (
@@ -358,6 +394,7 @@
 				52D6D99C1BEFF38C002C0205 /* Configs */,
 				35DD77BB24FB2FD1000164F7 /* Chip8-iOS-Example */,
 				35955CB925FD669F00278994 /* Chip8-Mac-Example */,
+				35A9BC312606AAE400BDEB0C /* Chip8-Mac-ExampleTests */,
 				52D6D97D1BEFF229002C0205 /* Products */,
 				35DD77CE24FB30E6000164F7 /* Frameworks */,
 			);
@@ -371,6 +408,7 @@
 				52D6DA0F1BF000BD002C0205 /* Chip8.framework */,
 				35DD77BA24FB2FD1000164F7 /* Chip8-iOS-Example.app */,
 				35955CB825FD669F00278994 /* Chip8-Mac-Example.app */,
+				35A9BC302606AAE400BDEB0C /* Chip8-Mac-ExampleTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -396,7 +434,6 @@
 			isa = PBXGroup;
 			children = (
 				8933C7891EB5B82A000D00A4 /* Chip8Tests.swift */,
-				35BE1C522606A7F000296387 /* MemoryTests.swift */,
 				35F2A7122511F01800BD678B /* EmptyROM */,
 			);
 			name = Tests;
@@ -463,6 +500,25 @@
 			productName = "Chip8-Mac-Example";
 			productReference = 35955CB825FD669F00278994 /* Chip8-Mac-Example.app */;
 			productType = "com.apple.product-type.application";
+		};
+		35A9BC2F2606AAE400BDEB0C /* Chip8-Mac-ExampleTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 35A9BC392606AAE500BDEB0C /* Build configuration list for PBXNativeTarget "Chip8-Mac-ExampleTests" */;
+			buildPhases = (
+				35A9BC2C2606AAE400BDEB0C /* Sources */,
+				35A9BC2D2606AAE400BDEB0C /* Frameworks */,
+				35A9BC2E2606AAE400BDEB0C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				35A9BC4B2606AB0000BDEB0C /* PBXTargetDependency */,
+				35A9BC362606AAE400BDEB0C /* PBXTargetDependency */,
+			);
+			name = "Chip8-Mac-ExampleTests";
+			productName = "Chip8-Mac-ExampleTests";
+			productReference = 35A9BC302606AAE400BDEB0C /* Chip8-Mac-ExampleTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
 		};
 		35DD77B924FB2FD1000164F7 /* Chip8-iOS-Example */ = {
 			isa = PBXNativeTarget;
@@ -553,6 +609,11 @@
 						DevelopmentTeam = RH4PC25J9C;
 						ProvisioningStyle = Automatic;
 					};
+					35A9BC2F2606AAE400BDEB0C = {
+						CreatedOnToolsVersion = 12.4;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 35955CB725FD669F00278994;
+					};
 					35DD77B924FB2FD1000164F7 = {
 						CreatedOnToolsVersion = 11.6;
 						DevelopmentTeam = A5FP7L6CSA;
@@ -592,6 +653,7 @@
 				52D6D97B1BEFF229002C0205 /* Chip8-iOS */,
 				52D6DA0E1BF000BD002C0205 /* Chip8-macOS */,
 				52D6D9EF1BEFFFBE002C0205 /* Chip8-tvOS */,
+				35A9BC2F2606AAE400BDEB0C /* Chip8-Mac-ExampleTests */,
 			);
 		};
 /* End PBXProject section */
@@ -603,6 +665,13 @@
 			files = (
 				35955CBF25FD66A000278994 /* Assets.xcassets in Resources */,
 				35955CC225FD66A000278994 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		35A9BC2E2606AAE400BDEB0C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -678,6 +747,15 @@
 				35955CBD25FD669F00278994 /* GameController.swift in Sources */,
 				35955CBB25FD669F00278994 /* AppDelegate.swift in Sources */,
 				35A3CC3125FEC230003C037E /* Notification.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		35A9BC2C2606AAE400BDEB0C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				35A9BC3F2606AAED00BDEB0C /* MemoryTests.swift in Sources */,
+				35A9BC332606AAE400BDEB0C /* Chip8_Mac_ExampleTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -767,6 +845,16 @@
 			isa = PBXTargetDependency;
 			target = 52D6DA0E1BF000BD002C0205 /* Chip8-macOS */;
 			targetProxy = 35A3CC1D25FEB621003C037E /* PBXContainerItemProxy */;
+		};
+		35A9BC362606AAE400BDEB0C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 35955CB725FD669F00278994 /* Chip8-Mac-Example */;
+			targetProxy = 35A9BC352606AAE400BDEB0C /* PBXContainerItemProxy */;
+		};
+		35A9BC4B2606AB0000BDEB0C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 52D6DA0E1BF000BD002C0205 /* Chip8-macOS */;
+			targetProxy = 35A9BC4A2606AB0000BDEB0C /* PBXContainerItemProxy */;
 		};
 		35DD77D224FB30E6000164F7 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
@@ -863,6 +951,65 @@
 				SDKROOT = macosx;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+		35A9BC372606AAE400BDEB0C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = "";
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				INFOPLIST_FILE = "Chip8-Mac-ExampleTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 11.1;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.carlosduclos.demo.Chip8-Mac-ExampleTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SDKROOT = macosx;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_VERSION = 5.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Chip8-Mac-Example.app/Contents/MacOS/Chip8-Mac-Example";
+			};
+			name = Debug;
+		};
+		35A9BC382606AAE400BDEB0C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = "";
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				INFOPLIST_FILE = "Chip8-Mac-ExampleTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 11.1;
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.carlosduclos.demo.Chip8-Mac-ExampleTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SDKROOT = macosx;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_VERSION = 5.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Chip8-Mac-Example.app/Contents/MacOS/Chip8-Mac-Example";
 			};
 			name = Release;
 		};
@@ -1191,6 +1338,15 @@
 			buildConfigurations = (
 				35955CDB25FD66A100278994 /* Debug */,
 				35955CDC25FD66A100278994 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		35A9BC392606AAE500BDEB0C /* Build configuration list for PBXNativeTarget "Chip8-Mac-ExampleTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				35A9BC372606AAE400BDEB0C /* Debug */,
+				35A9BC382606AAE400BDEB0C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
