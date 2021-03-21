@@ -12,10 +12,6 @@ import XCTest
 
 class MemoryTests: XCTestCase {
     
-    static var allTests = [
-        ("testSize", testSize)
-    ]
-    
     func testSize() {
         var memory = Memory(size: 5)
         XCTAssert(memory.buffer.count == 5, "Wrong size")

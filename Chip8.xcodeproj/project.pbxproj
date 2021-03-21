@@ -20,6 +20,7 @@
 		354F84BF24FBAF9700FD1253 /* Screen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35DD776F24FB27A4000164F7 /* Screen.swift */; };
 		354F84C024FBAF9700FD1253 /* Stack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35DD777424FB27A5000164F7 /* Stack.swift */; };
 		3564BAFF251DB8D1005CBFC5 /* Button+Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3564BAFE251DB8D1005CBFC5 /* Button+Helper.swift */; };
+		35766A272607401F008757D4 /* KeyboardTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35EA597026073EAE00DEEAC7 /* KeyboardTests.swift */; };
 		3578D738250CCAB800B02F9F /* Instruction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3578D736250CCAA300B02F9F /* Instruction.swift */; };
 		358CCB8E251B258300F5E27C /* GCDTimer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 358CCB8D251B258300F5E27C /* GCDTimer.swift */; };
 		35937AF225FBC6EC00067115 /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = 357805192510946A00E5664B /* Game.swift */; };
@@ -28,7 +29,6 @@
 		35955CBF25FD66A000278994 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 35955CBE25FD66A000278994 /* Assets.xcassets */; };
 		35955CC225FD66A000278994 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 35955CC025FD66A000278994 /* Main.storyboard */; };
 		35A3CC3125FEC230003C037E /* Notification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35A3CC3025FEC230003C037E /* Notification.swift */; };
-		35A9BC332606AAE400BDEB0C /* Chip8_Mac_ExampleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35A9BC322606AAE400BDEB0C /* Chip8_Mac_ExampleTests.swift */; };
 		35A9BC3F2606AAED00BDEB0C /* MemoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35BE1C522606A7F000296387 /* MemoryTests.swift */; };
 		35A9BC8E26070D8F00BDEB0C /* Chip8.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 52D6D97C1BEFF229002C0205 /* Chip8.framework */; };
 		35AF919C25042E3400756B7A /* Array+Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35AF919B25042E3400756B7A /* Array+Helper.swift */; };
@@ -43,6 +43,7 @@
 		35DD77C924FB2FD3000164F7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 35DD77C724FB2FD3000164F7 /* LaunchScreen.storyboard */; };
 		35DD77CF24FB30E6000164F7 /* Chip8.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 52D6D97C1BEFF229002C0205 /* Chip8.framework */; };
 		35DD77D024FB30E6000164F7 /* Chip8.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 52D6D97C1BEFF229002C0205 /* Chip8.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		35EA59492607208B00DEEAC7 /* Package.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35EA59482607208B00DEEAC7 /* Package.swift */; };
 		35EC41E525FDBE32009C2678 /* GameViewProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35EC41E425FDBE32009C2678 /* GameViewProtocol.swift */; };
 		35EC41EF25FDC2FB009C2678 /* GameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35EB271B25F965E8003ABD99 /* GameView.swift */; };
 		35EEA14C25FE760E0067ED2E /* WALL in Resources */ = {isa = PBXBuildFile; fileRef = 35EEA14225FE760E0067ED2E /* WALL */; };
@@ -115,8 +116,6 @@
 		35955CC425FD66A000278994 /* Chip8_Mac_Example.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Chip8_Mac_Example.entitlements; sourceTree = "<group>"; };
 		35A3CC3025FEC230003C037E /* Notification.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Notification.swift; sourceTree = "<group>"; };
 		35A9BC302606AAE400BDEB0C /* Chip8-Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Chip8-Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		35A9BC322606AAE400BDEB0C /* Chip8_Mac_ExampleTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Chip8_Mac_ExampleTests.swift; sourceTree = "<group>"; };
-		35A9BC342606AAE400BDEB0C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		35AF919B25042E3400756B7A /* Array+Helper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+Helper.swift"; sourceTree = "<group>"; };
 		35B0F3A2250DBD55000E768C /* ROM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ROM.swift; sourceTree = "<group>"; };
 		35BE1C522606A7F000296387 /* MemoryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoryTests.swift; sourceTree = "<group>"; };
@@ -136,6 +135,8 @@
 		35DD77C524FB2FD3000164F7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		35DD77C824FB2FD3000164F7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		35DD77CA24FB2FD3000164F7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		35EA59482607208B00DEEAC7 /* Package.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Package.swift; sourceTree = "<group>"; };
+		35EA597026073EAE00DEEAC7 /* KeyboardTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardTests.swift; sourceTree = "<group>"; };
 		35EB271B25F965E8003ABD99 /* GameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameView.swift; sourceTree = "<group>"; };
 		35EC41E425FDBE32009C2678 /* GameViewProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewProtocol.swift; sourceTree = "<group>"; };
 		35EEA14225FE760E0067ED2E /* WALL */ = {isa = PBXFileReference; lastKnownFileType = file; path = WALL; sourceTree = "<group>"; };
@@ -148,9 +149,7 @@
 		35EEA14925FE760E0067ED2E /* BC_test.ch8 */ = {isa = PBXFileReference; lastKnownFileType = file; path = BC_test.ch8; sourceTree = "<group>"; };
 		35EEA14A25FE760E0067ED2E /* PONG */ = {isa = PBXFileReference; lastKnownFileType = file; path = PONG; sourceTree = "<group>"; };
 		35EEA14B25FE760E0067ED2E /* SPACE */ = {isa = PBXFileReference; lastKnownFileType = file; path = SPACE; sourceTree = "<group>"; };
-		35F2A7122511F01800BD678B /* EmptyROM */ = {isa = PBXFileReference; lastKnownFileType = text; path = EmptyROM; sourceTree = "<group>"; };
 		52D6D97C1BEFF229002C0205 /* Chip8.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Chip8.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		8933C7891EB5B82A000D00A4 /* Chip8Tests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Chip8Tests.swift; sourceTree = "<group>"; };
 		AD2FAA261CD0B6D800659CF4 /* Chip8.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Chip8.plist; sourceTree = "<group>"; };
 		AD2FAA281CD0B6E100659CF4 /* Chip8Tests.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Chip8Tests.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -258,14 +257,13 @@
 			path = "Chip8-Mac-Example";
 			sourceTree = "<group>";
 		};
-		35A9BC312606AAE400BDEB0C /* Chip8-Mac-ExampleTests */ = {
+		35A9BC312606AAE400BDEB0C /* Chip8Tests */ = {
 			isa = PBXGroup;
 			children = (
-				35A9BC322606AAE400BDEB0C /* Chip8_Mac_ExampleTests.swift */,
 				35BE1C522606A7F000296387 /* MemoryTests.swift */,
-				35A9BC342606AAE400BDEB0C /* Info.plist */,
+				35EA597026073EAE00DEEAC7 /* KeyboardTests.swift */,
 			);
-			path = "Chip8-Mac-ExampleTests";
+			path = Chip8Tests;
 			sourceTree = "<group>";
 		};
 		35DD77B224FB2D26000164F7 /* Chip8 */ = {
@@ -309,6 +307,14 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		35EA5963260721BB00DEEAC7 /* Tests */ = {
+			isa = PBXGroup;
+			children = (
+				35A9BC312606AAE400BDEB0C /* Chip8Tests */,
+			);
+			path = Tests;
+			sourceTree = "<group>";
+		};
 		35EC41F825FDC56F009C2678 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
@@ -340,12 +346,12 @@
 		52D6D9721BEFF229002C0205 = {
 			isa = PBXGroup;
 			children = (
+				35EA59482607208B00DEEAC7 /* Package.swift */,
 				8933C7811EB5B7E0000D00A4 /* Sources */,
-				8933C7831EB5B7EB000D00A4 /* Tests */,
+				35EA5963260721BB00DEEAC7 /* Tests */,
 				52D6D99C1BEFF38C002C0205 /* Configs */,
 				35DD77BB24FB2FD1000164F7 /* Chip8-iOS-Example */,
 				35955CB925FD669F00278994 /* Chip8-Mac-Example */,
-				35A9BC312606AAE400BDEB0C /* Chip8-Mac-ExampleTests */,
 				52D6D97D1BEFF229002C0205 /* Products */,
 				35DD77CE24FB30E6000164F7 /* Frameworks */,
 			);
@@ -377,16 +383,6 @@
 				35DD77B224FB2D26000164F7 /* Chip8 */,
 			);
 			path = Sources;
-			sourceTree = "<group>";
-		};
-		8933C7831EB5B7EB000D00A4 /* Tests */ = {
-			isa = PBXGroup;
-			children = (
-				8933C7891EB5B82A000D00A4 /* Chip8Tests.swift */,
-				35F2A7122511F01800BD678B /* EmptyROM */,
-			);
-			name = Tests;
-			path = Tests/Chip8Tests;
 			sourceTree = "<group>";
 		};
 		DD7502721C68FC1B006590AF /* Frameworks */ = {
@@ -509,8 +505,7 @@
 					};
 					35A9BC2F2606AAE400BDEB0C = {
 						CreatedOnToolsVersion = 12.4;
-						ProvisioningStyle = Automatic;
-						TestTargetID = 35955CB725FD669F00278994;
+						ProvisioningStyle = Manual;
 					};
 					35DD77B924FB2FD1000164F7 = {
 						CreatedOnToolsVersion = 11.6;
@@ -627,8 +622,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				35766A272607401F008757D4 /* KeyboardTests.swift in Sources */,
 				35A9BC3F2606AAED00BDEB0C /* MemoryTests.swift in Sources */,
-				35A9BC332606AAE400BDEB0C /* Chip8_Mac_ExampleTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -642,6 +637,7 @@
 				354DED5025FBD2B2007FB9A1 /* GameCell.swift in Sources */,
 				3503C71925FC84A200E322A1 /* UIColor.swift in Sources */,
 				35DD77C124FB2FD1000164F7 /* GameController.swift in Sources */,
+				35EA59492607208B00DEEAC7 /* Package.swift in Sources */,
 				35DD77BD24FB2FD1000164F7 /* AppDelegate.swift in Sources */,
 				3564BAFF251DB8D1005CBFC5 /* Button+Helper.swift in Sources */,
 				35DD77BF24FB2FD1000164F7 /* SceneDelegate.swift in Sources */,
@@ -785,19 +781,18 @@
 		35A9BC372606AAE400BDEB0C /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
 				CLANG_ENABLE_OBJC_WEAK = YES;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
-				CODE_SIGN_IDENTITY = "Apple Development";
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_IDENTITY = "-";
+				CODE_SIGN_STYLE = Manual;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = "";
 				GCC_C_LANGUAGE_STANDARD = gnu11;
-				INFOPLIST_FILE = "Chip8-Mac-ExampleTests/Info.plist";
+				INFOPLIST_FILE = "Chip8Tests-Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 11.1;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
@@ -809,26 +804,24 @@
 				SUPPORTED_PLATFORMS = "macosx iphonesimulator iphoneos";
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_VERSION = 5.0;
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Chip8-Mac-Example.app/Contents/MacOS/Chip8-Mac-Example";
 			};
 			name = Debug;
 		};
 		35A9BC382606AAE400BDEB0C /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
 				CLANG_ENABLE_OBJC_WEAK = YES;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
-				CODE_SIGN_IDENTITY = "Apple Development";
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_IDENTITY = "-";
+				CODE_SIGN_STYLE = Manual;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = "";
 				GCC_C_LANGUAGE_STANDARD = gnu11;
-				INFOPLIST_FILE = "Chip8-Mac-ExampleTests/Info.plist";
+				INFOPLIST_FILE = "Chip8Tests-Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 11.1;
 				MTL_FAST_MATH = YES;
@@ -839,7 +832,6 @@
 				SUPPORTED_PLATFORMS = "macosx iphonesimulator iphoneos";
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				SWIFT_VERSION = 5.0;
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Chip8-Mac-Example.app/Contents/MacOS/Chip8-Mac-Example";
 			};
 			name = Release;
 		};
