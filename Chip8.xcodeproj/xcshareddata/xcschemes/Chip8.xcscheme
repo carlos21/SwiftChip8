@@ -14,9 +14,9 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "52D6DA0E1BF000BD002C0205"
+               BlueprintIdentifier = "52D6D97B1BEFF229002C0205"
                BuildableName = "Chip8.framework"
-               BlueprintName = "Chip8-macOS"
+               BlueprintName = "Chip8"
                ReferencedContainer = "container:Chip8.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -27,24 +27,34 @@
       selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
       shouldUseLaunchSchemeArgsEnv = "YES"
-      codeCoverageEnabled = "YES">
+      codeCoverageEnabled = "YES"
+      onlyGenerateCoverageForSpecifiedTargets = "YES">
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "52D6DA0E1BF000BD002C0205"
+            BlueprintIdentifier = "52D6D97B1BEFF229002C0205"
             BuildableName = "Chip8.framework"
-            BlueprintName = "Chip8-macOS"
+            BlueprintName = "Chip8"
             ReferencedContainer = "container:Chip8.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
+      <CodeCoverageTargets>
+         <BuildableReference
+            BuildableIdentifier = "primary"
+            BlueprintIdentifier = "52D6D97B1BEFF229002C0205"
+            BuildableName = "Chip8.framework"
+            BlueprintName = "Chip8"
+            ReferencedContainer = "container:Chip8.xcodeproj">
+         </BuildableReference>
+      </CodeCoverageTargets>
       <Testables>
          <TestableReference
             skipped = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "DD7502791C68FCFC006590AF"
-               BuildableName = "Chip8-macOS Tests.xctest"
-               BlueprintName = "Chip8-macOS Tests"
+               BlueprintIdentifier = "35A9BC2F2606AAE400BDEB0C"
+               BuildableName = "Chip8-Tests.xctest"
+               BlueprintName = "Chip8-Tests"
                ReferencedContainer = "container:Chip8.xcodeproj">
             </BuildableReference>
          </TestableReference>
@@ -63,9 +73,9 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "52D6DA0E1BF000BD002C0205"
+            BlueprintIdentifier = "52D6D97B1BEFF229002C0205"
             BuildableName = "Chip8.framework"
-            BlueprintName = "Chip8-macOS"
+            BlueprintName = "Chip8"
             ReferencedContainer = "container:Chip8.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
@@ -79,9 +89,9 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "52D6DA0E1BF000BD002C0205"
+            BlueprintIdentifier = "52D6D97B1BEFF229002C0205"
             BuildableName = "Chip8.framework"
-            BlueprintName = "Chip8-macOS"
+            BlueprintName = "Chip8"
             ReferencedContainer = "container:Chip8.xcodeproj">
          </BuildableReference>
       </MacroExpansion>

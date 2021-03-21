@@ -44,8 +44,8 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "35A9BC2F2606AAE400BDEB0C"
-               BuildableName = "Chip8-Mac-ExampleTests.xctest"
-               BlueprintName = "Chip8-Mac-ExampleTests"
+               BuildableName = "Chip8-Tests.xctest"
+               BlueprintName = "Chip8-Tests"
                ReferencedContainer = "container:Chip8.xcodeproj">
             </BuildableReference>
          </TestableReference>
