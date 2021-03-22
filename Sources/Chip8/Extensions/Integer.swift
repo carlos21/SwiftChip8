@@ -10,11 +10,6 @@ import Foundation
 
 internal extension UInt16 {
     
-    /// Initializes value from two bytes.
-    init(bytes: (UInt8, UInt8)) {
-        self = unsafeBitCast(bytes, to: UInt16.self)
-    }
-    
     var hex: String {
         return "0x\(String(format: "%02X", self))"
     }
@@ -24,29 +19,5 @@ internal extension UInt8 {
     
     var hex: String {
         return "0x\(String(format: "%02X", self))"
-    }
-}
-
-internal extension Int {
-    
-    var hex: String {
-        return "0x\(String(format: "%02X", self))"
-    }
-}
-
-infix operator ^+: AdditionPrecedence
-
-func ^+ (left: UInt8, right: UInt8) -> UInt16 {
-    return UInt16(left) + UInt16(right)
-}
-
-extension FixedWidthInteger {
-    
-    var bytes: [UInt8] {
-        return withUnsafeBytes(of: self.littleEndian, Array.init)
-    }
-    
-    var binary: String {
-        return String(self, radix: 2)
     }
 }

@@ -33,6 +33,8 @@
 		35A9BC8E26070D8F00BDEB0C /* Chip8.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 52D6D97C1BEFF229002C0205 /* Chip8.framework */; };
 		35AF919C25042E3400756B7A /* Array+Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35AF919B25042E3400756B7A /* Array+Helper.swift */; };
 		35B0F3A3250DBD55000E768C /* ROM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35B0F3A2250DBD55000E768C /* ROM.swift */; };
+		35D1CCBF26083AFC004CE1B4 /* HelperTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35D1CCBE26083AFC004CE1B4 /* HelperTests.swift */; };
+		35D1CCC42608427C004CE1B4 /* ScreenTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35D1CCC32608427C004CE1B4 /* ScreenTests.swift */; };
 		35D21E6A2509F5390090A2B1 /* Button.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35D21E692509F5390090A2B1 /* Button.swift */; };
 		35D320A225F87DCB005375A0 /* Runner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35D320A125F87DCB005375A0 /* Runner.swift */; };
 		35DD77BD24FB2FD1000164F7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35DD77BC24FB2FD1000164F7 /* AppDelegate.swift */; };
@@ -119,6 +121,8 @@
 		35AF919B25042E3400756B7A /* Array+Helper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+Helper.swift"; sourceTree = "<group>"; };
 		35B0F3A2250DBD55000E768C /* ROM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ROM.swift; sourceTree = "<group>"; };
 		35BE1C522606A7F000296387 /* MemoryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoryTests.swift; sourceTree = "<group>"; };
+		35D1CCBE26083AFC004CE1B4 /* HelperTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelperTests.swift; sourceTree = "<group>"; };
+		35D1CCC32608427C004CE1B4 /* ScreenTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenTests.swift; sourceTree = "<group>"; };
 		35D21E692509F5390090A2B1 /* Button.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Button.swift; sourceTree = "<group>"; };
 		35D320A125F87DCB005375A0 /* Runner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Runner.swift; sourceTree = "<group>"; };
 		35DD776F24FB27A4000164F7 /* Screen.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Screen.swift; sourceTree = "<group>"; };
@@ -262,6 +266,8 @@
 			children = (
 				35BE1C522606A7F000296387 /* MemoryTests.swift */,
 				35EA597026073EAE00DEEAC7 /* KeyboardTests.swift */,
+				35D1CCBE26083AFC004CE1B4 /* HelperTests.swift */,
+				35D1CCC32608427C004CE1B4 /* ScreenTests.swift */,
 			);
 			path = Chip8Tests;
 			sourceTree = "<group>";
@@ -623,7 +629,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				35766A272607401F008757D4 /* KeyboardTests.swift in Sources */,
+				35D1CCBF26083AFC004CE1B4 /* HelperTests.swift in Sources */,
 				35A9BC3F2606AAED00BDEB0C /* MemoryTests.swift in Sources */,
+				35D1CCC42608427C004CE1B4 /* ScreenTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
