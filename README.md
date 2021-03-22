@@ -3,6 +3,7 @@
 [![License][mit-badge]][mit-url]
 [![Build Status][build-status-badge]][build-status-url]
 [![CodeBeat][codebeat-badge]][codebeat-url]
+[![codecov][codecov-badge]][codecov-url]
 
 ![Chip8](https://user-images.githubusercontent.com/1591321/111880352-fc7c0880-8978-11eb-8002-354634ed84a5.png)
 ![Chip8](https://user-images.githubusercontent.com/1591321/111880560-3ac5f780-897a-11eb-9418-5cbddbfe9bbb.png)
@@ -25,3 +26,5 @@
 [codebeat-url]: https://codebeat.co/projects/github-com-carlos21-swiftchip8-master
 [linkedin-badge]: https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white
 [linkedin-url]: https://www.linkedin.com/in/carlos-duclos-caballero-5b1aa520/
+[codecov-badge]: https://codecov.io/gh/carlos21/SwiftChip8/branch/master/graph/badge.svg?token=FxjWg8RbEY
+[codecov-url]: https://codecov.io/gh/carlos21/SwiftChip8
