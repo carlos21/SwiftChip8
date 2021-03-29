@@ -85,7 +85,7 @@
                                 <rect key="frame" x="0.0" y="411" width="375" height="367"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KL2-Jg-BqP" userLabel="Buttons">
-                                        <rect key="frame" x="0.0" y="12" width="375" height="343"/>
+                                        <rect key="frame" x="0.0" y="8" width="375" height="343"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="gA7-R8-I2l">
                                                 <rect key="frame" x="16" y="0.0" width="343" height="343"/>
@@ -404,8 +404,8 @@
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstItem="KL2-Jg-BqP" firstAttribute="centerY" secondItem="E59-gE-rfq" secondAttribute="centerY" id="GLz-8f-xe9"/>
                                     <constraint firstAttribute="trailing" secondItem="KL2-Jg-BqP" secondAttribute="trailing" id="Rm3-sO-dTV"/>
+                                    <constraint firstAttribute="bottom" secondItem="KL2-Jg-BqP" secondAttribute="bottom" constant="16" id="eeU-S3-9DH"/>
                                     <constraint firstItem="KL2-Jg-BqP" firstAttribute="leading" secondItem="E59-gE-rfq" secondAttribute="leading" id="nJA-rL-tLC"/>
                                 </constraints>
                             </view>
