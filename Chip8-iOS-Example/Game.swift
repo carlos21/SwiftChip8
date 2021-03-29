@@ -18,6 +18,8 @@ enum Game {
     case tetris
     case tictactoe
     case wall
+    case particle
+    case brix
     
     var name: String {
         switch self {
@@ -44,6 +46,12 @@ enum Game {
             
         case .wall:
             return "WALL"
+            
+        case .particle:
+            return "PARTICLE"
+            
+        case .brix:
+            return "BRIX"
         }
     }
 }

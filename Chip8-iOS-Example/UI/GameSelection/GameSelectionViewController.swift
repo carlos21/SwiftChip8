@@ -11,7 +11,7 @@ import UIKit
 
 final class GameSelectionViewController: UITableViewController {
     
-    let games: [Game] = [.invaders, .pong, .maze, .space, .tank, .tetris, .tictactoe, .wall]
+    let games: [Game] = [.invaders, .pong, .maze, .space, .tank, .tetris, .tictactoe, .wall, .particle, .brix]
     
     override func viewDidLoad() {
         tableView.separatorInset = .zero
